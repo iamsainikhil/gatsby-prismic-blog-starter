@@ -1,7 +1,19 @@
 /**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
+ * Should return either an [x, y] Array of coordinates to scroll to,
+ * a string of the id or name of an element to scroll to,
+ * a boolean value of the scrollBehavior
  */
+exports.shouldUpdateScroll = ({
+  routerProps: { location },
+  getSavedScrollPosition,
+}) => {
+  const currentPosition = getSavedScrollPosition(location)
+  // const queriedPosition = getSavedScrollPosition({ pathname: `/random` })
 
-// You can delete this file if you're not using it
+  // false to not update the scroll position, or true for the default behavior.
+  const defaultScrollBehavior = false
+
+  window.scrollTo(...(defaultScrollBehavior ? currentPosition : [0, 0]))
+
+  return defaultScrollBehavior
+}

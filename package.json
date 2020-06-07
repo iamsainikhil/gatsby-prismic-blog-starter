@@ -1,7 +1,7 @@
 {
   "name": "iamsainikhil-blog",
   "private": true,
-  "description": "A blog site built with Gatsby and Prismic",
+  "description": "My personal blog built with Gatsby and Prismic",
   "version": "0.1.0",
   "author": "Sai Nikhil <contact@iamsainikhil.com>",
   "dependencies": {

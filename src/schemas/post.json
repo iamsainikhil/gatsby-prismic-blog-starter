@@ -1,0 +1,262 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "uid",
+        "placeholder": "ID of the post to show up in the URL"
+      }
+    },
+    "created": {
+      "type": "Date",
+      "config": {
+        "label": "created",
+        "placeholder": "Created date of the post"
+      }
+    },
+    "modified": {
+      "type": "Date",
+      "config": {
+        "label": "modified",
+        "placeholder": "Modified date of the post"
+      }
+    },
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "title",
+        "placeholder": "Title of the post"
+      }
+    },
+    "content": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+        "allowTargetBlank": true,
+        "label": "content",
+        "placeholder": "Content of the post"
+      }
+    },
+    "share_links": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "name": {
+            "type": "Text",
+            "config": {
+              "label": "name",
+              "placeholder": "Name of the shareable platform"
+            }
+          }
+        },
+        "label": "shareLinks"
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {
+          "quote": [
+            {
+              "name": "quote",
+              "display": "quote"
+            }
+          ],
+          "code": [
+            {
+              "name": "code",
+              "display": "code"
+            }
+          ],
+          "image": [
+            {
+              "name": "image",
+              "display": "image"
+            }
+          ],
+          "text": [
+            {
+              "name": "text",
+              "display": "text"
+            }
+          ]
+        },
+        "choices": {
+          "quote": {
+            "type": "Slice",
+            "fieldset": "Quote",
+            "description": "BlockQuote slice",
+            "icon": "format_quote",
+            "display": "list",
+            "non-repeat": {
+              "text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                  "allowTargetBlank": true,
+                  "label": "text",
+                  "placeholder": "Text in the BlockQuote"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "code": {
+            "type": "Slice",
+            "fieldset": "Code",
+            "description": "Slice representing a block of code",
+            "icon": "code",
+            "display": "list",
+            "non-repeat": {
+              "lang": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "paragraph",
+                  "label": "lang",
+                  "placeholder": "Language of the code block"
+                }
+              },
+              "block": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "preformatted, embed",
+                  "label": "block",
+                  "placeholder": "Code block"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "image_gallery": {
+            "type": "Slice",
+            "fieldset": "Image Gallery",
+            "description": "Image Gallery with a title and a caption for each image",
+            "icon": "photo_library",
+            "non-repeat": {
+              "name_of_the_gallery": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading2",
+                  "label": "Name of the gallery",
+                  "placeholder": "My beautiful paintings"
+                }
+              }
+            },
+            "repeat": {
+              "image_captions": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph",
+                  "label": "Image captions",
+                  "placeholder": "Images captions"
+                }
+              },
+              "gallery_image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "width": null,
+                    "height": null
+                  },
+                  "thumbnails": [],
+                  "label": "Gallery Image"
+                }
+              }
+            }
+          },
+          "banner_with_caption": {
+            "type": "Slice",
+            "fieldset": "Banner with caption",
+            "description": "Banner with caption and button",
+            "icon": "chrome_reader_mode",
+            "non-repeat": {
+              "image_banner": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "width": null,
+                    "height": null
+                  },
+                  "thumbnails": [],
+                  "label": "Image Banner"
+                }
+              },
+              "title_of_banner": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "heading2",
+                  "label": "Title Of banner",
+                  "placeholder": "My title of banner"
+                }
+              },
+              "description": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph",
+                  "label": "Description",
+                  "placeholder": "My description"
+                }
+              },
+              "button_label": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                  "label": "Button label",
+                  "placeholder": "Click Here"
+                }
+              },
+              "button_link": {
+                "type": "Link",
+                "config": {
+                  "label": "Button Link",
+                  "placeholder": "Select the link"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "text": {
+            "type": "Slice",
+            "fieldset": "text",
+            "description": "Text block",
+            "icon": "textsms",
+            "display": "list",
+            "non-repeat": {
+              "text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                  "allowTargetBlank": true,
+                  "label": "text",
+                  "placeholder": "Blog post text content"
+                }
+              }
+            },
+            "repeat": {}
+          }
+        }
+      }
+    }
+  },
+  "Meta": {
+    "tags": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "tag": {
+            "type": "Link",
+            "config": {
+              "select": "document",
+              "customtypes": ["tags"],
+              "label": "tag",
+              "placeholder": "Tag"
+            }
+          }
+        },
+        "label": "tags"
+      }
+    }
+  }
+}

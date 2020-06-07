@@ -1,0 +1,40 @@
+.headroom {
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+.headroom--unfixed {
+  position: relative;
+  transform: translateY(0);
+}
+.headroom--scrolled {
+  transition: transform 200ms ease-in-out;
+}
+.headroom--unpinned {
+  position: fixed;
+  transform: translateY(-100%);
+}
+.headroom--unpinned .header {
+  display: none;
+}
+.headroom--pinned {
+  position: fixed;
+  transform: translateY(0%);
+  height: 50px;
+}
+
+.headroom--pinned .header {
+  background: RGBA(102, 51, 152, 0.9);
+  height: 4rem;
+}
+
+.header {
+  background: RGB(102, 51, 152);
+  height: 6rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,7 +1,56 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+// graphql function doesn't throw an error so we have to check to check for the result.errors to throw manually
+const wrapper = promise =>
+  promise.then(result => {
+    if (result.errors) {
+      throw result.errors
+    }
+    return result
+  })
 
-// You can delete this file if you're not using it
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+
+  const postTemplate = require.resolve("./src/templates/article.js")
+  const tagTemplate = require.resolve("./src/templates/tag.js")
+
+  const result = await wrapper(
+    graphql(
+      `
+        {
+          allPrismicPost {
+            edges {
+              node {
+                uid
+                tags
+              }
+            }
+          }
+        }
+      `
+    )
+  )
+
+  const posts = result.data.allPrismicPost.edges
+
+  posts.forEach(post => {
+    // post pages
+    createPage({
+      path: `/article/${post.node.uid}/`,
+      component: postTemplate,
+      context: {
+        slug: post.node.uid,
+      },
+    })
+
+    // tag pages
+    post.node.tags.forEach(tag => {
+      createPage({
+        path: `/tag/${tag}/`,
+        component: tagTemplate,
+        context: {
+          slug: tag,
+        },
+      })
+    })
+  })
+}
