@@ -33,6 +33,7 @@
   background: RGB(102, 51, 152);
   height: 6rem;
   margin-bottom: 1.5rem;
+  padding: 1rem 2rem;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;

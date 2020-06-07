@@ -1,11 +1,11 @@
 import React from "react"
-// import { Link } from "gatsby"
-
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import Listing from "../components/listing"
 
-const IndexPage = () => (
+const IndexPage = ({ data: { posts } }) => (
   <Layout>
     <SEO title="Home" />
     <h1>Hi</h1>
@@ -17,7 +17,32 @@ const IndexPage = () => (
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>
+    {posts.edges.map((post, index) => (
+      <Listing slug={post.node.uid} data={post.node.data} key={index} />
+    ))}
   </Layout>
 )
 
 export default IndexPage
+
+export const IndexQuery = graphql`
+  query Posts {
+    posts: allPrismicPost {
+      edges {
+        node {
+          uid
+          tags
+          data {
+            title {
+              text
+            }
+            content {
+              text
+            }
+            created
+          }
+        }
+      }
+    }
+  }
+`

@@ -5,15 +5,9 @@ import Headroom from "react-headroom"
 import "./header.css"
 
 const Header = ({ siteTitle }) => (
-  <Headroom disableInlineStyles upTolerance={10} downTolerance={10}>
-    <header className="header">
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `1rem 2rem`,
-        }}
-      >
+  <header>
+    <Headroom disableInlineStyles upTolerance={10} downTolerance={10}>
+      <div className="header">
         <h1 style={{ margin: 0 }}>
           <Link
             to="/"
@@ -26,8 +20,8 @@ const Header = ({ siteTitle }) => (
           </Link>
         </h1>
       </div>
-    </header>
-  </Headroom>
+    </Headroom>
+  </header>
 )
 
 Header.propTypes = {

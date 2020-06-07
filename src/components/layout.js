@@ -24,39 +24,31 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <div className="content-wrapper">
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a
-            href="https://www.gatsbyjs.org"
-            rel="noreferrer noopener"
-            target="_blank"
-            title="Gatsby"
-          >
-            Gatsby
-          </a>{" "}
-          &nbsp;by&nbsp;
-          <a
-            href="https://iamsainikhil.com"
-            rel="noreferrer noopener"
-            target="_blank"
-            title="Sai Nikhil"
-          >
-            Sai Nikhil
-          </a>
-        </footer>
-      </div>
-    </>
+      <main className="main">{children}</main>
+      <footer className="footer">
+        © {new Date().getFullYear()}, Built with
+        {` `}
+        <a
+          href="https://www.gatsbyjs.org"
+          rel="noreferrer noopener"
+          target="_blank"
+          title="Gatsby"
+        >
+          Gatsby
+        </a>{" "}
+        &nbsp;by&nbsp;
+        <a
+          href="https://iamsainikhil.com"
+          rel="noreferrer noopener"
+          target="_blank"
+          title="Sai Nikhil"
+        >
+          Sai Nikhil
+        </a>
+      </footer>
+    </div>
   )
 }
 

@@ -400,7 +400,7 @@ pre {
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 1rem;
   font-size: 0.85rem;
   line-height: 1.42;
   background: hsla(0, 0%, 0%, 0.04);
@@ -619,4 +619,22 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+/* site layout */
+.content-wrapper {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+}
+
+.main {
+  margin: 1rem auto;
+  padding: 1rem 2rem;
+}
+
+.footer {
+  padding: 1rem 2rem;
+  text-align: center;
 }
