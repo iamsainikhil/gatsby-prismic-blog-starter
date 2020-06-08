@@ -627,14 +627,14 @@ pre tt:after {
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 100%;
-}
 
-.main {
-  margin: 1rem auto;
-  padding: 1rem 2rem;
-}
+  .main {
+    margin: 1rem auto;
+    padding: 1rem 2rem;
+  }
 
-.footer {
-  padding: 1rem 2rem;
-  text-align: center;
+  .footer {
+    padding: 1rem 2rem;
+    text-align: center;
+  }
 }
