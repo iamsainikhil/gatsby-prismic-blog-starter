@@ -89,7 +89,8 @@ module.exports = {
         // Gatsby. This is required.
         schemas: {
           // Your custom types mapped to schemas
-          post: require("./src/schemas/post.json"),
+          article: require("./src/schemas/article.json"),
+          category: require("./src/schemas/category.json"),
         },
 
         // Set a default language when fetching documents. The default value is

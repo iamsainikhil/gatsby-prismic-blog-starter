@@ -10,46 +10,63 @@ const wrapper = promise =>
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const postTemplate = require.resolve("./src/templates/article.js")
+  const articleTemplate = require.resolve("./src/templates/article.js")
   const tagTemplate = require.resolve("./src/templates/tag.js")
+  const categoryTemplate = require.resolve("./src/templates/category.js")
 
   const result = await wrapper(
     graphql(
       `
         {
-          allPrismicPost {
-            edges {
-              node {
-                uid
-                tags
-              }
+            allPrismicArticle {
+                edges {
+                    node {
+                        uid
+                        tags
+                        data {
+                            categories {
+                                slug
+                            }
+                        }
+                    }
+                }
             }
-          }
         }
       `
     )
   )
 
-  const posts = result.data.allPrismicPost.edges
+  const articles = result.data.allPrismicArticle.edges
 
-  posts.forEach(post => {
-    // post pages
+  articles.forEach(article => {
+    // article pages
     createPage({
-      path: `/article/${post.node.uid}/`,
-      component: postTemplate,
+      path: `/article/${article.node.uid}/`,
+      component: articleTemplate,
       context: {
-        slug: post.node.uid,
+        slug: article.node.uid,
       },
     })
 
     // tag pages
-    post.node.tags.forEach(tag => {
+    article.node.tags.forEach(tag => {
       createPage({
         path: `/tag/${tag}/`,
         component: tagTemplate,
         context: {
           slug: tag,
         },
+      })
+    })
+
+    // category pages
+    article.node.data.categories.forEach(({slug}) => {
+        createPage({
+            path: `/category/${slug}/`,
+            component: categoryTemplate,
+            context: {
+            slug: slug,
+            },
       })
     })
   })

@@ -5,11 +5,12 @@ import SEO from "../components/seo"
 import Listing from "./../components/listing"
 import { Styled } from "theme-ui"
 
-const Tag = ({ data: { articles }, pageContext }) => {
+const Category = ({ data: { articles }, pageContext }) => {
+  console.log(articles, pageContext)
   return (
     <Layout>
       <SEO
-        title={`${pageContext.slug} | Tag`}
+        title={`${pageContext.slug} | Category`}
         description={`Articles related to ${pageContext.slug}`}
       />
       <div style={{ textAlign: "center" }}>
@@ -23,15 +24,19 @@ const Tag = ({ data: { articles }, pageContext }) => {
   )
 }
 
-export default Tag
+export default Category
 
-export const TagQuery = graphql`
-  query TagQuery($tag: String) {
-    articles: allPrismicArticle(filter: { tags: { eq: $tag } }) {
+export const CategoryQuery = graphql`
+  query CategoryQuery($category: String) {
+    articles: allPrismicArticle(
+      filter: {
+        data: { categories: { elemMatch: { slug: { eq: $category } } } }
+      }
+    ) {
       edges {
         node {
-          uid
           tags
+          uid
           data {
             excerpt {
               text

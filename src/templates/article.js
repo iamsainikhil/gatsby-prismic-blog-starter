@@ -2,37 +2,40 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "./../components/layout"
 import SEO from "./../components/seo"
-// import Highlight, { defaultProps } from 'prism-react-renderer'
+import Highlight, { defaultProps } from 'prism-react-renderer'
 import "prismjs/themes/prism-solarizedlight.css"
 
-const Article = ({ data: { post } }) => {
-  console.log(post)
+
+const Article = ({ data: { article } }) => {
+  console.log(article)
   return (
     <Layout>
-      <SEO title={post.data.title.text} description={post.data.content.text} />
-      <h1>{post.data.title.text}</h1>
-      <p>{post.data.content.text}</p>
-      <p>Created: {post.data.created}</p>
-      {post.data.body.map((slice, index) => {
+      <SEO
+        title={article.data.title.text}
+        description={article.data.excerpt.text}
+      />
+      <h1>{article.data.title.text}</h1>
+      <p>{article.data.excerpt.text}</p>
+      <p>Created: {article.data.created}</p>
+      {article.data.body.map((slice, index) => {
         switch (slice.slice_type) {
           case "banner_with_caption":
             return (
               <div key={index}>
-                <h1>{slice.primary.title_of_banner.text}</h1>
-                <p>{slice.primary.description.text}</p>
+                <div dangerouslySetInnerHTML={{__html: `${slice.primary.title_of_banner.text}`}}></div>
+                <div dangerouslySetInnerHTML={{__html: `${slice.primary.description.text}`}}></div>
               </div>
             )
           case "quote":
             return (
-              <blockquote key={index}>
-                <p>{slice.primary.text.text}</p>
+              <blockquote key={index} dangerouslySetInnerHTML={{__html: `${slice.primary.quote.html}`}}>
               </blockquote>
             )
           case "text":
             return (
               <div
                 dangerouslySetInnerHTML={{
-                  __html: `${slice.primary.text.html}`,
+                  __html: `${slice.primary.content.text}`,
                 }}
                 key={index}
               ></div>
@@ -40,11 +43,11 @@ const Article = ({ data: { post } }) => {
           case "code":
             return (
               <div key={index}>
-                {/* <Highlight
+                <Highlight
                   {...defaultProps}
                   theme={undefined}
-                  code={slice.primary.block.raw[0].text}
-                  language={slice.primary.lang.text}
+                  code={slice.primary.code.text}
+                  language={slice.primary.lang}
                 >
                   {({
                     className,
@@ -62,7 +65,7 @@ const Article = ({ data: { post } }) => {
                           color: '#181818',
                         }}
                       >
-                        {slice.primary.lang.text.toUpperCase()}
+                        {slice.primary.lang.toUpperCase()}
                       </span>
                       {tokens.map((line, i) => (
                         <div {...getLineProps({ line, key: i })}>
@@ -73,29 +76,28 @@ const Article = ({ data: { post } }) => {
                       ))}
                     </pre>
                   )}
-                </Highlight> */}
-                <pre className={`language-${slice.primary.lang.text}`}>
-                  <code className={`language-${slice.primary.lang.text}`}>
+                </Highlight>
+                {/* <pre className={`language-${slice.primary.lang}`}>
+                  <code className={`language-${slice.primary.lang}`}>
                     <div
                       dangerouslySetInnerHTML={{
-                        __html: `${slice.primary.block.html}`,
+                        __html: `${slice.primary.code.html}`,
                       }}
                     ></div>
                   </code>
-                </pre>
+                </pre> */}
               </div>
             )
           case "image_gallery":
             return (
-              <div key={index}>
-                <p>{slice.primary.name_of_the_gallery.text}</p>
+              <div key={index} dangerouslySetInnerHTML={{__html: `${slice.primary.name_of_the_gallery.html}`}}>
               </div>
             )
           default:
             return null
         }
       })}
-      {post.tags.map((tag, index) => (
+      {article.tags.map((tag, index) => (
         <Link to={`/tag/${tag}`} key={index}>
           {tag}
         </Link>
@@ -106,104 +108,99 @@ const Article = ({ data: { post } }) => {
 
 export default Article
 
-export const PostQuery = graphql`
-  query Post($uid: String) {
-    post: prismicPost(uid: { eq: $uid }) {
-      data {
-        body {
-          ... on PrismicPostBodyQuote {
-            id
-            slice_type
-            primary {
-              text {
-                text
-              }
-            }
-          }
-          ... on PrismicPostBodyCode {
-            id
-            slice_type
-            primary {
-              block {
-                raw
-                html
-              }
-              lang {
-                text
-              }
-            }
-            slice_label
-          }
-          ... on PrismicPostBodyImageGallery {
-            id
-            primary {
-              name_of_the_gallery {
-                text
-              }
-            }
-            slice_type
-            items {
-              gallery_image {
-                alt
-                copyright
-                url
-                thumbnails
-              }
-              image_captions {
-                html
-                text
-                raw
-              }
-            }
-          }
-          ... on PrismicPostBodyBannerWithCaption {
-            id
-            primary {
-              button_label {
-                text
-              }
-              button_link {
-                url
-              }
-              description {
-                text
-              }
-              image_banner {
-                alt
-                copyright
-                url
-                thumbnails
-              }
-              title_of_banner {
-                text
-              }
-            }
-            slice_type
-          }
-          ... on PrismicPostBodyText {
-            id
-            slice_type
-            primary {
-              text {
-                html
-              }
+export const articleQuery = graphql`
+query Article($uid: String) {
+  article: prismicArticle(uid: {eq: $uid}) {
+    data {
+      created
+      excerpt {
+        text
+      }
+      title {
+        text
+      }
+      modified
+      body {
+        ... on PrismicArticleBodyText {
+          slice_type
+          primary {
+            content {
+              raw
+              text
             }
           }
         }
-        created
-        modified
-        share_links {
-          name
+        ... on PrismicArticleBodyQuote {
+          slice_type
+          primary {
+            quote {
+              raw
+              text
+            }
+          }
         }
-        title {
-          text
+        ... on PrismicArticleBodyBannerWithCaption {
+          id
+          slice_type
+          primary {
+            description {
+              text
+            }
+            image_banner {
+              alt
+              thumbnails
+              url
+            }
+            title_of_banner {
+              text
+            }
+          }
         }
-        content {
-          text
+        ... on PrismicArticleBodyImageGallery {
+          id
+          slice_type
+          primary {
+            name_of_the_gallery {
+              text
+            }
+          }
+          items {
+            gallery_image {
+              alt
+              thumbnails
+              url
+            }
+            image_captions {
+              text
+            }
+          }
+        }
+        ... on PrismicArticleBodyCode {
+          id
+          slice_type
+          primary {
+            code {
+              raw
+              text
+            }
+            lang
+          }
         }
       }
-      tags
-      uid
+      categories {
+        category {
+          document {
+            ... on PrismicCategory {
+              data {
+                name
+              }
+            }
+          }
+        }
+      }
     }
+    tags
   }
+}
+
 `

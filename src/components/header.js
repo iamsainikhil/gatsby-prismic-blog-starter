@@ -16,7 +16,7 @@ const Header = ({ siteTitle }) => {
         style={{ background: `${theme.colors.muted}` }}
         className="header"
       >
-        <div className="header-content" style={{ maxWidth: 960 }}>
+        <div className="header-content">
           <div>
             <Styled.h1 style={{ margin: "0" }}>
               <Styled.a as={Link} to="/">
@@ -25,12 +25,12 @@ const Header = ({ siteTitle }) => {
             </Styled.h1>
           </div>
           <div className="header-links">
-            <Styled.h2 style={{ margin: "0 1rem" }}>
+            {/* <Styled.h2 style={{ margin: "0 1rem" }}>
               <Styled.a as={Link} to="/">
                 Tags
               </Styled.a>
-            </Styled.h2>
-            <p>
+            </Styled.h2> */}
+            {/* <p>
               <GoSearch
                 title="Search"
                 style={{
@@ -39,15 +39,10 @@ const Header = ({ siteTitle }) => {
                   marginTop: "0.2rem",
                 }}
               />
-            </p>
+            </p> */}
             <p>
               {colorMode === "dark" ? (
-                <Styled.a
-                  as={Link}
-                  to="/"
-                  title="Light Mode"
-                  aria-role="Enable Light Mode"
-                >
+                <Styled.a title="Light Mode" aria-label="Enable Light Mode">
                   <FiSun
                     className="theme-icon"
                     onClick={() => {
@@ -56,12 +51,7 @@ const Header = ({ siteTitle }) => {
                   />
                 </Styled.a>
               ) : (
-                <Styled.a
-                  as={Link}
-                  to="/"
-                  title="Dark Mode"
-                  aria-role="Enable Dark Mode"
-                >
+                <Styled.a title="Dark Mode" aria-label="Enable Dark Mode">
                   <FiMoon
                     className="theme-icon"
                     onClick={() => {
