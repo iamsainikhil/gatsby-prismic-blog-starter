@@ -4,9 +4,30 @@ import Layout from "./../components/layout"
 import SEO from "./../components/seo"
 import Highlight, { defaultProps } from "prism-react-renderer"
 import "prismjs/themes/prism-solarizedlight.css"
+import Gist from "react-gist"
+
+const iframeStyle = {
+  minWidth: "200px",
+  minHeight: "500px",
+  width: "100%",
+  height: "100%",
+  border: "0",
+  borderRadius: "4px",
+  overflow: "auto",
+  margin: "1rem auto",
+}
+
+/**
+ * return the ID part of the URL
+ * @param {*} url
+ */
+const getGistId = url => {
+  return url.split("/").slice(-1).join("")
+}
 
 const Article = ({ data: { article } }) => {
   console.log(article)
+
   return (
     <Layout>
       <SEO
@@ -38,19 +59,21 @@ const Article = ({ data: { article } }) => {
               <blockquote
                 key={index}
                 dangerouslySetInnerHTML={{
-                  __html: `${slice.primary.quote.html}`,
+                  __html: `${slice.primary.quote.text}`,
                 }}
               ></blockquote>
             )
           case "text":
-            return (
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: `${slice.primary.content.text}`,
-                }}
-                key={index}
-              ></div>
-            )
+            return slice.primary.content.raw.map((block, index) => {
+              return (
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: `${block.text}`,
+                  }}
+                  key={index}
+                ></div>
+              )
+            })
           case "code":
             return (
               <div key={index}>
@@ -108,6 +131,27 @@ const Article = ({ data: { article } }) => {
                 }}
               ></div>
             )
+          case "embed":
+            if (slice.primary.platform === "CodeSandbox") {
+              return (
+                <iframe
+                  key={index}
+                  src={slice.primary.embed.embed_url}
+                  style={iframeStyle}
+                  title={`${slice.primary.platform} Embed`}
+                ></iframe>
+              )
+            }
+            return (
+              // <iframe
+              //   key={index}
+              //   style={iframeStyle}
+              //   scrolling="no"
+              //   seamless="seamless"
+              //   srcdoc={`<html><body><style type="text/css">.gist .gist-data { height: 400px; }</style><script src=${slice.primary.embed.embed_url}.js></script></body></html>`}
+              // ></iframe>
+              <Gist id={getGistId(slice.primary.embed.embed_url)} />
+            )
           default:
             return null
         }
@@ -140,6 +184,7 @@ export const articleQuery = graphql`
             slice_type
             primary {
               content {
+                html
                 raw
                 text
               }
@@ -199,6 +244,16 @@ export const articleQuery = graphql`
                 text
               }
               lang
+            }
+          }
+          ... on PrismicArticleBodyEmbed {
+            id
+            slice_type
+            primary {
+              embed {
+                embed_url
+              }
+              platform
             }
           }
         }

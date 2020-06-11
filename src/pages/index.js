@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 // import Image from "../components/image"
 import SEO from "../components/seo"
 import Listing from "../components/listing"
+import { Styled } from "theme-ui"
 
 const IndexPage = ({ data: { articles } }) => {
   console.log(articles)
@@ -11,10 +12,12 @@ const IndexPage = ({ data: { articles } }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <em>
-        Dive into many interesting articles related to Web Development, Software
-        Tools, Tips & Tricks, etc.
-      </em>
+      <Styled.p style={{ textAlign: "center" }}>
+        <em>
+          Dive into many interesting articles related to Web Development,
+          Software Tools, Tips & Tricks, etc.
+        </em>
+      </Styled.p>
       {/* <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div> */}

@@ -60,6 +60,12 @@
               "name": "code",
               "display": "code"
             }
+          ],
+          "embed": [
+            {
+              "name": "embed",
+              "display": "embed"
+            }
           ]
         },
         "choices": {
@@ -198,6 +204,30 @@
               }
             },
             "repeat": {}
+          },
+          "embed": {
+            "type": "Slice",
+            "fieldset": "Embed",
+            "description": "Embed Section",
+            "icon": "filter_drama",
+            "display": "list",
+            "non-repeat": {
+              "platform": {
+                "type": "Text",
+                "config": {
+                  "label": "platform",
+                  "placeholder": "Platform of the embed URL"
+                }
+              },
+              "embed": {
+                "type": "Embed",
+                "config": {
+                  "label": "embed",
+                  "placeholder": "Embed block"
+                }
+              }
+            },
+            "repeat": {}
           }
         }
       }
@@ -212,9 +242,7 @@
             "type": "Link",
             "config": {
               "select": "document",
-              "customtypes": [
-                "category"
-              ],
+              "customtypes": ["category"],
               "label": "category",
               "placeholder": "Category of the article"
             }
