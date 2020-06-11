@@ -5,9 +5,9 @@ export default {
   colors: {
     text: "#000",
     background: "#fff",
-    primary: "#000",
-    secondary: "#3f3f3f",
-    muted: "#eeeeee",
+    primary: "#333",
+    secondary: "#5b5b5b",
+    muted: "#f6f6f6",
     highlight: "#9f9f9f",
     gray: "#6c6c6c",
     accent: "#3f3f3f",
@@ -25,9 +25,10 @@ export default {
     },
   },
   fonts: {
-    body: "Silom, monospace",
-    heading: "Silom, monospace",
-    monospace: "Silom, monospace",
+    body: "'Inter', 'Lato', sans-serif",
+    heading: "'Inter', 'Lato', sans-serif",
+    code: "'Fira Code', monospace",
+    title: "'Damion', 'Inter', 'Lato', sans-serif",
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
   fontWeights: {
@@ -42,6 +43,11 @@ export default {
   textStyles: {
     heading: {
       fontFamily: "heading",
+      fontWeight: "heading",
+      lineHeight: "heading",
+    },
+    title: {
+      fontFamily: "title",
       fontWeight: "heading",
       lineHeight: "heading",
     },
@@ -64,7 +70,7 @@ export default {
       fontWeight: "body",
     },
     h1: {
-      variant: "textStyles.display",
+      variant: "textStyles.title",
     },
     h2: {
       variant: "textStyles.heading",
@@ -97,7 +103,7 @@ export default {
       },
     },
     pre: {
-      fontFamily: "monospace",
+      fontFamily: "code",
       fontSize: 1,
       p: 3,
       color: "text",
@@ -114,11 +120,11 @@ export default {
       },
     },
     code: {
-      fontFamily: "monospace",
+      fontFamily: "code",
       fontSize: 1,
     },
     inlineCode: {
-      fontFamily: "monospace",
+      fontFamily: "code",
       color: "secondary",
       bg: "muted",
       px: 2,

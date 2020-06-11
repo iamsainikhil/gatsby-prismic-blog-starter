@@ -2,9 +2,8 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "./../components/layout"
 import SEO from "./../components/seo"
-import Highlight, { defaultProps } from 'prism-react-renderer'
+import Highlight, { defaultProps } from "prism-react-renderer"
 import "prismjs/themes/prism-solarizedlight.css"
-
 
 const Article = ({ data: { article } }) => {
   console.log(article)
@@ -22,14 +21,26 @@ const Article = ({ data: { article } }) => {
           case "banner_with_caption":
             return (
               <div key={index}>
-                <div dangerouslySetInnerHTML={{__html: `${slice.primary.title_of_banner.text}`}}></div>
-                <div dangerouslySetInnerHTML={{__html: `${slice.primary.description.text}`}}></div>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: `${slice.primary.title_of_banner.text}`,
+                  }}
+                ></div>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: `${slice.primary.description.text}`,
+                  }}
+                ></div>
               </div>
             )
           case "quote":
             return (
-              <blockquote key={index} dangerouslySetInnerHTML={{__html: `${slice.primary.quote.html}`}}>
-              </blockquote>
+              <blockquote
+                key={index}
+                dangerouslySetInnerHTML={{
+                  __html: `${slice.primary.quote.html}`,
+                }}
+              ></blockquote>
             )
           case "text":
             return (
@@ -61,8 +72,8 @@ const Article = ({ data: { article } }) => {
                         className={className}
                         style={{
                           ...style,
-                          margin: '3rem auto',
-                          color: '#181818',
+                          margin: "3rem auto",
+                          color: "#181818",
                         }}
                       >
                         {slice.primary.lang.toUpperCase()}
@@ -90,8 +101,12 @@ const Article = ({ data: { article } }) => {
             )
           case "image_gallery":
             return (
-              <div key={index} dangerouslySetInnerHTML={{__html: `${slice.primary.name_of_the_gallery.html}`}}>
-              </div>
+              <div
+                key={index}
+                dangerouslySetInnerHTML={{
+                  __html: `${slice.primary.name_of_the_gallery.html}`,
+                }}
+              ></div>
             )
           default:
             return null
@@ -109,98 +124,97 @@ const Article = ({ data: { article } }) => {
 export default Article
 
 export const articleQuery = graphql`
-query Article($uid: String) {
-  article: prismicArticle(uid: {eq: $uid}) {
-    data {
-      created
-      excerpt {
-        text
-      }
-      title {
-        text
-      }
-      modified
-      body {
-        ... on PrismicArticleBodyText {
-          slice_type
-          primary {
-            content {
-              raw
-              text
+  query Article($uid: String) {
+    article: prismicArticle(uid: { eq: $uid }) {
+      data {
+        created
+        excerpt {
+          text
+        }
+        title {
+          text
+        }
+        modified
+        body {
+          ... on PrismicArticleBodyText {
+            slice_type
+            primary {
+              content {
+                raw
+                text
+              }
+            }
+          }
+          ... on PrismicArticleBodyQuote {
+            slice_type
+            primary {
+              quote {
+                raw
+                text
+              }
+            }
+          }
+          ... on PrismicArticleBodyBannerWithCaption {
+            id
+            slice_type
+            primary {
+              description {
+                text
+              }
+              image_banner {
+                alt
+                thumbnails
+                url
+              }
+              title_of_banner {
+                text
+              }
+            }
+          }
+          ... on PrismicArticleBodyImageGallery {
+            id
+            slice_type
+            primary {
+              name_of_the_gallery {
+                text
+              }
+            }
+            items {
+              gallery_image {
+                alt
+                thumbnails
+                url
+              }
+              image_captions {
+                text
+              }
+            }
+          }
+          ... on PrismicArticleBodyCode {
+            id
+            slice_type
+            primary {
+              code {
+                raw
+                text
+              }
+              lang
             }
           }
         }
-        ... on PrismicArticleBodyQuote {
-          slice_type
-          primary {
-            quote {
-              raw
-              text
-            }
-          }
-        }
-        ... on PrismicArticleBodyBannerWithCaption {
-          id
-          slice_type
-          primary {
-            description {
-              text
-            }
-            image_banner {
-              alt
-              thumbnails
-              url
-            }
-            title_of_banner {
-              text
-            }
-          }
-        }
-        ... on PrismicArticleBodyImageGallery {
-          id
-          slice_type
-          primary {
-            name_of_the_gallery {
-              text
-            }
-          }
-          items {
-            gallery_image {
-              alt
-              thumbnails
-              url
-            }
-            image_captions {
-              text
-            }
-          }
-        }
-        ... on PrismicArticleBodyCode {
-          id
-          slice_type
-          primary {
-            code {
-              raw
-              text
-            }
-            lang
-          }
-        }
-      }
-      categories {
-        category {
-          document {
-            ... on PrismicCategory {
-              data {
-                name
+        categories {
+          category {
+            document {
+              ... on PrismicCategory {
+                data {
+                  name
+                }
               }
             }
           }
         }
       }
+      tags
     }
-    tags
   }
-}
-
 `

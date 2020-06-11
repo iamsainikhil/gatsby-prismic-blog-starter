@@ -1,3 +1,8 @@
+// custom typefaces
+require("typeface-damion")
+require("typeface-inter")
+require("typeface-fira-code")
+
 /**
  * Should return either an [x, y] Array of coordinates to scroll to,
  * a string of the id or name of an element to scroll to,
