@@ -2,6 +2,7 @@ export default {
   useCustomProperties: true,
   initialColorMode: "light",
   useColorSchemeMediaQuery: true,
+  useLocalStorage: true,
   colors: {
     text: "#000",
     background: "#fff",
@@ -11,6 +12,9 @@ export default {
     highlight: "#9f9f9f",
     gray: "#6c6c6c",
     accent: "#3f3f3f",
+    gatsby: "#352065",
+    shade1: "#d2d2d2",
+    shade2: "#e0e0e0",
     modes: {
       dark: {
         text: "#fff",
@@ -21,6 +25,9 @@ export default {
         highlight: "#3c3c3c",
         gray: "#999",
         accent: "#e0e0e0",
+        gatsby: "#b2b2b2",
+        shade1: "#0a0a0a",
+        shade2: "#262626",
       },
     },
   },
@@ -94,6 +101,9 @@ export default {
     },
     p: {
       fontSize: 2,
+    },
+    em: {
+      fontSize: 1,
     },
     a: {
       color: "primary",

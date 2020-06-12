@@ -7,6 +7,7 @@ import {
   GrMedium,
   GrFacebookOption,
   GrTwitter,
+  GrGatsbyjs,
 } from "react-icons/gr"
 import { FaHeart } from "react-icons/fa"
 import "../styles/footer.scss"
@@ -26,6 +27,8 @@ const Footer = () => {
               target="_blank"
               rel="noreferrer noopener"
               className="special-link"
+              aria-label="GitHub"
+              title="GitHub"
             >
               GitHub
             </a>
@@ -36,16 +39,35 @@ const Footer = () => {
               target="_blank"
               rel="noreferrer noopener"
               className="special-link"
+              aria-label="Privacy Policy"
+              title="Privacy Policy"
             >
               Privacy Policy
             </a>
           </div>
         </div>
 
-        <div style={{ textAlign: "center", margin: "0.25rem auto" }}>
+        <div
+          style={{
+            textAlign: "center",
+            margin: "0.25rem auto",
+            wordSpacing: "0.2rem",
+          }}
+        >
           Made with{" "}
-          <FaHeart style={{ color: "#CC3D5C", marginBottom: "-0.1rem" }} />{" "}
-          using Gatsby and Prismic
+          <FaHeart
+            style={{ color: "#CC3D5C", marginBottom: "-0.25rem" }}
+            title="Love"
+          />{" "}
+          using{" "}
+          <GrGatsbyjs
+            sx={{
+              color: "gatsby",
+              marginBottom: "-0.25rem",
+            }}
+            title="Gatsby"
+          />{" "}
+          and Prismic
         </div>
 
         <div className="social-row">
@@ -53,6 +75,8 @@ const Footer = () => {
             href="https://facebook.com"
             target="_blank"
             rel="noreferrer noopener"
+            aria-label="Facebook"
+            title="Facebook"
           >
             <GrFacebookOption
               sx={{
@@ -69,6 +93,8 @@ const Footer = () => {
             href="https://twitter.com/iamsainikhil12"
             target="_blank"
             rel="noreferrer noopener"
+            aria-label="Twitter"
+            title="Twitter"
           >
             <GrTwitter
               sx={{
@@ -85,6 +111,8 @@ const Footer = () => {
             href="https://medium.com/@iamsainikhil"
             target="_blank"
             rel="noreferrer noopener"
+            aria-label="Medium"
+            title="Medium"
           >
             <GrMedium
               sx={{
@@ -101,6 +129,8 @@ const Footer = () => {
             href="https://www.linkedin.com/in/iamsainikhil"
             target="_blank"
             rel="noreferrer noopener"
+            aria-label="LinkedIn"
+            title="LinkedIn"
           >
             <GrLinkedinOption
               sx={{
@@ -122,6 +152,8 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer noopener"
             className="special-link"
+            aria-label="Portfolio"
+            title="Portfolio"
           >
             Sai&nbsp;Nikhil
           </a>

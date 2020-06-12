@@ -42,6 +42,7 @@ export const IndexQuery = graphql`
             excerpt {
               text
             }
+            read_time
             created
           }
         }

@@ -38,6 +38,13 @@
         "placeholder": "Short description of the article"
       }
     },
+    "read_time": {
+      "type": "Text",
+      "config": {
+        "label": "read_time",
+        "placeholder": "Total time to read the article"
+      }
+    },
     "body": {
       "type": "Slices",
       "fieldset": "Slice zone",

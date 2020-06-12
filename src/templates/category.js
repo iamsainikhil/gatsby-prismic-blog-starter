@@ -44,6 +44,7 @@ export const CategoryQuery = graphql`
             title {
               text
             }
+            read_time
             created
           }
         }
