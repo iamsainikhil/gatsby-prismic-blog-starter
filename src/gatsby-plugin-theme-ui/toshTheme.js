@@ -100,6 +100,7 @@ export default {
       textDecoration: "none",
       "&:hover": {
         color: "secondary",
+        textDecoration: "underline",
       },
     },
     pre: {

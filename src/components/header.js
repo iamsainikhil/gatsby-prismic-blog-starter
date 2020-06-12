@@ -5,7 +5,7 @@ import Headroom from "react-headroom"
 import { Styled, useThemeUI } from "theme-ui"
 import { GoSearch } from "react-icons/go"
 import { FiSun, FiMoon } from "react-icons/fi"
-import "./header.scss"
+import "../styles/header.scss"
 
 const Header = ({ siteTitle }) => {
   const { theme, colorMode, setColorMode } = useThemeUI()
@@ -19,7 +19,7 @@ const Header = ({ siteTitle }) => {
         <div className="header-content">
           <div>
             <Styled.h1 style={{ margin: "0" }}>
-              <Styled.a as={Link} to="/">
+              <Styled.a as={Link} to="/" style={{ textDecoration: "none" }}>
                 {siteTitle}
               </Styled.a>
             </Styled.h1>

@@ -34,7 +34,7 @@ const Article = ({ data: { article } }) => {
         title={article.data.title.text}
         description={article.data.excerpt.text}
       />
-      <h1>{article.data.title.text}</h1>
+      <h1 style={{ textAlign: "center" }}>{article.data.title.text}</h1>
       <p>{article.data.excerpt.text}</p>
       <p>Created: {article.data.created}</p>
       {article.data.body.map((slice, index) => {

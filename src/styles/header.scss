@@ -1,8 +1,4 @@
-%flex {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-}
+@import "partials";
 
 .headroom {
   top: 0;
@@ -30,8 +26,8 @@
   height: 50px;
 
   .header {
-    height: 4rem;
-    margin-bottom: 1.5rem;
+    height: 3rem;
+    margin-bottom: 1rem;
 
     .header-content {
       h1 {
@@ -48,7 +44,7 @@
 .header {
   height: 4.75rem;
   margin-bottom: 1.5rem;
-  padding: 0.75rem 2rem;
+  padding: 0.75rem 1.25rem;
 
   .header-content {
     @extend %flex;
