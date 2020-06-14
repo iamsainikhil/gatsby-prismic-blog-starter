@@ -3,6 +3,8 @@ export default {
   initialColorMode: "light",
   useColorSchemeMediaQuery: true,
   useLocalStorage: true,
+  breakpoints: ["40em", "52em", "64em"],
+  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   colors: {
     text: "#000",
     background: "#fff",
@@ -45,7 +47,7 @@ export default {
   },
   lineHeights: {
     body: 1.5,
-    heading: 1.25,
+    heading: 1.125,
   },
   textStyles: {
     heading: {

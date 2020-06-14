@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+
 import React from "react"
 import { Link, navigate } from "gatsby"
-import { Styled, useThemeUI } from "theme-ui"
+import { jsx, Styled, useThemeUI } from "theme-ui"
 import styled from "@emotion/styled"
 import { FiClock } from "react-icons/fi"
 
@@ -77,18 +77,24 @@ const Listing = ({ articles }) => {
               </Link>
             </Styled.h2>
             <p sx={{ fontWeight: "bold", my: 0, pt: 1 }}>
-              <Styled.em>{article.node.data.created}</Styled.em>
+              <Styled.em
+                title={`${article.node.data.created} (yyyy-mm-dd)`}
+                aria-label={`${article.node.data.created} (yyyy-mm-dd)`}
+              >
+                {article.node.data.created}
+              </Styled.em>
               <Styled.em sx={{ mx: 4 }}>
                 <FiClock style={{ marginBottom: "-0.1rem" }} />
-                &nbsp;{article.node.data.read_time} min read
+                &nbsp;{article.node.data.read_time}&nbsp;min read
               </Styled.em>
             </p>
-            <div
+            <Styled.p
+              as="div"
               sx={{ py: 2 }}
               dangerouslySetInnerHTML={{
                 __html: `${article.node.data.excerpt.text}`,
               }}
-            ></div>
+            ></Styled.p>
           </li>
         </List>
       ))}

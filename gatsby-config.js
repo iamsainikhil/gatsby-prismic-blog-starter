@@ -82,7 +82,7 @@ module.exports = {
         // See: https://prismic.io/docs/nodejs/beyond-the-api/html-serializer
         // htmlSerializer: () => {
         //   // Your HTML serializer
-        //   require('./src/utils/htmlSerializer')
+        //   require("./src/utils/htmlSerializer")
         // },
 
         // Provide an object of Prismic custom type JSON schemas to load into

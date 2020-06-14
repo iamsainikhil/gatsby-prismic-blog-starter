@@ -1,10 +1,14 @@
+/** @jsx jsx */
+
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "./../components/layout"
 import SEO from "./../components/seo"
-import Highlight, { defaultProps } from "prism-react-renderer"
-import "prismjs/themes/prism-solarizedlight.css"
-import Gist from "react-gist"
+// import "prismjs/themes/prism-solarizedlight.css"
+// import Highlight, { defaultProps } from "prism-react-renderer"
+// import Gist from "react-gist"
+import { jsx, Styled } from "theme-ui"
+import { FiClock } from "react-icons/fi"
 
 const iframeStyle = {
   minWidth: "200px",
@@ -34,10 +38,23 @@ const Article = ({ data: { article } }) => {
         title={article.data.title.text}
         description={article.data.excerpt.text}
       />
-      <h1 style={{ textAlign: "center" }}>{article.data.title.text}</h1>
-      <p>{article.data.excerpt.text}</p>
-      <p>Created: {article.data.created}</p>
-      {article.data.body.map((slice, index) => {
+      <Styled.h1 sx={{ textAlign: "center", letterSpacing: "0.25rem", mb: 3 }}>
+        {article.data.title.text}
+      </Styled.h1>
+      <p sx={{ fontWeight: "bold", my: 0, pt: 0, textAlign: "center" }}>
+        <Styled.em
+          title={`${article.data.created} (yyyy-mm-dd)`}
+          aria-label={`${article.data.created} (yyyy-mm-dd)`}
+        >
+          {article.data.created}
+        </Styled.em>
+        <Styled.em sx={{ mx: 4 }}>
+          <FiClock style={{ marginBottom: "-0.1rem" }} />
+          &nbsp;{article.data.read_time}&nbsp;min read
+        </Styled.em>
+      </p>
+      <Styled.p sx={{ my: 4 }}>{article.data.excerpt.text}</Styled.p>
+      {/* {article.data.body.map((slice, index) => {
         switch (slice.slice_type) {
           case "banner_with_caption":
             return (
@@ -111,15 +128,6 @@ const Article = ({ data: { article } }) => {
                     </pre>
                   )}
                 </Highlight>
-                {/* <pre className={`language-${slice.primary.lang}`}>
-                  <code className={`language-${slice.primary.lang}`}>
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: `${slice.primary.code.html}`,
-                      }}
-                    ></div>
-                  </code>
-                </pre> */}
               </div>
             )
           case "image_gallery":
@@ -132,25 +140,21 @@ const Article = ({ data: { article } }) => {
               ></div>
             )
           case "embed":
-            if (slice.primary.platform === "CodeSandbox") {
+            if (slice.primary.platform === "GitHub") {
               return (
-                <iframe
+                <Gist
                   key={index}
-                  src={slice.primary.embed.embed_url}
-                  style={iframeStyle}
-                  title={`${slice.primary.platform} Embed`}
-                ></iframe>
+                  id={getGistId(slice.primary.embed.embed_url)}
+                />
               )
             }
             return (
-              // <iframe
-              //   key={index}
-              //   style={iframeStyle}
-              //   scrolling="no"
-              //   seamless="seamless"
-              //   srcdoc={`<html><body><style type="text/css">.gist .gist-data { height: 400px; }</style><script src=${slice.primary.embed.embed_url}.js></script></body></html>`}
-              // ></iframe>
-              <Gist id={getGistId(slice.primary.embed.embed_url)} />
+              <iframe
+                key={index}
+                src={slice.primary.embed.embed_url}
+                style={iframeStyle}
+                title={`${slice.primary.platform} Embed`}
+              ></iframe>
             )
           default:
             return null
@@ -160,7 +164,7 @@ const Article = ({ data: { article } }) => {
         <Link to={`/tag/${tag}`} key={index}>
           {tag}
         </Link>
-      ))}
+      ))} */}
     </Layout>
   )
 }
@@ -171,14 +175,15 @@ export const articleQuery = graphql`
   query Article($uid: String) {
     article: prismicArticle(uid: { eq: $uid }) {
       data {
-        created
         excerpt {
           text
         }
         title {
           text
         }
+        created
         modified
+        read_time
         body {
           ... on PrismicArticleBodyText {
             slice_type
@@ -242,6 +247,7 @@ export const articleQuery = graphql`
               code {
                 raw
                 text
+                html
               }
               lang
             }

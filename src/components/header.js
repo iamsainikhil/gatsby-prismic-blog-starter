@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import Headroom from "react-headroom"
 import { Styled, useThemeUI } from "theme-ui"
-import { GoSearch } from "react-icons/go"
+// import { GoSearch } from "react-icons/go"
 import { FiSun, FiMoon } from "react-icons/fi"
 import "../styles/header.scss"
 
