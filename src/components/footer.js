@@ -11,6 +11,7 @@ import {
 } from "react-icons/gr"
 import { FaHeart } from "react-icons/fa"
 import "../styles/footer.scss"
+import PrismicLogo from "./prismicLogo"
 
 const Footer = () => {
   return (
@@ -29,6 +30,7 @@ const Footer = () => {
               className="special-link"
               aria-label="GitHub"
               title="GitHub"
+              sx={{ color: "primary" }}
             >
               GitHub
             </a>
@@ -41,6 +43,7 @@ const Footer = () => {
               className="special-link"
               aria-label="Privacy Policy"
               title="Privacy Policy"
+              sx={{ color: "primary" }}
             >
               Privacy Policy
             </a>
@@ -57,6 +60,7 @@ const Footer = () => {
           Made with{" "}
           <FaHeart
             style={{ color: "#CC3D5C", marginBottom: "-0.25rem" }}
+            aria-label="Love"
             title="Love"
           />{" "}
           using{" "}
@@ -65,9 +69,11 @@ const Footer = () => {
               color: "gatsby",
               marginBottom: "-0.25rem",
             }}
+            aria-label="Gatsby"
             title="Gatsby"
           />{" "}
-          and Prismic
+          and{" "}
+          <PrismicLogo style={{ marginBottom: "-0.25rem" }} title="Prismic" />
         </div>
 
         <div className="social-row">
@@ -154,6 +160,7 @@ const Footer = () => {
             className="special-link"
             aria-label="Portfolio"
             title="Portfolio"
+            sx={{ color: "primary" }}
           >
             Sai&nbsp;Nikhil
           </a>

@@ -248,3 +248,31 @@ pre {
     flex-shrink: 0;
   }
 }
+
+/* common styles */
+
+.special-link {
+  position: relative;
+  text-decoration: none;
+  transition: color ease 0.3s;
+  z-index: 0;
+  padding: 2.5px 5px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 5%;
+    left: 0;
+    bottom: 0;
+    background-color: #cc3d5b;
+    transition: all ease 0.3s;
+  }
+
+  &:hover {
+    &::after {
+      height: 100%;
+    }
+  }
+}
