@@ -73,6 +73,12 @@
               "name": "embed",
               "display": "embed"
             }
+          ],
+          "raw_text": [
+            {
+              "name": "raw_text",
+              "display": "raw_text"
+            }
           ]
         },
         "choices": {
@@ -231,6 +237,25 @@
                 "config": {
                   "label": "embed",
                   "placeholder": "Embed block"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "raw_text": {
+            "type": "Slice",
+            "fieldset": "Raw Text",
+            "description": "Raw text Section with inline code block",
+            "icon": "comment",
+            "display": "list",
+            "non-repeat": {
+              "raw_content": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, embed, list-item, o-list-item, o-list-item",
+                  "allowTargetBlank": true,
+                  "label": "raw_content",
+                  "placeholder": "Raw text content"
                 }
               }
             },

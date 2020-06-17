@@ -149,6 +149,15 @@ export const articleQuery = graphql`
               }
             }
           }
+          ... on PrismicArticleBodyRawText {
+            id
+            slice_type
+            primary {
+              raw_content {
+                raw
+              }
+            }
+          }
           ... on PrismicArticleBodyCode {
             id
             slice_type

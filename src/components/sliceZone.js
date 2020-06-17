@@ -5,6 +5,7 @@ import Code from "./../slices/Code"
 import Embed from "../slices/Embed"
 import Gallery from "../slices/Gallery"
 import Banner from "../slices/Banner"
+import RawContent from "../slices/RawContent"
 
 const SliceZone = ({ slices }) => {
   console.log(slices)
@@ -14,6 +15,8 @@ const SliceZone = ({ slices }) => {
         return <Quote key={index} data={slice} />
       case "text":
         return <Content key={index} data={slice} />
+      case "raw_text":
+        return <RawContent key={index} data={slice} />
       case "code":
         return <Code key={index} data={slice} />
       case "embed":

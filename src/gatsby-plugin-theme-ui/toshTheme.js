@@ -150,6 +150,8 @@ export default {
     code: {
       fontFamily: "code",
       fontSize: 1,
+      color: "muted",
+      bg: "gatsby",
     },
     inlineCode: {
       fontFamily: "code",
