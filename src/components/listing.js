@@ -5,6 +5,7 @@ import { Link, navigate } from "gatsby"
 import { jsx, Styled, useThemeUI } from "theme-ui"
 import styled from "@emotion/styled"
 import { FiClock } from "react-icons/fi"
+import formatDate from "../utils/formatDate"
 
 /**
  * Programmatic navigation to given path of the article
@@ -78,10 +79,10 @@ const Listing = ({ articles }) => {
             </Styled.h2>
             <p sx={{ fontWeight: "bold", my: 0, pt: 1 }}>
               <Styled.em
-                title={`${article.node.data.created} (yyyy-mm-dd)`}
-                aria-label={`${article.node.data.created} (yyyy-mm-dd)`}
+                title={formatDate(article.node.data.created)}
+                aria-label={formatDate(article.node.data.created)}
               >
-                {article.node.data.created}
+                {formatDate(article.node.data.created)}
               </Styled.em>
               <Styled.em
                 sx={{ mx: 4 }}

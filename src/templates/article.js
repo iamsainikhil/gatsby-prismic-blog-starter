@@ -7,6 +7,7 @@ import SEO from "../components/SEO"
 import SliceZone from "../components/sliceZone"
 import { jsx, Styled } from "theme-ui"
 import { FiClock } from "react-icons/fi"
+import formatDate from "../utils/formatDate"
 
 const Article = ({ data: { article } }) => {
   console.log(article)
@@ -22,10 +23,10 @@ const Article = ({ data: { article } }) => {
       </Styled.h1>
       <p sx={{ fontWeight: "bold", my: 0, pt: 0, textAlign: "center" }}>
         <Styled.em
-          title={`${article.data.created} (yyyy-mm-dd)`}
-          aria-label={`${article.data.created} (yyyy-mm-dd)`}
+          title={formatDate(article.data.created)}
+          aria-label={formatDate(article.data.created)}
         >
-          {article.data.created}
+          {formatDate(article.data.created)}
         </Styled.em>
         <Styled.em
           sx={{ mx: 4 }}
