@@ -2,9 +2,9 @@
 
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Listing from "../components/listing"
+import Layout from "../components/Layout"
+import SEO from "../components/SEO"
+import Listing from "../components/Listing"
 import { jsx, Styled } from "theme-ui"
 
 const IndexPage = ({ data: { articles } }) => {
@@ -17,12 +17,12 @@ const IndexPage = ({ data: { articles } }) => {
         sx={{
           fontFamily: "title",
           fontSize: 4,
-          letterSpacing: "0.1rem",
+          letterSpacing: "0.05rem",
           textAlign: "center",
         }}
       >
         Dive into many interesting articles related to Web Development, Software
-        Tools, Tips&nbsp;&&nbsp;Tricks, etc.
+        Tools, Tips&nbsp;&&nbsp;Tricks,&nbsp;etc.
       </Styled.p>
       <Listing articles={articles} />
     </Layout>

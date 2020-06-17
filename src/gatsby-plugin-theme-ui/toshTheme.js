@@ -1,10 +1,12 @@
 export default {
+  useBodyStyles: true,
   useCustomProperties: true,
   initialColorMode: "light",
   useColorSchemeMediaQuery: true,
   useLocalStorage: true,
-  breakpoints: ["40em", "52em", "64em"],
+  breakpoints: ["30em", "48em", "64em", "100em"],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  borders: [0],
   colors: {
     text: "#000",
     background: "#fff",
@@ -50,11 +52,6 @@ export default {
     heading: 1.125,
   },
   textStyles: {
-    heading: {
-      fontFamily: "heading",
-      fontWeight: "heading",
-      lineHeight: "heading",
-    },
     title: {
       fontFamily: "title",
       fontWeight: "heading",
@@ -62,10 +59,20 @@ export default {
     },
     display: {
       variant: "textStyles.heading",
-      fontSize: [5, 6],
+      fontSize: [3, 4, 5, 6],
       fontWeight: "display",
       letterSpacing: "-0.03em",
       mt: 3,
+    },
+    heading: {
+      fontFamily: "heading",
+      fontWeight: "heading",
+      lineHeight: "heading",
+    },
+    body: {
+      fontFamily: "body",
+      fontWeight: "body",
+      lineHeight: "body",
     },
   },
   styles: {
@@ -74,20 +81,19 @@ export default {
       maxWidth: 1024,
     },
     root: {
-      fontFamily: "body",
-      lineHeight: "body",
-      fontWeight: "body",
+      variant: "textStyles.body",
     },
     h1: {
       variant: "textStyles.title",
+      fontSize: [4, 5, 6],
     },
     h2: {
       variant: "textStyles.heading",
-      fontSize: 5,
+      fontSize: [3, 4, 5],
     },
     h3: {
       variant: "textStyles.heading",
-      fontSize: 4,
+      fontSize: [2, 3, 4],
     },
     h4: {
       variant: "textStyles.heading",
@@ -102,31 +108,40 @@ export default {
       fontSize: 1,
     },
     p: {
-      fontSize: 2,
+      fontSize: [1, 2, 3],
     },
     em: {
-      fontSize: 1,
+      fontSize: [0, 1],
     },
     a: {
       color: "primary",
-      textDecoration: "none",
+      textDecoration: "underline",
       "&:hover": {
         color: "secondary",
-        textDecoration: "underline",
+        textDecoration: "none",
       },
+    },
+    blockquote: {
+      fontSize: [1, 2, 3],
+      variant: "textStyles.body",
+      margin: "1.45rem",
+      padding: "0 0 0 1rem",
+      borderColor: "gatsby",
+      borderStyle: "solid",
+      borderTopWidth: 0,
+      borderLeftWidth: 2,
+      borderRightWidth: 0,
+      borderBottomWidth: 0,
     },
     pre: {
       fontFamily: "code",
       fontSize: 1,
-      p: 3,
+      p: [1, 2],
       color: "text",
-      bg: "muted",
-      borderColor: "text",
+      bg: "highlight",
+      borderColor: "accent",
       borderStyle: "solid",
-      borderTopWidth: 0,
-      borderLeftWidth: 0,
-      borderRightWidth: 8,
-      borderBottomWidth: 8,
+      borderWidth: 2,
       overflow: "auto",
       code: {
         color: "inherit",

@@ -11,7 +11,7 @@ import {
 } from "react-icons/gr"
 import { FaHeart } from "react-icons/fa"
 import "../styles/footer.scss"
-import PrismicLogo from "./prismicLogo"
+import PrismicLogo from "./PrismicLogo"
 
 const Footer = () => {
   return (

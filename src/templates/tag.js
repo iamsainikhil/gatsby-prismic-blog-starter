@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Listing from "./../components/listing"
+import Layout from "../components/Layout"
+import SEO from "../components/SEO"
+import Listing from "./../components/Listing"
 import { Styled } from "theme-ui"
 
 const Tag = ({ data: { articles }, pageContext }) => {

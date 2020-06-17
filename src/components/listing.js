@@ -83,7 +83,11 @@ const Listing = ({ articles }) => {
               >
                 {article.node.data.created}
               </Styled.em>
-              <Styled.em sx={{ mx: 4 }}>
+              <Styled.em
+                sx={{ mx: 4 }}
+                title="Time to read the article"
+                aria-label="Time to read the article"
+              >
                 <FiClock style={{ marginBottom: "-0.1rem" }} />
                 &nbsp;{article.node.data.read_time}&nbsp;min read
               </Styled.em>
