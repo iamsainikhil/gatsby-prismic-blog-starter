@@ -17,6 +17,7 @@ export default {
     gray: "#6c6c6c",
     accent: "#3f3f3f",
     gatsby: "#352065",
+    code: "#fdf6e3",
     shade1: "#d2d2d2",
     shade2: "#e0e0e0",
     modes: {
@@ -30,6 +31,7 @@ export default {
         gray: "#999",
         accent: "#e0e0e0",
         gatsby: "#b2b2b2",
+        code: "#222",
         shade1: "#0a0a0a",
         shade2: "#262626",
       },
@@ -135,23 +137,20 @@ export default {
     },
     pre: {
       fontFamily: "code",
-      fontSize: 1,
+      fontSize: [0, 1],
       p: [1, 2],
       color: "text",
-      bg: "highlight",
+      bg: "code",
       borderColor: "accent",
       borderStyle: "solid",
       borderWidth: 2,
-      overflow: "auto",
-      code: {
-        color: "inherit",
-      },
     },
     code: {
       fontFamily: "code",
       fontSize: 1,
       color: "muted",
       bg: "gatsby",
+      px: 1,
     },
     inlineCode: {
       fontFamily: "code",
