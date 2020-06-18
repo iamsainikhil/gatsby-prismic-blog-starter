@@ -16,7 +16,7 @@ const IndexPage = ({ data: { articles } }) => {
       <Styled.p
         sx={{
           fontFamily: "title",
-          fontSize: 4,
+          fontSize: [2, 3, 4],
           letterSpacing: "0.05rem",
           textAlign: "center",
         }}

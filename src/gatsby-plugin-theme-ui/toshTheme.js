@@ -9,7 +9,7 @@ export default {
   borders: [0],
   colors: {
     text: "#000",
-    background: "#fff",
+    background: "#ffff",
     primary: "#333",
     secondary: "#5b5b5b",
     muted: "#f6f6f6",
@@ -31,7 +31,7 @@ export default {
         gray: "#999",
         accent: "#e0e0e0",
         gatsby: "#b2b2b2",
-        code: "#222",
+        code: "#1b1b1b",
         shade1: "#0a0a0a",
         shade2: "#262626",
       },
@@ -113,7 +113,7 @@ export default {
       fontSize: [1, 2, 3],
     },
     em: {
-      fontSize: [0, 1],
+      fontSize: [0, 1, 2],
     },
     a: {
       color: "primary",

@@ -169,6 +169,7 @@ export const articleQuery = graphql`
                 html
               }
               lang
+              type
             }
           }
           ... on PrismicArticleBodyEmbed {

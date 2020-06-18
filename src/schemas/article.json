@@ -45,6 +45,14 @@
         "placeholder": "Total time to read the article"
       }
     },
+    "article_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "article_image"
+      }
+    },
     "body": {
       "type": "Slices",
       "fieldset": "Slice zone",
@@ -74,12 +82,7 @@
               "display": "embed"
             }
           ],
-          "raw_text": [
-            {
-              "name": "raw_text",
-              "display": "raw_text"
-            }
-          ]
+          "raw_text": []
         },
         "choices": {
           "text": {
@@ -200,6 +203,13 @@
             "icon": "code",
             "display": "list",
             "non-repeat": {
+              "type": {
+                "type": "Text",
+                "config": {
+                  "label": "type",
+                  "placeholder": "Mention the type of scenario where this code block is used. For ex- type of \"list\" will add some padding to the code block."
+                }
+              },
               "lang": {
                 "type": "Text",
                 "config": {

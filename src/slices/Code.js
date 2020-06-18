@@ -23,6 +23,7 @@ const Code = ({ data: { primary } }) => {
           style={{
             ...style,
             backgroundColor: theme.colors.code,
+            marginLeft: primary.type === "list" ? "2.5rem" : null,
           }}
         >
           <div
