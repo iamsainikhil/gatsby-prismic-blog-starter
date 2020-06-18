@@ -6,6 +6,16 @@ import { jsx } from "theme-ui"
 const RawContent = ({ data: { primary } }) =>
   primary.raw_content.raw.map((block, index) => {
     switch (block.type) {
+      case "o-list-item":
+        return (
+          <ol>
+            <li
+              key={index}
+              dangerouslySetInnerHTML={{ __html: block.text }}
+              sx={{ variant: "styles", my: 4 }}
+            ></li>
+          </ol>
+        )
       case "list-item":
         return (
           <ul>
