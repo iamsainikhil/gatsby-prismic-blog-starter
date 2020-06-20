@@ -34,11 +34,15 @@ const Listing = ({ articles }) => {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-template-rows: auto;
-    grid-gap: 1rem;
+    grid-gap: 1.25rem;
     margin: 0 auto;
 
-    @media (max-width: ${theme.breakpoints[1]}) {
+    @media (max-width: ${theme.breakpoints[0]}) {
       grid-template-columns: 1fr;
+    }
+
+    @media (min-width: ${theme.breakpoints[2]}) {
+      grid-template-columns: repeat(auto-fit, minmax(400px, 0.7fr));
     }
   `
 
