@@ -61,6 +61,8 @@ module.exports = {
             return "/post/" + doc.uid
           } else if (doc.type === "tag") {
             return "/tag/" + doc.uid
+          } else if (doc.type === "category") {
+            return "/category" + doc.uid
           }
           // Homepage route fallback
           return "/"
@@ -109,10 +111,10 @@ module.exports = {
         // provided to the function, as seen below. This allows you to use
         // different logic for each field if necessary.
         // This defaults to always return false.
-        // shouldDownloadImage: ({ node, key, value }) => {
-        //   // Return true to download the image or false to skip.
-        //   return true
-        // },
+        shouldDownloadImage: ({ node, key, value }) => {
+          // Return true to download the image or false to skip.
+          return true
+        },
 
         // Set the prefix for the filename where type paths for your schemas are
         // stored. The filename will include the MD5 hash of your schemas after

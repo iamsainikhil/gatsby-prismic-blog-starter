@@ -1,10 +1,10 @@
 export default {
   useBodyStyles: true,
   useCustomProperties: true,
-  initialColorMode: "light",
+  initialColorMode: "dark",
   useColorSchemeMediaQuery: true,
   useLocalStorage: true,
-  breakpoints: ["30em", "48em", "64em", "100em"],
+  breakpoints: ["30em", "47em", "64em", "100em"],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   borders: [0],
   colors: {

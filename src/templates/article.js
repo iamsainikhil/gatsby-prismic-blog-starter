@@ -8,6 +8,7 @@ import SliceZone from "../components/sliceZone"
 import { jsx, Styled } from "theme-ui"
 import { FiClock } from "react-icons/fi"
 import formatDate from "../utils/formatDate"
+import Img from "gatsby-image"
 
 const Article = ({ data: { article } }) => {
   console.log(article)
@@ -38,6 +39,13 @@ const Article = ({ data: { article } }) => {
         </Styled.em>
       </p>
       <Styled.p sx={{ my: 4 }}>{article.data.excerpt.text}</Styled.p>
+
+      <Img
+        fluid={article.data.article_image.localFile.childImageSharp.fluid}
+        alt={article.data.article_image.alt}
+        title={article.data.article_image.alt}
+        sx={{ margin: "2rem auto" }}
+      />
 
       {/* slices */}
       <SliceZone slices={article.data.body} />
@@ -96,6 +104,17 @@ export const articleQuery = graphql`
         created
         modified
         read_time
+        article_image {
+          alt
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1280, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp
+                ...GatsbyImageSharpFluidLimitPresentationSize
+              }
+            }
+          }
+        }
         body {
           ... on PrismicArticleBodyText {
             slice_type

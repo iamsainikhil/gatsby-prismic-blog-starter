@@ -47,6 +47,17 @@ export const IndexQuery = graphql`
             }
             read_time
             created
+            article_image {
+              alt
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 300, quality: 90) {
+                    ...GatsbyImageSharpFluid_withWebp
+                    ...GatsbyImageSharpFluidLimitPresentationSize
+                  }
+                }
+              }
+            }
           }
         }
       }
