@@ -189,5 +189,18 @@ export default {
       borderBottom: "8px solid",
       borderColor: "text",
     },
+    buttons: {
+      primary: {
+        color: "background",
+        bg: "primary",
+        "&:hover": {
+          bg: "text",
+        },
+      },
+      secondary: {
+        color: "background",
+        bg: "secondary",
+      },
+    },
   },
 }

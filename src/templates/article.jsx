@@ -1,10 +1,8 @@
 /** @jsx jsx */
 
 import React from "react"
-import { graphql, Link } from "gatsby"
-import Layout from "../components/Layout"
-import SEO from "../components/SEO"
-import SliceZone from "../components/sliceZone"
+import { graphql } from "gatsby"
+import { Layout, SEO, SliceZone } from "../components"
 import { jsx, Styled } from "theme-ui"
 import { FiClock } from "react-icons/fi"
 import formatDate from "../utils/formatDate"

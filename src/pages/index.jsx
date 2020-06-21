@@ -2,9 +2,7 @@
 
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/Layout"
-import SEO from "../components/SEO"
-import Listing from "../components/Listing"
+import { Layout, SEO, Listing } from "../components"
 import { jsx, Styled } from "theme-ui"
 
 const IndexPage = ({ data: { articles } }) => {

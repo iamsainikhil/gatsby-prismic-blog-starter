@@ -3,7 +3,7 @@
 import React, { Fragment } from "react"
 import { Link, navigate } from "gatsby"
 import Img from "gatsby-image"
-import { jsx, Styled, useThemeUI } from "theme-ui"
+import { jsx, useThemeUI } from "theme-ui"
 import styled from "@emotion/styled"
 import { FiClock } from "react-icons/fi"
 import formatDate from "../utils/formatDate"
@@ -35,7 +35,7 @@ const Listing = ({ articles }) => {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-template-rows: auto;
     grid-gap: 1.25rem;
-    margin: 0 auto;
+    margin: auto;
 
     @media (max-width: ${theme.breakpoints[0]}) {
       grid-template-columns: 1fr;

@@ -1,11 +1,13 @@
 import React from "react"
-import Content from "./../slices/Content"
-import Quote from "../slices/Quote"
-import Code from "./../slices/Code"
-import Embed from "../slices/Embed"
-import Gallery from "../slices/Gallery"
-import Banner from "../slices/Banner"
-import RawContent from "../slices/RawContent"
+import {
+  Quote,
+  Content,
+  RawContent,
+  Code,
+  Embed,
+  Gallery,
+  Banner,
+} from "../slices"
 
 const SliceZone = ({ slices }) => {
   console.log(slices)

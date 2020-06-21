@@ -8,9 +8,8 @@ const RawContent = ({ data: { primary } }) =>
     switch (block.type) {
       case "o-list-item":
         return (
-          <ol>
+          <ol key={index}>
             <li
-              key={index}
               dangerouslySetInnerHTML={{ __html: block.text }}
               sx={{ variant: "styles", my: 4 }}
             ></li>
@@ -18,9 +17,8 @@ const RawContent = ({ data: { primary } }) =>
         )
       case "list-item":
         return (
-          <ul>
+          <ul key={index}>
             <li
-              key={index}
               dangerouslySetInnerHTML={{ __html: block.text }}
               sx={{ variant: "styles", my: 4 }}
             ></li>

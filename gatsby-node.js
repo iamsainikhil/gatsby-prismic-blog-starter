@@ -10,27 +10,27 @@ const wrapper = promise =>
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const articleTemplate = require.resolve("./src/templates/article.js")
-  const tagTemplate = require.resolve("./src/templates/tag.js")
-  const categoryTemplate = require.resolve("./src/templates/category.js")
+  const articleTemplate = require.resolve("./src/templates/article.jsx")
+  const tagTemplate = require.resolve("./src/templates/tag.jsx")
+  const categoryTemplate = require.resolve("./src/templates/category.jsx")
 
   const result = await wrapper(
     graphql(
       `
         {
-            allPrismicArticle {
-                edges {
-                    node {
-                        uid
-                        tags
-                        data {
-                            categories {
-                                slug
-                            }
-                        }
-                    }
+          allPrismicArticle {
+            edges {
+              node {
+                uid
+                tags
+                data {
+                  categories {
+                    slug
+                  }
                 }
+              }
             }
+          }
         }
       `
     )
@@ -60,13 +60,13 @@ exports.createPages = async ({ graphql, actions }) => {
     })
 
     // category pages
-    article.node.data.categories.forEach(({slug}) => {
-        createPage({
-            path: `/category/${slug}/`,
-            component: categoryTemplate,
-            context: {
-            slug: slug,
-            },
+    article.node.data.categories.forEach(({ slug }) => {
+      createPage({
+        path: `/category/${slug}/`,
+        component: categoryTemplate,
+        context: {
+          slug: slug,
+        },
       })
     })
   })

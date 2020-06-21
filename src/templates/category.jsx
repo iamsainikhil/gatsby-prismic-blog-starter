@@ -1,8 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import Layout from "../components/Layout"
-import SEO from "../components/SEO"
-import Listing from "./../components/Listing"
+import { Layout, SEO, Listing } from "../components"
 import { Styled } from "theme-ui"
 
 const Category = ({ data: { articles }, pageContext }) => {
