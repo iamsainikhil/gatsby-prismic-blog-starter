@@ -2,7 +2,7 @@
 
 import React from "react"
 import { graphql } from "gatsby"
-import { Layout, SEO, SliceZone } from "../components"
+import { Layout, SEO, SliceZone, Chip } from "../components"
 import { jsx, Styled } from "theme-ui"
 import { FiClock } from "react-icons/fi"
 import formatDate from "../utils/formatDate"
@@ -36,6 +36,28 @@ const Article = ({ data: { article } }) => {
           &nbsp;{article.data.read_time}&nbsp;min read
         </Styled.em>
       </p>
+      <p
+        sx={{
+          display: "flex",
+          flexFlow: "row nowrap",
+          justifyContent: "center",
+          alignItems: "center",
+          "@media screen and (max-width: 30rem)": {
+            flexFlow: "column nowrap",
+          },
+        }}
+      >
+        {article.data.categories.map((data, index) => {
+          return (
+            <Chip
+              name={data.category.document.data.name}
+              slug={data.slug}
+              type="category"
+              key={index}
+            />
+          )
+        })}
+      </p>
       <Styled.p sx={{ my: 4 }}>{article.data.excerpt.text}</Styled.p>
 
       <Img
@@ -47,6 +69,26 @@ const Article = ({ data: { article } }) => {
 
       {/* slices */}
       <SliceZone slices={article.data.body} />
+
+      <Styled.em sx={{ color: "gray" }}>
+        This article was last updated on {formatDate(article.data.modified)}
+      </Styled.em>
+
+      <p
+        sx={{
+          display: "flex",
+          flexFlow: "row nowrap",
+          justifyContent: "flex-start",
+          alignItems: "center",
+          "@media screen and (max-width: 30rem)": {
+            flexFlow: "column nowrap",
+          },
+        }}
+      >
+        {article.tags.map((tag, index) => {
+          return <Chip name={tag} slug={tag} type="tag" key={index} />
+        })}
+      </p>
 
       {/* {article.data.body.map((slice, index) => {
         switch (slice.slice_type) {
@@ -210,6 +252,7 @@ export const articleQuery = graphql`
               }
             }
           }
+          slug
         }
       }
       tags

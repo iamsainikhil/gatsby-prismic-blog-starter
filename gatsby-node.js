@@ -25,6 +25,15 @@ exports.createPages = async ({ graphql, actions }) => {
                 tags
                 data {
                   categories {
+                    category {
+                      document {
+                        ... on PrismicCategory {
+                          data {
+                            name
+                          }
+                        }
+                      }
+                    }
                     slug
                   }
                 }
@@ -60,12 +69,12 @@ exports.createPages = async ({ graphql, actions }) => {
     })
 
     // category pages
-    article.node.data.categories.forEach(({ slug }) => {
+    article.node.data.categories.forEach(({ category, slug }) => {
       createPage({
         path: `/category/${slug}/`,
         component: categoryTemplate,
         context: {
-          slug: slug,
+          slug: category.document.data.name,
         },
       })
     })

@@ -6,5 +6,16 @@ import Footer from "./Footer"
 import PrismicLogo from "./PrismicLogo"
 import SliceZone from "./sliceZone"
 import Image from "./Image"
+import Chip from "./Chip"
 
-export { Layout, SEO, Header, Listing, Footer, Image, PrismicLogo, SliceZone }
+export {
+  Layout,
+  SEO,
+  Header,
+  Listing,
+  Footer,
+  Image,
+  PrismicLogo,
+  SliceZone,
+  Chip,
+}

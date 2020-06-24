@@ -1,7 +1,9 @@
+/** @jsx jsx */
+
 import React from "react"
 import { graphql, Link } from "gatsby"
 import { Layout, SEO, Listing } from "../components"
-import { Styled } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 
 const Category = ({ data: { articles }, pageContext }) => {
   console.log(articles, pageContext)
@@ -15,7 +17,16 @@ const Category = ({ data: { articles }, pageContext }) => {
         <Styled.h2 style={{ marginBottom: "0.25rem" }}>
           {pageContext.slug}
         </Styled.h2>
-        <Styled.p>The articles related to {pageContext.slug}.</Styled.p>
+        <Styled.p
+          sx={{
+            fontFamily: "title",
+            fontSize: [2, 3, 4],
+            letterSpacing: "0.05rem",
+            textAlign: "center",
+          }}
+        >
+          The articles related to {pageContext.slug}.
+        </Styled.p>
       </div>
       <Listing articles={articles} />
     </Layout>
@@ -44,6 +55,17 @@ export const CategoryQuery = graphql`
             }
             read_time
             created
+            article_image {
+              alt
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 300, quality: 90) {
+                    ...GatsbyImageSharpFluid_withWebp
+                    ...GatsbyImageSharpFluidLimitPresentationSize
+                  }
+                }
+              }
+            }
           }
         }
       }

@@ -19,7 +19,7 @@ const Code = ({ data: { primary } }) => {
 
   const copyText = lang => {
     setCopied(true)
-    toast.info(`${lang.toUpperCase()} copied to clipboard`)
+    toast.info(`${lang.toUpperCase()} block copied to clipboard`)
   }
 
   const Button = styled.button`
