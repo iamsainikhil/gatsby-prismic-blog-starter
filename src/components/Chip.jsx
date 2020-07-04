@@ -5,10 +5,10 @@ import { jsx } from "theme-ui"
 
 const Chip = ({ name, slug, type, page = "article" }) => {
   return (
-    <div>
+    <p sx={{ m: 1 }}>
       <a
         href={`/${type}/${slug}`}
-        sx={{ textDecoration: "none", mx: 1 }}
+        sx={{ textDecoration: "none" }}
         target="_blank"
       >
         <span
@@ -29,7 +29,7 @@ const Chip = ({ name, slug, type, page = "article" }) => {
           {name}
         </span>
       </a>
-    </div>
+    </p>
   )
 }
 

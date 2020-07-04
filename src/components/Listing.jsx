@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import React, { Fragment } from "react"
+import React from "react"
 import { Link, navigate } from "gatsby"
 import Img from "gatsby-image"
 import { jsx, useThemeUI } from "theme-ui"
@@ -49,121 +49,123 @@ const Listing = ({ articles }) => {
   return (
     <GridLayout>
       {articles.edges.map(article => (
-        <Fragment>
-          <ArticleCard
-            aria-label={`Read article ${article.node.uid}`}
-            title={article.node.uid}
-            key={article.node.uid}
-          >
-            <div>
-              <Link to={`article/${article.node.uid}`}>
-                <Img
-                  fluid={
-                    article.node.data.article_image.localFile.childImageSharp
-                      .fluid
-                  }
-                  alt={article.node.data.article_image.alt}
-                  title={article.node.data.article_image.alt}
-                  sx={{
-                    height: "100%",
-                    borderTopLeftRadius: "25px",
-                    borderTopRightRadius: "25px",
-                  }}
-                />
-              </Link>
-            </div>
-            <div
-              sx={{
-                px: 3,
-                py: 2,
+        <ArticleCard
+          aria-label={`Read article ${article.node.uid}`}
+          title={article.node.uid}
+          key={article.node.uid}
+        >
+          <div>
+            <Link to={`article/${article.node.uid}`}>
+              <Img
+                fluid={
+                  article.node.data.article_image.localFile.childImageSharp
+                    .fluid
+                }
+                alt={article.node.data.article_image.alt}
+                title={article.node.data.article_image.alt}
+                sx={{
+                  height: "100%",
+                  borderTopLeftRadius: "25px",
+                  borderTopRightRadius: "25px",
+                  filter: "grayscale(100%)",
+                  ":hover, :focus": {
+                    filter: "none",
+                  },
+                }}
+              />
+            </Link>
+          </div>
+          <div
+            sx={{
+              px: 3,
+              py: 2,
 
+              "@media (max-width: 30rem)": {
+                px: 3,
+              },
+            }}
+          >
+            <h2
+              sx={{
+                m: 0,
+                pt: 2,
+                fontSize: [2, 3],
                 "@media (max-width: 30rem)": {
-                  px: 3,
+                  pt: 0,
                 },
               }}
             >
-              <h2
+              <Link
+                to={`article/${article.node.uid}`}
                 sx={{
-                  m: 0,
-                  pt: 2,
-                  fontSize: [2, 3],
-                  "@media (max-width: 30rem)": {
-                    pt: 0,
+                  color: "inherit",
+                  textDecoration: "none",
+                  ":hover,:focus": {
+                    color: "secondary",
+                    textDecoration: "underline",
                   },
                 }}
               >
-                <Link
-                  to={`article/${article.node.uid}`}
-                  sx={{
-                    color: "inherit",
-                    textDecoration: "none",
-                    ":hover,:focus": {
-                      color: "secondary",
-                      textDecoration: "underline",
-                    },
-                  }}
-                >
-                  {article.node.data.title.text}
-                </Link>
-              </h2>
-              <p
-                sx={{
-                  fontSize: [1, 2],
-                  height: "8rem",
-                  "@media screen and (max-width: 30rem)": {
-                    height: "auto",
-                  },
-                }}
-              >
-                {truncateText(`${article.node.data.excerpt.text}`)}
-              </p>
-              <p
-                sx={{
-                  display: "flex",
-                  flexFlow: "row wrap",
-                  justifyContent: "flex-start",
-                  alignItems: "center",
-                  margin: "0 auto 0 -0.5rem",
-                }}
-              >
-                {article.node.data.categories.map((data, index) => {
-                  return (
-                    <Chip
-                      name={data.category.document.data.name}
-                      slug={data.slug}
-                      type="category"
-                      page="listing"
-                      key={index}
-                    />
-                  )
-                })}
-              </p>
-              <p
-                sx={{
-                  fontSize: 0,
-                  fontWeight: "bold",
-                  mb: 1,
-                  py: 1,
-                }}
-              >
-                <em
-                  title={formatDate(article.node.data.created)}
-                  aria-label={formatDate(article.node.data.created)}
-                >
-                  {formatDate(article.node.data.created)}
-                </em>
-                <em
-                  sx={{ mx: 4 }}
-                  title="Time to read the article"
-                  aria-label="Time to read the article"
-                >
-                  <FiClock style={{ marginBottom: "-0.1rem" }} />
-                  &nbsp;{article.node.data.read_time}&nbsp;min read
-                </em>
-              </p>
+                {article.node.data.title.text}
+              </Link>
+            </h2>
+            <p
+              sx={{
+                fontSize: [1, 2],
+                height: "8rem",
+                "@media screen and (max-width: 30rem)": {
+                  height: "auto",
+                },
+              }}
+            >
+              {truncateText(`${article.node.data.excerpt.text}`)}
+            </p>
+            <div
+              sx={{
+                display: "flex",
+                flexFlow: "row wrap",
+                justifyContent: "flex-start",
+                alignItems: "center",
+                margin: "0 auto 0 -0.5rem",
+              }}
+            >
+              {article.node.data.categories.map((data, index) => {
+                return (
+                  <Chip
+                    name={data.category.document.data.name}
+                    slug={data.slug}
+                    type="category"
+                    page="listing"
+                    key={index}
+                  />
+                )
+              })}
             </div>
-          </ArticleCard>
-        </Fragment>
+            <p
+              sx={{
+                fontSize: 0,
+                fontWeight: "bold",
+                mb: 1,
+                py: 1,
+              }}
+            >
+              <em
+                title={formatDate(article.node.data.created)}
+                aria-label={formatDate(article.node.data.created)}
+              >
+                {formatDate(article.node.data.created)}
+              </em>
+              <em
+                sx={{ mx: 4 }}
+                title="Time to read the article"
+                aria-label="Time to read the article"
+              >
+                <FiClock style={{ marginBottom: "-0.1rem" }} />
+                &nbsp;{article.node.data.read_time}&nbsp;min read
+              </em>
+            </p>
+          </div>
+        </ArticleCard>
       ))}
     </GridLayout>
   )

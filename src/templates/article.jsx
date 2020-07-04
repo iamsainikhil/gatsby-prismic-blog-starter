@@ -36,15 +36,15 @@ const Article = ({ data: { article } }) => {
           &nbsp;{article.data.read_time}&nbsp;min read
         </Styled.em>
       </p>
-      <p
+
+      {/* categories */}
+      <div
         sx={{
           display: "flex",
-          flexFlow: "row nowrap",
+          flexFlow: "row wrap",
           justifyContent: "center",
           alignItems: "center",
-          "@media screen and (max-width: 30rem)": {
-            flexFlow: "column nowrap",
-          },
+          mt: 2,
         }}
       >
         {article.data.categories.map((data, index) => {
@@ -57,7 +57,7 @@ const Article = ({ data: { article } }) => {
             />
           )
         })}
-      </p>
+      </div>
       <Styled.p sx={{ my: 4 }}>{article.data.excerpt.text}</Styled.p>
 
       <Img
@@ -74,21 +74,19 @@ const Article = ({ data: { article } }) => {
         This article was last updated on {formatDate(article.data.modified)}
       </Styled.em>
 
-      <p
+      {/* tags */}
+      <div
         sx={{
           display: "flex",
-          flexFlow: "row nowrap",
+          flexFlow: "row wrap",
           justifyContent: "flex-start",
           alignItems: "center",
-          "@media screen and (max-width: 30rem)": {
-            flexFlow: "column nowrap",
-          },
         }}
       >
         {article.tags.map((tag, index) => {
           return <Chip name={tag} slug={tag} type="tag" key={index} />
         })}
-      </p>
+      </div>
 
       {/* {article.data.body.map((slice, index) => {
         switch (slice.slice_type) {

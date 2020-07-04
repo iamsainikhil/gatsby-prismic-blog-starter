@@ -11,7 +11,7 @@ const Category = ({ data: { articles }, pageContext }) => {
     <Layout>
       <SEO
         title={`${pageContext.slug} | Category`}
-        description={`Articles related to ${pageContext.slug}`}
+        description={`Articles related to ${pageContext.slug} category.`}
       />
       <div style={{ textAlign: "center" }}>
         <Styled.h2 style={{ marginBottom: "0.25rem" }}>
@@ -25,7 +25,7 @@ const Category = ({ data: { articles }, pageContext }) => {
             textAlign: "center",
           }}
         >
-          The articles related to {pageContext.slug}.
+          The articles related to {pageContext.slug} category.
         </Styled.p>
       </div>
       <Listing articles={articles} />
@@ -65,6 +65,18 @@ export const CategoryQuery = graphql`
                   }
                 }
               }
+            }
+            categories {
+              category {
+                document {
+                  ... on PrismicCategory {
+                    data {
+                      name
+                    }
+                  }
+                }
+              }
+              slug
             }
           }
         }
