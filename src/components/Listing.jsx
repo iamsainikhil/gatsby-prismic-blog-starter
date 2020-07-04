@@ -10,20 +10,12 @@ import formatDate from "../utils/formatDate"
 import Chip from "./Chip"
 
 /**
- * Programmatic navigation to given path of the article
- * @param {String} path
- */
-const readArticle = path => {
-  navigate(path)
-}
-
-/**
  * Truncate the excerpt text based on character count
  * @param {String} text
  */
 const truncateText = text => {
-  if (text.length > 250) {
-    return text.slice(0, 250).concat("...")
+  if (text.length > 200) {
+    return text.slice(0, 200).concat("...")
   }
   return text
 }
@@ -33,7 +25,7 @@ const Listing = ({ articles }) => {
 
   const GridLayout = styled.div`
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, 300px);
     grid-template-rows: auto;
     grid-gap: 1.25rem;
     margin: auto;
@@ -41,25 +33,17 @@ const Listing = ({ articles }) => {
     @media (max-width: ${theme.breakpoints[0]}) {
       grid-template-columns: 1fr;
     }
-
-    @media (min-width: ${theme.breakpoints[2]}) {
-      grid-template-columns: repeat(auto-fit, minmax(400px, 0.7fr));
-    }
   `
 
   const ArticleCard = styled.div`
     display: grid;
-    grid-template-columns: minmax(100px, 200px) 1fr;
+    grid-template-columns: 300px;
     grid-template-rows: auto;
     grid-gap: 0;
+    margin: 0 auto;
     border-radius: 25px;
     box-shadow: inset -5px -5px 12px ${theme.colors.shade1},
       inset 5px 5px 12px ${theme.colors.shade2};
-
-    @media (max-width: ${theme.breakpoints[1]}) {
-      grid-template-columns: 300px;
-      margin: 0 auto;
-    }
   `
 
   return (
@@ -71,30 +55,25 @@ const Listing = ({ articles }) => {
             title={article.node.uid}
             key={article.node.uid}
           >
-            <Link to={`article/${article.node.uid}`}>
-              <Img
-                fluid={
-                  article.node.data.article_image.localFile.childImageSharp
-                    .fluid
-                }
-                alt={article.node.data.article_image.alt}
-                title={article.node.data.article_image.alt}
-                sx={{
-                  height: "100%",
-                  "@media screen and (max-width: 47rem)": {
+            <div>
+              <Link to={`article/${article.node.uid}`}>
+                <Img
+                  fluid={
+                    article.node.data.article_image.localFile.childImageSharp
+                      .fluid
+                  }
+                  alt={article.node.data.article_image.alt}
+                  title={article.node.data.article_image.alt}
+                  sx={{
+                    height: "100%",
                     borderTopLeftRadius: "25px",
                     borderTopRightRadius: "25px",
-                  },
-                  "@media screen and (min-width: 48rem)": {
-                    borderTopLeftRadius: "25px",
-                    borderBottomLeftRadius: "25px",
-                  },
-                }}
-              />
-            </Link>
+                  }}
+                />
+              </Link>
+            </div>
             <div
               sx={{
-                flex: "1 1 auto",
                 px: 3,
                 py: 2,
 
@@ -119,7 +98,7 @@ const Listing = ({ articles }) => {
                     color: "inherit",
                     textDecoration: "none",
                     ":hover,:focus": {
-                      color: "primary",
+                      color: "secondary",
                       textDecoration: "underline",
                     },
                   }}
@@ -130,13 +109,13 @@ const Listing = ({ articles }) => {
               <p
                 sx={{
                   fontSize: [1, 2],
-                  height: "6rem",
+                  height: "8rem",
                   "@media screen and (max-width: 30rem)": {
                     height: "auto",
                   },
                 }}
               >
-                {truncateText(article.node.data.excerpt.text)}
+                {truncateText(`${article.node.data.excerpt.text}`)}
               </p>
               <p
                 sx={{
@@ -144,7 +123,7 @@ const Listing = ({ articles }) => {
                   flexFlow: "row wrap",
                   justifyContent: "flex-start",
                   alignItems: "center",
-                  margin: "-0.75rem auto 0 -0.5rem",
+                  margin: "0 auto 0 -0.5rem",
                 }}
               >
                 {article.node.data.categories.map((data, index) => {
@@ -153,6 +132,7 @@ const Listing = ({ articles }) => {
                       name={data.category.document.data.name}
                       slug={data.slug}
                       type="category"
+                      page="listing"
                       key={index}
                     />
                   )

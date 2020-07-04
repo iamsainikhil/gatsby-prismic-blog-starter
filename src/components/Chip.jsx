@@ -3,19 +3,19 @@
 import React from "react"
 import { jsx } from "theme-ui"
 
-const Chip = ({ name, slug, type }) => {
+const Chip = ({ name, slug, type, page = "article" }) => {
   return (
-    <div sx={{ m: 2 }}>
+    <div>
       <a
         href={`/${type}/${slug}`}
-        sx={{ textDecoration: "none" }}
+        sx={{ textDecoration: "none", mx: 1 }}
         target="_blank"
       >
         <span
           sx={{
             color: "muted",
             backgroundColor: "accent",
-            fontSize: [0, 1, 2],
+            fontSize: page === "article" ? [0, 1, 2] : [0],
             py: 1,
             px: 3,
             borderRadius: "2rem",
