@@ -15,6 +15,7 @@ const Chip = ({ name, slug, type }) => {
           sx={{
             color: "muted",
             backgroundColor: "accent",
+            fontSize: [0, 1, 2],
             py: 1,
             px: 3,
             borderRadius: "2rem",

@@ -7,6 +7,7 @@ import { jsx, useThemeUI } from "theme-ui"
 import styled from "@emotion/styled"
 import { FiClock } from "react-icons/fi"
 import formatDate from "../utils/formatDate"
+import Chip from "./Chip"
 
 /**
  * Programmatic navigation to given path of the article
@@ -21,8 +22,8 @@ const readArticle = path => {
  * @param {String} text
  */
 const truncateText = text => {
-  if (text.length > 80) {
-    return text.slice(0, 80).concat("...")
+  if (text.length > 250) {
+    return text.slice(0, 250).concat("...")
   }
   return text
 }
@@ -51,7 +52,6 @@ const Listing = ({ articles }) => {
     grid-template-columns: minmax(100px, 200px) 1fr;
     grid-template-rows: auto;
     grid-gap: 0;
-    cursor: pointer;
     border-radius: 25px;
     box-shadow: inset -5px -5px 12px ${theme.colors.shade1},
       inset 5px 5px 12px ${theme.colors.shade2};
@@ -70,26 +70,28 @@ const Listing = ({ articles }) => {
             aria-label={`Read article ${article.node.uid}`}
             title={article.node.uid}
             key={article.node.uid}
-            onClick={() => readArticle(`article/${article.node.uid}`)}
           >
-            <Img
-              fluid={
-                article.node.data.article_image.localFile.childImageSharp.fluid
-              }
-              alt={article.node.data.article_image.alt}
-              title={article.node.data.article_image.alt}
-              sx={{
-                maxHeight: "100% !important",
-                "@media screen and (max-width: 47rem)": {
-                  borderTopLeftRadius: "25px",
-                  borderTopRightRadius: "25px",
-                },
-                "@media screen and (min-width: 48rem)": {
-                  borderTopLeftRadius: "25px",
-                  borderBottomLeftRadius: "25px",
-                },
-              }}
-            />
+            <Link to={`article/${article.node.uid}`}>
+              <Img
+                fluid={
+                  article.node.data.article_image.localFile.childImageSharp
+                    .fluid
+                }
+                alt={article.node.data.article_image.alt}
+                title={article.node.data.article_image.alt}
+                sx={{
+                  height: "100%",
+                  "@media screen and (max-width: 47rem)": {
+                    borderTopLeftRadius: "25px",
+                    borderTopRightRadius: "25px",
+                  },
+                  "@media screen and (min-width: 48rem)": {
+                    borderTopLeftRadius: "25px",
+                    borderBottomLeftRadius: "25px",
+                  },
+                }}
+              />
+            </Link>
             <div
               sx={{
                 flex: "1 1 auto",
@@ -125,8 +127,36 @@ const Listing = ({ articles }) => {
                   {article.node.data.title.text}
                 </Link>
               </h2>
-              <p sx={{ fontSize: [1, 2], maxHeight: "5rem" }}>
+              <p
+                sx={{
+                  fontSize: [1, 2],
+                  height: "6rem",
+                  "@media screen and (max-width: 30rem)": {
+                    height: "auto",
+                  },
+                }}
+              >
                 {truncateText(article.node.data.excerpt.text)}
+              </p>
+              <p
+                sx={{
+                  display: "flex",
+                  flexFlow: "row wrap",
+                  justifyContent: "flex-start",
+                  alignItems: "center",
+                  margin: "-0.75rem auto 0 -0.5rem",
+                }}
+              >
+                {article.node.data.categories.map((data, index) => {
+                  return (
+                    <Chip
+                      name={data.category.document.data.name}
+                      slug={data.slug}
+                      type="category"
+                      key={index}
+                    />
+                  )
+                })}
               </p>
               <p
                 sx={{

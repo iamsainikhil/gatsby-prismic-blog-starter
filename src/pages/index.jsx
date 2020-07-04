@@ -56,6 +56,18 @@ export const IndexQuery = graphql`
                 }
               }
             }
+            categories {
+              category {
+                document {
+                  ... on PrismicCategory {
+                    data {
+                      name
+                    }
+                  }
+                }
+              }
+              slug
+            }
           }
         }
       }
