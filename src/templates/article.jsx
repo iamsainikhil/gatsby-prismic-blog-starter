@@ -81,6 +81,7 @@ const Article = ({ data: { article } }) => {
           flexFlow: "row wrap",
           justifyContent: "flex-start",
           alignItems: "center",
+          my: 2,
         }}
       >
         {article.tags.map((tag, index) => {

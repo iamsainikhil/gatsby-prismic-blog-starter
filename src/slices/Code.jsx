@@ -7,7 +7,7 @@ import styled from "@emotion/styled"
 
 /* copy to clipboard UI/UX */
 import { CopyToClipboard } from "react-copy-to-clipboard"
-import { ToastContainer, toast } from "react-toastify"
+import { ToastContainer, toast, Slide } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
 /* custom syntax highlight theme */
@@ -17,9 +17,25 @@ const Code = ({ data: { primary } }) => {
   const { theme, colorMode } = useThemeUI()
   const [copied, setCopied] = useState(false)
 
+  /**
+   * Toast
+   * language of the block copied to clipboard
+   * @param {String} lang
+   */
   const copyText = lang => {
-    setCopied(true)
-    toast.info(`${lang.toUpperCase()} block copied to clipboard`)
+    // remove older toast and copied state
+    toast.dismiss()
+    setCopied(false)
+
+    // new toast and copied state
+    toast.info(`${lang.toUpperCase()} block copied to clipboard`, {
+      onOpen: () => {
+        setCopied(true)
+      },
+      onClose: () => {
+        setCopied(false)
+      },
+    })
   }
 
   const Button = styled.button`
@@ -69,7 +85,7 @@ const Code = ({ data: { primary } }) => {
                 onCopy={() => copyText(primary.lang)}
                 style={{ margin: "0 0.5rem" }}
               >
-                <Button>Copy</Button>
+                {copied ? <span>Copied</span> : <Button>Copy</Button>}
               </CopyToClipboard>
             </div>
             {tokens.map((line, i) => (
@@ -82,7 +98,15 @@ const Code = ({ data: { primary } }) => {
           </pre>
         )}
       </Highlight>
-      <ToastContainer newestOnTop pauseOnHover={false} />
+      <ToastContainer
+        closeOnClick
+        newestOnTop
+        pauseOnHover
+        transition={Slide}
+        draggable
+        draggablePercent={60}
+        role="alert"
+      />
     </Fragment>
   )
 }
