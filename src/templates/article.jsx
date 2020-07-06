@@ -2,7 +2,7 @@
 
 import React from "react"
 import { graphql } from "gatsby"
-import { Layout, SEO, SliceZone, Chip } from "../components"
+import { Layout, SEO, SliceZone, Chip, Author } from "../components"
 import { jsx, Styled } from "theme-ui"
 import { FiClock } from "react-icons/fi"
 import formatDate from "../utils/formatDate"
@@ -88,6 +88,8 @@ const Article = ({ data: { article } }) => {
         })}
       </div>
 
+      <Author author={article.data.author.document.data} />
+
       {/* {article.data.body.map((slice, index) => {
         switch (slice.slice_type) {
           case "banner_with_caption":
@@ -117,12 +119,7 @@ const Article = ({ data: { article } }) => {
           default:
             return null
         }
-      })}
-      {article.tags.map((tag, index) => (
-        <Link to={`/tag/${tag}`} key={index}>
-          {tag}
-        </Link>
-      ))} */}
+      })}*/}
     </Layout>
   )
 }
@@ -251,6 +248,35 @@ export const articleQuery = graphql`
             }
           }
           slug
+        }
+        author {
+          document {
+            ... on PrismicAuthor {
+              data {
+                name
+                social_links {
+                  platform_name
+                  platform_url {
+                    url
+                  }
+                }
+                bio {
+                  html
+                }
+                avatar {
+                  alt
+                  localFile {
+                    childImageSharp {
+                      fluid(maxWidth: 100, maxHeight: 100) {
+                        ...GatsbyImageSharpFluid_withWebp
+                        ...GatsbyImageSharpFluidLimitPresentationSize
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
       tags

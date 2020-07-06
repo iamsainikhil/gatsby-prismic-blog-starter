@@ -7,6 +7,8 @@ import PrismicLogo from "./PrismicLogo"
 import SliceZone from "./sliceZone"
 import Image from "./Image"
 import Chip from "./Chip"
+import Author from "./Author"
+import Icon from "./Icon"
 
 export {
   Layout,
@@ -17,5 +19,7 @@ export {
   Image,
   PrismicLogo,
   SliceZone,
+  Icon,
   Chip,
+  Author,
 }

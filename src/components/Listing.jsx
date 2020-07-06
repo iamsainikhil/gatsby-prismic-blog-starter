@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import React from "react"
-import { Link, navigate } from "gatsby"
+import { Link } from "gatsby"
 import Img from "gatsby-image"
 import { jsx, useThemeUI } from "theme-ui"
 import styled from "@emotion/styled"

@@ -12,6 +12,7 @@ import {
 import { FaHeart } from "react-icons/fa"
 import "../styles/footer.scss"
 import PrismicLogo from "./PrismicLogo"
+import Icon from "./Icon"
 
 const Footer = () => {
   return (
@@ -77,78 +78,42 @@ const Footer = () => {
         </div>
 
         <div className="social-row">
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label="Facebook"
-            title="Facebook"
-          >
-            <GrFacebookOption
-              sx={{
-                color: "primary",
-                fontSize: "1.75rem",
-                "&:hover": {
-                  color: "#3b5998",
-                },
-              }}
-            />
-          </a>
+          <Icon
+            name="Facebook"
+            url="https://facebook.com"
+            style={{
+              color: "primary",
+              fontSize: "1.75rem",
+            }}
+          />
 
-          <a
-            href="https://twitter.com/iamsainikhil12"
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label="Twitter"
-            title="Twitter"
-          >
-            <GrTwitter
-              sx={{
-                color: "primary",
-                fontSize: "1.5rem",
-                "&:hover": {
-                  color: "#1da1f2",
-                },
-              }}
-            />
-          </a>
+          <Icon
+            name="Twitter"
+            url="https://twitter.com/iamsainikhil12"
+            style={{
+              color: "primary",
+              fontSize: "1.5rem",
+            }}
+          />
 
-          <a
-            href="https://medium.com/@iamsainikhil"
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label="Medium"
-            title="Medium"
-          >
-            <GrMedium
-              sx={{
-                color: "primary",
-                fontSize: "1.5rem",
-                "&:hover": {
-                  color: "#00ab6c",
-                },
-              }}
-            />
-          </a>
+          <Icon
+            name="Medium"
+            url="https://medium.com/@iamsainikhil"
+            style={{
+              color: "primary",
+              fontSize: "1.5rem",
+            }}
+          />
 
-          <a
-            href="https://www.linkedin.com/in/iamsainikhil"
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label="LinkedIn"
-            title="LinkedIn"
-          >
-            <GrLinkedinOption
-              sx={{
-                color: "primary",
-                fontSize: "1.70rem",
-                marginBottom: "0.25rem",
-                "&:hover": {
-                  color: "#0077b5",
-                },
-              }}
-            />
-          </a>
+          <Icon
+            name="LinkedIn"
+            url="https://www.linkedin.com/in/iamsainikhil"
+            style={{
+              color: "primary",
+              fontSize: "1.70rem",
+              marginBottom: "0.25rem",
+            }}
+          />
         </div>
 
         <p style={{ textAlign: "center", marginTop: "0.5rem" }}>

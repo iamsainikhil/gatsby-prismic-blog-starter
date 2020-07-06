@@ -93,6 +93,7 @@ module.exports = {
           // Your custom types mapped to schemas
           article: require("./src/schemas/article.json"),
           category: require("./src/schemas/category.json"),
+          author: require("./src/schemas/author.json"),
         },
 
         // Set a default language when fetching documents. The default value is

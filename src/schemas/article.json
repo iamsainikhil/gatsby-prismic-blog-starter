@@ -299,6 +299,15 @@
         },
         "label": "categories"
       }
+    },
+    "author": {
+      "type": "Link",
+      "config": {
+        "select": "document",
+        "customtypes": ["author"],
+        "label": "author",
+        "placeholder": "Author of the article"
+      }
     }
   }
 }

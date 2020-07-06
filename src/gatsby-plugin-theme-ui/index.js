@@ -1,5 +1,3 @@
-import toshTheme from "./toshTheme"
-
-const theme = toshTheme
+import theme from "./theme"
 
 export default theme
