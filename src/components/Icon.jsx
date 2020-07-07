@@ -10,7 +10,7 @@ import {
   GrGithub,
 } from "react-icons/gr"
 import { FiCodepen } from "react-icons/fi"
-import { IoIosGlobe } from "react-icons/io"
+import { IoIosGlobe, IoLogoWhatsapp } from "react-icons/io"
 
 const Icon = ({ name, url, style }) => {
   const renderIcon = () => {
@@ -88,6 +88,17 @@ const Icon = ({ name, url, style }) => {
               ...style,
               "&:hover": {
                 color: "#fc7740",
+              },
+            }}
+          />
+        )
+      case "WhatsApp":
+        return (
+          <IoLogoWhatsapp
+            sx={{
+              ...style,
+              "&:hover": {
+                color: "#128c7e",
               },
             }}
           />

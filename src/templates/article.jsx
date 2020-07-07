@@ -2,15 +2,13 @@
 
 import React from "react"
 import { graphql } from "gatsby"
-import { Layout, SEO, SliceZone, Chip, Author } from "../components"
+import { Layout, SEO, SliceZone, Chip, Author, Share } from "../components"
 import { jsx, Styled } from "theme-ui"
 import { FiClock } from "react-icons/fi"
 import formatDate from "../utils/formatDate"
 import Img from "gatsby-image"
 
-const Article = ({ data: { article } }) => {
-  console.log(article)
-
+const Article = ({ data: { article }, location }) => {
   return (
     <Layout>
       <SEO
@@ -88,6 +86,9 @@ const Article = ({ data: { article } }) => {
           return <Chip name={tag} slug={tag} type="tag" key={index} />
         })}
       </div>
+
+      {/* Share */}
+      <Share articleURL={location.href} articleName={article.data.title.text} />
 
       <Author author={article.data.author.document.data} />
 

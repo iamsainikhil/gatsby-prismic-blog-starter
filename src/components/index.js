@@ -9,6 +9,7 @@ import Image from "./Image"
 import Chip from "./Chip"
 import Author from "./Author"
 import Icon from "./Icon"
+import Share from "./Share"
 
 export {
   Layout,
@@ -22,4 +23,5 @@ export {
   Icon,
   Chip,
   Author,
+  Share,
 }
