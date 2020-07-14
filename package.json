@@ -28,6 +28,7 @@
     "react-headroom": "^3.0.0",
     "react-helmet": "^6.0.0",
     "react-icons": "^3.10.0",
+    "react-snakke": "^1.2.3",
     "react-toastify": "^6.0.5",
     "theme-ui": "^0.3.1",
     "typeface-damion": "0.0.72",
@@ -36,6 +37,7 @@
   },
   "devDependencies": {
     "eslint-plugin-react": "^7.20.0",
+    "ink": "^2.7.1",
     "prettier": "2.0.5"
   },
   "keywords": [

@@ -7,92 +7,105 @@ import { jsx, Styled } from "theme-ui"
 import { FiClock } from "react-icons/fi"
 import formatDate from "../utils/formatDate"
 import Img from "gatsby-image"
+import Snakke from "react-snakke"
 
 const Article = ({ data: { article }, location }) => {
   return (
-    <Layout>
-      <SEO
-        title={`${article.data.title.text} | Article`}
-        description={article.data.excerpt.text}
+    <>
+      <Snakke
+        color="#484848"
+        top="0px"
+        height="5px"
+        opacity="1"
+        zIndex="10"
+        shadow={false}
       />
-      <Styled.h1 sx={{ textAlign: "center", letterSpacing: "0.1rem", mb: 3 }}>
-        {article.data.title.text}
-      </Styled.h1>
-      <p sx={{ fontWeight: "bold", my: 0, pt: 0, textAlign: "center" }}>
-        <Styled.em
-          title={formatDate(article.data.created)}
-          aria-label={formatDate(article.data.created)}
+      <Layout>
+        <SEO
+          title={`${article.data.title.text} | Article`}
+          description={article.data.excerpt.text}
+        />
+        <Styled.h1 sx={{ textAlign: "center", letterSpacing: "0.1rem", mb: 3 }}>
+          {article.data.title.text}
+        </Styled.h1>
+        <p sx={{ fontWeight: "bold", my: 0, pt: 0, textAlign: "center" }}>
+          <Styled.em
+            title={formatDate(article.data.created)}
+            aria-label={formatDate(article.data.created)}
+          >
+            {formatDate(article.data.created)}
+          </Styled.em>
+          <Styled.em
+            sx={{ mx: 4 }}
+            title="Time to read the article"
+            aria-label="Time to read the article"
+          >
+            <FiClock style={{ marginBottom: "-0.1rem" }} />
+            &nbsp;{article.data.read_time}&nbsp;min read
+          </Styled.em>
+        </p>
+
+        {/* categories */}
+        <div
+          sx={{
+            display: "flex",
+            flexFlow: "row wrap",
+            justifyContent: "center",
+            alignItems: "center",
+            mt: 2,
+          }}
         >
-          {formatDate(article.data.created)}
+          {article.data.categories.map((data, index) => {
+            return (
+              <Chip
+                name={data.category.document.data.name}
+                slug={data.slug}
+                type="category"
+                key={index}
+              />
+            )
+          })}
+        </div>
+        <Styled.p sx={{ my: 4 }}>{article.data.excerpt.text}</Styled.p>
+
+        <Img
+          fluid={article.data.article_image.localFile.childImageSharp.fluid}
+          alt={article.data.article_image.alt}
+          title={article.data.article_image.alt}
+          sx={{ margin: "2rem auto" }}
+        />
+
+        {/* slices */}
+        <SliceZone slices={article.data.body} />
+
+        <Styled.em sx={{ color: "gray" }}>
+          This article was last updated on {formatDate(article.data.modified)}
         </Styled.em>
-        <Styled.em
-          sx={{ mx: 4 }}
-          title="Time to read the article"
-          aria-label="Time to read the article"
+
+        {/* tags */}
+        <div
+          sx={{
+            display: "flex",
+            flexFlow: "row wrap",
+            justifyContent: "flex-start",
+            alignItems: "center",
+            my: 2,
+          }}
         >
-          <FiClock style={{ marginBottom: "-0.1rem" }} />
-          &nbsp;{article.data.read_time}&nbsp;min read
-        </Styled.em>
-      </p>
+          {article.tags.map((tag, index) => {
+            return <Chip name={tag} slug={tag} type="tag" key={index} />
+          })}
+        </div>
 
-      {/* categories */}
-      <div
-        sx={{
-          display: "flex",
-          flexFlow: "row wrap",
-          justifyContent: "center",
-          alignItems: "center",
-          mt: 2,
-        }}
-      >
-        {article.data.categories.map((data, index) => {
-          return (
-            <Chip
-              name={data.category.document.data.name}
-              slug={data.slug}
-              type="category"
-              key={index}
-            />
-          )
-        })}
-      </div>
-      <Styled.p sx={{ my: 4 }}>{article.data.excerpt.text}</Styled.p>
+        {/* Share */}
+        <Share
+          articleURL={location.href}
+          articleName={article.data.title.text}
+        />
 
-      <Img
-        fluid={article.data.article_image.localFile.childImageSharp.fluid}
-        alt={article.data.article_image.alt}
-        title={article.data.article_image.alt}
-        sx={{ margin: "2rem auto" }}
-      />
+        <Author author={article.data.author.document.data} />
 
-      {/* slices */}
-      <SliceZone slices={article.data.body} />
-
-      <Styled.em sx={{ color: "gray" }}>
-        This article was last updated on {formatDate(article.data.modified)}
-      </Styled.em>
-
-      {/* tags */}
-      <div
-        sx={{
-          display: "flex",
-          flexFlow: "row wrap",
-          justifyContent: "flex-start",
-          alignItems: "center",
-          my: 2,
-        }}
-      >
-        {article.tags.map((tag, index) => {
-          return <Chip name={tag} slug={tag} type="tag" key={index} />
-        })}
-      </div>
-
-      {/* Share */}
-      <Share articleURL={location.href} articleName={article.data.title.text} />
-
-      <Author author={article.data.author.document.data} />
-
-      {/* {article.data.body.map((slice, index) => {
+        {/* {article.data.body.map((slice, index) => {
         switch (slice.slice_type) {
           case "banner_with_caption":
             return (
@@ -122,7 +135,8 @@ const Article = ({ data: { article }, location }) => {
             return null
         }
       })}*/}
-    </Layout>
+      </Layout>
+    </>
   )
 }
 
