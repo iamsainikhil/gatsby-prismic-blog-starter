@@ -8,11 +8,13 @@ module.exports = {
     titleTemplate: "%s | Blog",
     description: `My personal blog with articles related to Web Development, Software Tools, Tips & Tricks, etc.`,
     author: `@iamsainikhil12`,
+    siteUrl: `https://iamsainikhil.github.io/blog`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-theme-ui`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -122,6 +124,12 @@ module.exports = {
         // the prefix.
         // This defaults to 'prismic-typepaths---${repositoryName}'.
         // typePathsFilenamePrefix: 'prismic-typepaths---gatsby-source-prismic-test-site',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `${process.env.GATSBY_DISQUS_NAME}`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

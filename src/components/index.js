@@ -10,6 +10,7 @@ import Chip from "./Chip"
 import Author from "./Author"
 import Icon from "./Icon"
 import Share from "./Share"
+import DisqusComments from "./DisqusComments"
 
 export {
   Layout,
@@ -24,4 +25,5 @@ export {
   Chip,
   Author,
   Share,
+  DisqusComments,
 }

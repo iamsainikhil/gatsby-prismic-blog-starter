@@ -2,14 +2,22 @@
 
 import React from "react"
 import { graphql } from "gatsby"
-import { Layout, SEO, SliceZone, Chip, Author, Share } from "../components"
+import {
+  Layout,
+  SEO,
+  SliceZone,
+  Chip,
+  Author,
+  Share,
+  DisqusComments,
+} from "../components"
 import { jsx, Styled } from "theme-ui"
 import { FiClock } from "react-icons/fi"
 import formatDate from "../utils/formatDate"
 import Img from "gatsby-image"
 import Snakke from "react-snakke"
 
-const Article = ({ data: { article }, location }) => {
+const Article = ({ data: { article }, pageContext, location }) => {
   return (
     <>
       <Snakke
@@ -135,6 +143,12 @@ const Article = ({ data: { article }, location }) => {
             return null
         }
       })}*/}
+        {/* Disqus comments */}
+        <DisqusComments
+          slug={pageContext.slug}
+          title={article.data.title.text}
+          pathname={location.pathname}
+        />
       </Layout>
     </>
   )
