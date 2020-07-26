@@ -1,14 +1,14 @@
-require("dotenv").config({
-  path: `.env`,
+require('dotenv').config({
+  path: `.env`
 })
 
 module.exports = {
   siteMetadata: {
-    title: "Blog",
-    titleTemplate: "%s | Blog",
+    title: 'Blog',
+    titleTemplate: '%s | Blog',
     description: `My personal blog with articles related to Web Development, Software Tools, Tips & Tricks, etc.`,
     author: `@iamsainikhil12`,
-    siteUrl: `https://iamsainikhil.github.io/blog`,
+    siteUrl: `https://blog-iamsainikhil.vercel.app/`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -19,8 +19,8 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
-      },
+        path: `${__dirname}/src/images`
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -33,11 +33,11 @@ module.exports = {
         background_color: `#f7f8f9`,
         theme_color: `#181818`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
+        icon: `src/images/logo.png` // This path is relative to the root of the site.
+      }
     },
     {
-      resolve: "gatsby-source-prismic",
+      resolve: 'gatsby-source-prismic',
       options: {
         // The name of your prismic.io repository. This is required.
         // Example: 'gatsby-source-prismic-test-site' if your prismic.io address
@@ -57,17 +57,17 @@ module.exports = {
         // provided to the function, as seen below. This allows you to use
         // different link resolver logic for each field if necessary.
         // See: https://prismic.io/docs/javascript/query-the-api/link-resolving
-        linkResolver: () => doc => {
+        linkResolver: () => (doc) => {
           // Route for blog posts
-          if (doc.type === "post") {
-            return "/post/" + doc.uid
-          } else if (doc.type === "tag") {
-            return "/tag/" + doc.uid
-          } else if (doc.type === "category") {
-            return "/category" + doc.uid
+          if (doc.type === 'post') {
+            return '/post/' + doc.uid
+          } else if (doc.type === 'tag') {
+            return '/tag/' + doc.uid
+          } else if (doc.type === 'category') {
+            return '/category' + doc.uid
           }
           // Homepage route fallback
-          return "/"
+          return '/'
         },
 
         // Set a list of links to fetch and be made available in your link
@@ -93,9 +93,9 @@ module.exports = {
         // Gatsby. This is required.
         schemas: {
           // Your custom types mapped to schemas
-          article: require("./src/schemas/article.json"),
-          category: require("./src/schemas/category.json"),
-          author: require("./src/schemas/author.json"),
+          article: require('./src/schemas/article.json'),
+          category: require('./src/schemas/category.json'),
+          author: require('./src/schemas/author.json')
         },
 
         // Set a default language when fetching documents. The default value is
@@ -117,23 +117,23 @@ module.exports = {
         shouldDownloadImage: ({ node, key, value }) => {
           // Return true to download the image or false to skip.
           return true
-        },
+        }
 
         // Set the prefix for the filename where type paths for your schemas are
         // stored. The filename will include the MD5 hash of your schemas after
         // the prefix.
         // This defaults to 'prismic-typepaths---${repositoryName}'.
         // typePathsFilenamePrefix: 'prismic-typepaths---gatsby-source-prismic-test-site',
-      },
+      }
     },
     {
       resolve: `gatsby-plugin-disqus`,
       options: {
-        shortname: `${process.env.GATSBY_DISQUS_NAME}`,
-      },
+        shortname: `${process.env.GATSBY_DISQUS_NAME}`
+      }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
-  ],
+    `gatsby-plugin-offline`
+  ]
 }
