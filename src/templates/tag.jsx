@@ -17,7 +17,7 @@ const Tag = ({ data: { articles }, pageContext }) => {
           sx={{
             fontFamily: 'title',
             fontSize: [2, 3, 4],
-            letterSpacing: '0.05rem',
+            letterSpacing: '0.1rem',
             textAlign: 'center'
           }}
         >
@@ -26,7 +26,8 @@ const Tag = ({ data: { articles }, pageContext }) => {
             sx={{
               fontFamily: 'heading',
               fontWeight: 'bold',
-              fontSize: [1, 2, 3]
+              fontSize: [1, 2, 3],
+              letterSpacing: '0.05rem'
             }}
           >
             {pageContext.slug}

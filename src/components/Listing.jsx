@@ -29,6 +29,7 @@ const Listing = ({ articles }) => {
     grid-template-columns: repeat(auto-fit, 300px);
     grid-template-rows: auto;
     grid-gap: 1.25rem;
+    justify-content: center;
     margin: auto;
 
     @media (max-width: ${theme.breakpoints[0]}) {

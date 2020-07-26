@@ -1,7 +1,7 @@
-@import "partials";
+@import 'partials';
 
 html {
-  font: 112.5%/1.45em "Inter", sans-serif;
+  font: 112.5%/1.45em 'Inter', sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
@@ -25,10 +25,10 @@ body {
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
-  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
-  -ms-font-feature-settings: "kern", "liga", "clig", "calt";
-  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
-  font-feature-settings: "kern", "liga", "clig", "calt";
+  -moz-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+  -ms-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+  -webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+  font-feature-settings: 'kern', 'liga', 'clig', 'calt';
 }
 
 a {
@@ -44,7 +44,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: "Fira Code", monospace !important;
+  font-family: 'Fira Code', monospace !important;
   font-size: 1em;
 }
 
@@ -205,7 +205,7 @@ pre {
 
   .main {
     @extend %container;
-    margin: 1rem auto;
+    margin: 1rem auto 2rem auto;
     padding: 1rem 2rem;
     flex: 1 0 auto;
   }
@@ -227,7 +227,7 @@ pre {
   padding: 2.5px 5px;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     z-index: -1;
     width: 100%;

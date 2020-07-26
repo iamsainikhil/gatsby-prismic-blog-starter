@@ -17,7 +17,7 @@ const Category = ({ data: { articles }, pageContext }) => {
           sx={{
             fontFamily: 'title',
             fontSize: [2, 3, 4],
-            letterSpacing: '0.05rem',
+            letterSpacing: '0.1rem',
             textAlign: 'center'
           }}
         >
@@ -25,7 +25,9 @@ const Category = ({ data: { articles }, pageContext }) => {
           <span
             sx={{
               variant: 'textStyles.heading',
-              fontWeight: 'bold'
+              fontWeight: 'bold',
+              fontSize: [1, 2, 3],
+              letterSpacing: '0.05rem'
             }}
           >
             {pageContext.slug}

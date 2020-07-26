@@ -36,7 +36,8 @@ const Layout = ({ children }) => {
             right: 0,
             marginRight: '1rem',
             marginBottom: '1rem',
-            fontSize: '2rem'
+            fontSize: '2rem',
+            cursor: 'pointer'
           }}
           onClick={() =>
             scrollTo({
