@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://blog-iamsainikhil.vercel.app">
-    <img alt="Gatsby" src="https://blog-git-master.iamsainikhil.vercel.app/icons/icon-192x192.png?v=94f1610a5b130a3cdf69470d413150ba" width="60" />
+  <a href="https://blog.iamsainikhil.com">
+    <img alt="Gatsby" src="https://blog.iamsainikhil.com/icons/icon-512x512.png?v=94f1610a5b130a3cdf69470d413150ba" width="100" />
   </a>
 </p>
 <h1 align="center">
