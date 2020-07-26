@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { jsx, Styled } from 'theme-ui'
+import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 import Icon from './Icon'
 
@@ -67,3 +68,7 @@ const Author = ({ author }) => {
 }
 
 export default Author
+
+Author.propTypes = {
+  author: PropTypes.object
+}

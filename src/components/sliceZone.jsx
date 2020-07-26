@@ -1,4 +1,5 @@
-import React from "react"
+import React from 'react'
+import PropTypes from 'prop-types'
 import {
   Quote,
   Content,
@@ -6,26 +7,26 @@ import {
   Code,
   Embed,
   Gallery,
-  Banner,
-} from "../slices"
+  Banner
+} from '../slices'
 
 const SliceZone = ({ slices }) => {
   console.log(slices)
   return slices.map((slice, index) => {
     switch (slice.slice_type) {
-      case "quote":
+      case 'quote':
         return <Quote key={index} data={slice} />
-      case "text":
+      case 'text':
         return <Content key={index} data={slice} />
-      case "raw_text":
+      case 'raw_text':
         return <RawContent key={index} data={slice} />
-      case "code":
+      case 'code':
         return <Code key={index} data={slice} />
-      case "embed":
+      case 'embed':
         return <Embed key={index} data={slice} />
-      case "image_gallery":
+      case 'image_gallery':
         return <Gallery key={index} data={slice} />
-      case "banner_with_caption":
+      case 'banner_with_caption':
         return <Banner key={index} data={slice} />
       default:
         return null
@@ -34,3 +35,7 @@ const SliceZone = ({ slices }) => {
 }
 
 export default SliceZone
+
+SliceZone.propTypes = {
+  slices: PropTypes.array
+}

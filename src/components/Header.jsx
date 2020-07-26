@@ -1,13 +1,13 @@
-import React from "react"
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import Headroom from "react-headroom"
-import { Styled, useThemeUI } from "theme-ui"
+import React from 'react'
+import { Link } from 'gatsby'
+import PropTypes from 'prop-types'
+import Headroom from 'react-headroom'
+import { Styled, useThemeUI } from 'theme-ui'
 // import { GoSearch } from "react-icons/go"
-import { FiSun, FiMoon } from "react-icons/fi"
-import "../styles/header.scss"
+import { FiSun, FiMoon } from 'react-icons/fi'
+import '../styles/header.scss'
 
-const Header = ({ siteTitle }) => {
+const Header = ({ siteTitle = '' }) => {
   const { theme, colorMode, setColorMode } = useThemeUI()
 
   return (
@@ -18,8 +18,8 @@ const Header = ({ siteTitle }) => {
       >
         <div className="header-content">
           <div>
-            <Styled.h1 style={{ margin: "0" }}>
-              <Styled.a as={Link} to="/" style={{ textDecoration: "none" }}>
+            <Styled.h1 style={{ margin: '0' }}>
+              <Styled.a as={Link} to="/" style={{ textDecoration: 'none' }}>
                 {siteTitle}
               </Styled.a>
             </Styled.h1>
@@ -41,12 +41,12 @@ const Header = ({ siteTitle }) => {
               />
             </p> */}
             <p>
-              {colorMode === "dark" ? (
+              {colorMode === 'dark' ? (
                 <Styled.a title="Light Mode" aria-label="Enable Light Mode">
                   <FiSun
                     className="theme-icon"
                     onClick={() => {
-                      setColorMode("light")
+                      setColorMode('light')
                     }}
                   />
                 </Styled.a>
@@ -55,7 +55,7 @@ const Header = ({ siteTitle }) => {
                   <FiMoon
                     className="theme-icon"
                     onClick={() => {
-                      setColorMode("dark")
+                      setColorMode('dark')
                     }}
                   />
                 </Styled.a>
@@ -69,11 +69,7 @@ const Header = ({ siteTitle }) => {
 }
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+  siteTitle: PropTypes.string
 }
 
 export default Header

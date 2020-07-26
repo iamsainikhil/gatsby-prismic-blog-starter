@@ -2,11 +2,8 @@
 
 import React from 'react'
 import { jsx } from 'theme-ui'
+import PropTypes from 'prop-types'
 import Listing from './Listing'
-// import { Link } from 'gatsby'
-// import { FiClock } from 'react-icons/fi'
-// import formatDate from '../utils/formatDate'
-// import Chip from './Chip'
 
 const RelatedArticles = ({ uid, categories, tags: articleTags, related }) => {
   // get slugs from categories of the current article
@@ -51,83 +48,6 @@ const RelatedArticles = ({ uid, categories, tags: articleTags, related }) => {
         {relatedArticles.edges.length > 0 ? (
           <Listing articles={relatedArticles} />
         ) : (
-          // relatedArticles.slice(0, 3).map((article, index) => {
-          //   return (
-          //     <div
-          //       key={index}
-          //       sx={{
-          //         mx: 3,
-          //         my: 2,
-          //         p: 2,
-          //         minWidth: '300px',
-          //         borderWidth: '1px',
-          //         borderStyle: 'solid',
-          //         borderColor: 'shade2',
-          //         borderRadius: '1rem'
-          //       }}
-          //     >
-          //       <h2
-          //         sx={{
-          //           m: 0,
-          //           pt: 2,
-          //           fontSize: [2, 3]
-          //         }}
-          //       >
-          //         <Link
-          //           to={`article/${article.node.uid}`}
-          //           sx={{
-          //             color: 'inherit',
-          //             textDecoration: 'none',
-          //             ':hover,:focus': {
-          //               color: 'secondary',
-          //               textDecoration: 'underline'
-          //             }
-          //           }}
-          //         >
-          //           {article.node.data.title.text}
-          //         </Link>
-          //       </h2>
-          //       {article.node.data.categories.map((data, index) => {
-          //         return (
-          //           data.category.document && (
-          //             <Chip
-          //               name={data.category.document.data.name}
-          //               slug={data.slug}
-          //               type="category"
-          //               page="listing"
-          //               key={index}
-          //             />
-          //           )
-          //         )
-          //       })}
-
-          //       <p
-          //         sx={{
-          //           fontSize: 0,
-          //           fontWeight: 'bold',
-          //           mb: 1,
-          //           ml: 1,
-          //           py: 1
-          //         }}
-          //       >
-          //         <em
-          //           title={formatDate(article.node.data.created)}
-          //           aria-label={formatDate(article.node.data.created)}
-          //         >
-          //           {formatDate(article.node.data.created)}
-          //         </em>
-          //         <em
-          //           sx={{ mx: 4 }}
-          //           title="Time to read the article"
-          //           aria-label="Time to read the article"
-          //         >
-          //           <FiClock style={{ marginBottom: '-0.1rem' }} />
-          //           &nbsp;{article.node.data.read_time}&nbsp;min read
-          //         </em>
-          //       </p>
-          //     </div>
-          //   )
-          // })
           <p
             style={{
               textAlign: 'center',
@@ -143,3 +63,10 @@ const RelatedArticles = ({ uid, categories, tags: articleTags, related }) => {
 }
 
 export default RelatedArticles
+
+RelatedArticles.propTypes = {
+  uid: PropTypes.string,
+  categories: PropTypes.array,
+  articleTags: PropTypes.array,
+  related: PropTypes.object
+}

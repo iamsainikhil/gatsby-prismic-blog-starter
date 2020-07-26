@@ -1,6 +1,7 @@
-import React from "react"
-import Img from "gatsby-image"
-import { StaticQuery, graphql } from "gatsby"
+import React from 'react'
+import PropTypes from 'prop-types'
+import Img from 'gatsby-image'
+import { StaticQuery, graphql } from 'gatsby'
 
 const PrismicLogo = ({ style, title }) => (
   <StaticQuery
@@ -15,7 +16,7 @@ const PrismicLogo = ({ style, title }) => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <Img
         fixed={data.file.childImageSharp.fixed}
         style={style}
@@ -26,3 +27,8 @@ const PrismicLogo = ({ style, title }) => (
   />
 )
 export default PrismicLogo
+
+PrismicLogo.propTypes = {
+  style: PropTypes.object,
+  title: PropTypes.string
+}

@@ -1,6 +1,7 @@
 /** @jsx jsx */
 
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import { jsx, useThemeUI } from 'theme-ui'
@@ -123,7 +124,7 @@ const Listing = ({ articles }) => {
               {truncateText(`${article.node.data.excerpt.text}`)}&nbsp;
               <Link
                 to={`article/${article.node.uid}`}
-                sx={{ variant: 'styles.a' }}
+                sx={{ variant: 'styles.a', color: 'gatsby !important' }}
               >
                 Read More
               </Link>
@@ -180,3 +181,7 @@ const Listing = ({ articles }) => {
 }
 
 export default Listing
+
+Listing.propTypes = {
+  articles: PropTypes.array
+}
