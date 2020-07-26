@@ -30,8 +30,8 @@ module.exports = {
         name: `Sai Nikhil | Blog`,
         short_name: `Blog`,
         start_url: `/?source=pwa`,
-        background_color: `#f7f8f9`,
-        theme_color: `#181818`,
+        background_color: `#3f3f3f`,
+        theme_color: `#f7f8f9`,
         display: `standalone`,
         icon: `src/images/logo.svg` // This path is relative to the root of the site.
       }
