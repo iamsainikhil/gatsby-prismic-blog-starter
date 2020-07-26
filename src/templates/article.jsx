@@ -85,7 +85,9 @@ const Article = ({
           fluid={article.data.article_image.localFile.childImageSharp.fluid}
           alt={article.data.article_image.alt}
           title={article.data.article_image.alt}
-          sx={{ margin: '2rem auto' }}
+          sx={{
+            margin: '2rem auto'
+          }}
         />
 
         {/* slices */}

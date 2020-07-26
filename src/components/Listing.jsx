@@ -125,7 +125,7 @@ const Listing = ({ articles }) => {
               {truncateText(`${article.node.data.excerpt.text}`)}&nbsp;
               <Link
                 to={`article/${article.node.uid}`}
-                sx={{ variant: 'styles.a', color: 'gatsby !important' }}
+                sx={{ variant: 'styles.a' }}
               >
                 Read More
               </Link>
@@ -165,8 +165,8 @@ const Listing = ({ articles }) => {
               >
                 {formatDate(article.node.data.created)}
               </em>
+              <span sx={{ mx: 2, fontSize: '10px' }}>|</span>
               <em
-                sx={{ mx: 4 }}
                 title="Time to read the article"
                 aria-label="Time to read the article"
               >

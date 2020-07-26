@@ -116,7 +116,7 @@ export default {
       fontSize: [0, 1, 2]
     },
     a: {
-      color: 'primary',
+      color: 'gatsby',
       textDecoration: 'underline',
       '&:hover': {
         color: 'secondary',

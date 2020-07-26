@@ -1,14 +1,14 @@
-import React, { useState, Fragment } from "react"
-import Highlight, { defaultProps } from "prism-react-renderer"
-import light from "prism-react-renderer/themes/github"
-import dark from "prism-react-renderer/themes/vsDark"
-import { useThemeUI } from "theme-ui"
-import styled from "@emotion/styled"
+import React, { useState, Fragment } from 'react'
+import Highlight, { defaultProps } from 'prism-react-renderer'
+import light from 'prism-react-renderer/themes/github'
+import dark from 'prism-react-renderer/themes/vsDark'
+import { useThemeUI } from 'theme-ui'
+import styled from '@emotion/styled'
 
 /* copy to clipboard UI/UX */
-import { CopyToClipboard } from "react-copy-to-clipboard"
-import { ToastContainer, toast, Slide } from "react-toastify"
-import "react-toastify/dist/ReactToastify.css"
+import { CopyToClipboard } from 'react-copy-to-clipboard'
+import { ToastContainer, toast, Slide } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 /* custom syntax highlight theme */
 // import "../styles/prism-theme.css"
@@ -22,7 +22,7 @@ const Code = ({ data: { primary } }) => {
    * language of the block copied to clipboard
    * @param {String} lang
    */
-  const copyText = lang => {
+  const copyText = (lang) => {
     // remove older toast and copied state
     toast.dismiss()
     setCopied(false)
@@ -34,7 +34,7 @@ const Code = ({ data: { primary } }) => {
       },
       onClose: () => {
         setCopied(false)
-      },
+      }
     })
   }
 
@@ -47,7 +47,7 @@ const Code = ({ data: { primary } }) => {
     letter-spacing: 1px;
     cursor: pointer;
     &:hover {
-      color: ${theme.colors.shade2};
+      color: ${theme.colors.accent};
       background: ${theme.colors.text};
     }
   `
@@ -56,7 +56,7 @@ const Code = ({ data: { primary } }) => {
     <Fragment>
       <Highlight
         {...defaultProps}
-        theme={colorMode === "light" ? light : dark}
+        theme={colorMode === 'light' ? light : dark}
         code={primary.code.text}
         language={primary.lang}
       >
@@ -66,24 +66,28 @@ const Code = ({ data: { primary } }) => {
             style={{
               ...style,
               backgroundColor: theme.colors.code,
-              marginLeft: primary.type === "list" ? "2.5rem" : null,
+              marginLeft: primary.type === 'list' ? '2.5rem' : null,
+              borderWidth: '1px',
+              borderStyle: 'solid',
+              borderColor: theme.colors.shade2,
+              borderRadius: '0.25rem'
             }}
           >
             <div
               className={className}
               style={{
                 ...style,
-                margin: "-0.25rem auto 0.5rem auto",
-                textAlign: "right",
+                margin: '-0.25rem auto 0.5rem auto',
+                textAlign: 'right',
                 color: theme.colors.accent,
-                backgroundColor: theme.colors.code,
+                backgroundColor: theme.colors.code
               }}
             >
               <span>{primary.lang.toUpperCase()}</span>
               <CopyToClipboard
                 text={primary.code.text}
                 onCopy={() => copyText(primary.lang)}
-                style={{ margin: "0 0.5rem" }}
+                style={{ margin: '0 0.5rem' }}
               >
                 {copied ? <span>Copied</span> : <Button>Copy</Button>}
               </CopyToClipboard>
