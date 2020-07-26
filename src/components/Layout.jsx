@@ -28,26 +28,16 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <main className="main">{children}</main>
       <Footer />
-      <div className="scroll-top">
-        <IoIosArrowDropupCircle
-          style={{
-            position: 'fixed',
-            bottom: 0,
-            right: 0,
-            marginRight: '1rem',
-            marginBottom: '1rem',
-            fontSize: '2rem',
-            cursor: 'pointer'
-          }}
-          onClick={() =>
-            scrollTo({
-              top: 0,
-              left: 0,
-              behavior: 'smooth'
-            })
-          }
-        />
-      </div>
+      <IoIosArrowDropupCircle
+        className="scroll-top-icon"
+        onClick={() =>
+          scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+          })
+        }
+      />
     </div>
   )
 }
