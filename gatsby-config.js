@@ -24,21 +24,21 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: `Sai Nikhil | Blog`,
-    //     short_name: `Blog`,
-    //     description: `Personal blog with articles related to Web Development, Software Tools, Tips & Tricks, etc.`,
-    //     scope: '.',
-    //     start_url: `/`,
-    //     background_color: `#f7f8f9`,
-    //     theme_color: `#181818`,
-    //     display: `standalone`,
-    //     orientation: `potrait`,
-    //     icon: `src/images/logo.svg` // This path is relative to the root of the site.
-    //   }
-    // },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Sai Nikhil | Blog`,
+        short_name: `Blog`,
+        description: `Personal blog with articles related to Web Development, Software Tools, Tips & Tricks, etc.`,
+        scope: '.',
+        start_url: `/`,
+        background_color: `#f7f8f9`,
+        theme_color: `#181818`,
+        display: `standalone`,
+        orientation: `potrait`,
+        icon: `src/images/logo.svg` // This path is relative to the root of the site.
+      }
+    },
     {
       resolve: 'gatsby-source-prismic',
       options: {
