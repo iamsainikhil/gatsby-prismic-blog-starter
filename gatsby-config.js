@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: 'Blog',
     titleTemplate: '%s | Blog',
-    description: `Sainikhil's personal blog with articles related to Web Development, Software Tools, Tips & Tricks, etc.`,
+    description: `Personal blog with articles related to Web Development, Software Tools, Tips & Tricks, etc.`,
     author: `@iamsainikhil12`,
     siteUrl: `https://blog-iamsainikhil.vercel.app/`
   },
@@ -29,10 +29,13 @@ module.exports = {
       options: {
         name: `Sai Nikhil | Blog`,
         short_name: `Blog`,
-        start_url: `/?source=pwa`,
-        background_color: `#3f3f3f`,
-        theme_color: `#f7f8f9`,
+        description: `Personal blog with articles related to Web Development, Software Tools, Tips & Tricks, etc.`,
+        scope: '.',
+        start_url: `/`,
+        background_color: `#f7f8f9`,
+        theme_color: `#181818`,
         display: `standalone`,
+        orientation: `potrait`,
         icon: `src/images/logo.svg` // This path is relative to the root of the site.
       }
     },
