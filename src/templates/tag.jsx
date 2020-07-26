@@ -1,9 +1,9 @@
 /** @jsx jsx */
 
-import React from "react"
-import { graphql, Link } from "gatsby"
-import { Layout, SEO, Listing } from "../components"
-import { jsx, Styled } from "theme-ui"
+import React from 'react'
+import { graphql, Link } from 'gatsby'
+import { Layout, SEO, Listing } from '../components'
+import { jsx, Styled } from 'theme-ui'
 
 const Tag = ({ data: { articles }, pageContext }) => {
   return (
@@ -12,19 +12,26 @@ const Tag = ({ data: { articles }, pageContext }) => {
         title={`${pageContext.slug} | Tag`}
         description={`Articles related to ${pageContext.slug} tag.`}
       />
-      <div style={{ textAlign: "center" }}>
-        <Styled.h2 style={{ marginBottom: "0.25rem" }}>
-          {pageContext.slug}
-        </Styled.h2>
+      <div style={{ textAlign: 'center' }}>
         <Styled.p
           sx={{
-            fontFamily: "title",
+            fontFamily: 'title',
             fontSize: [2, 3, 4],
-            letterSpacing: "0.05rem",
-            textAlign: "center",
+            letterSpacing: '0.05rem',
+            textAlign: 'center'
           }}
         >
-          The articles related to {pageContext.slug} tag.
+          The articles related to{' '}
+          <span
+            sx={{
+              fontFamily: 'heading',
+              fontWeight: 'bold',
+              fontSize: [1, 2, 3]
+            }}
+          >
+            {pageContext.slug}
+          </span>{' '}
+          tag.
         </Styled.p>
       </div>
       <Listing articles={articles} />
@@ -54,9 +61,8 @@ export const TagQuery = graphql`
               alt
               localFile {
                 childImageSharp {
-                  fluid(maxWidth: 300, quality: 90) {
-                    ...GatsbyImageSharpFluid_withWebp
-                    ...GatsbyImageSharpFluidLimitPresentationSize
+                  fluid(maxWidth: 300) {
+                    ...GatsbyImageSharpFluid
                   }
                 }
               }

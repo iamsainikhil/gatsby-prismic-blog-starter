@@ -11,6 +11,7 @@ import Author from "./Author"
 import Icon from "./Icon"
 import Share from "./Share"
 import DisqusComments from "./DisqusComments"
+import RelatedArticles from "./RelatedArticles"
 
 export {
   Layout,
@@ -26,4 +27,5 @@ export {
   Author,
   Share,
   DisqusComments,
+  RelatedArticles,
 }

@@ -1,22 +1,22 @@
 /** @jsx jsx */
 
-import React from "react"
-import { jsx, Styled } from "theme-ui"
-import Img from "gatsby-image"
-import Icon from "./Icon"
+import React from 'react'
+import { jsx, Styled } from 'theme-ui'
+import Img from 'gatsby-image'
+import Icon from './Icon'
 
 const flexbox = {
-  display: "flex",
-  flexFlow: "row wrap",
-  justifyContent: "start",
-  alignItems: "start",
+  display: 'flex',
+  flexFlow: 'row wrap',
+  justifyContent: 'start',
+  alignItems: 'start'
 }
 
 const grid = {
-  display: "grid",
-  gridTemplateColumns: "100px 1fr",
-  gridTemplateRows: "auto",
-  gridGap: "1rem",
+  display: 'grid',
+  gridTemplateColumns: '100px 1fr',
+  gridTemplateRows: 'auto',
+  gridGap: '1rem'
 }
 
 const Author = ({ author }) => {
@@ -26,23 +26,23 @@ const Author = ({ author }) => {
         ...grid,
         my: 4,
         p: 2,
-        borderWidth: "1px",
-        borderStyle: "solid",
-        borderColor: "muted",
-        borderRadius: "1rem",
+        borderWidth: '1px',
+        borderStyle: 'solid',
+        borderColor: 'shade2',
+        borderRadius: '1rem'
       }}
     >
       <Img
         fluid={author.avatar.localFile.childImageSharp.fluid}
         alt={author.avatar.alt}
         title={author.avatar.alt}
-        sx={{ height: "100%", borderRadius: "50%" }}
+        sx={{ height: '100%', borderRadius: '50%' }}
       />
       <div>
         <h3
           sx={{
             mt: 0,
-            mb: -2,
+            mb: -2
           }}
         >
           {author.name}
@@ -55,7 +55,7 @@ const Author = ({ author }) => {
                 <Icon
                   name={platform.platform_name}
                   url={platform.platform_url.url}
-                  style={{ color: "secondary", fontSize: [2, 3, 4] }}
+                  style={{ color: 'secondary', fontSize: [2, 3, 4] }}
                 />
               </div>
             )

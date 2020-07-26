@@ -1,21 +1,21 @@
 /** @jsx jsx */
 
-import React from "react"
-import { Link } from "gatsby"
-import Img from "gatsby-image"
-import { jsx, useThemeUI } from "theme-ui"
-import styled from "@emotion/styled"
-import { FiClock } from "react-icons/fi"
-import formatDate from "../utils/formatDate"
-import Chip from "./Chip"
+import React from 'react'
+import { Link } from 'gatsby'
+import Img from 'gatsby-image'
+import { jsx, useThemeUI } from 'theme-ui'
+import styled from '@emotion/styled'
+import { FiClock } from 'react-icons/fi'
+import formatDate from '../utils/formatDate'
+import Chip from './Chip'
 
 /**
  * Truncate the excerpt text based on character count
  * @param {String} text
  */
-const truncateText = text => {
-  if (text.length > 200) {
-    return text.slice(0, 200).concat("...")
+const truncateText = (text) => {
+  if (text.length > 175) {
+    return text.slice(0, 175).concat('...')
   }
   return text
 }
@@ -38,7 +38,7 @@ const Listing = ({ articles }) => {
   const ArticleCard = styled.div`
     display: grid;
     grid-template-columns: 300px;
-    grid-template-rows: auto;
+    grid-template-rows: 200px auto;
     grid-gap: 0;
     margin: 0 auto;
     border-radius: 25px;
@@ -48,7 +48,7 @@ const Listing = ({ articles }) => {
 
   return (
     <GridLayout>
-      {articles.edges.map(article => (
+      {articles.edges.map((article) => (
         <ArticleCard
           aria-label={`Read article ${article.node.uid}`}
           title={article.node.uid}
@@ -64,13 +64,13 @@ const Listing = ({ articles }) => {
                 alt={article.node.data.article_image.alt}
                 title={article.node.data.article_image.alt}
                 sx={{
-                  height: "100%",
-                  borderTopLeftRadius: "25px",
-                  borderTopRightRadius: "25px",
-                  filter: "grayscale(100%)",
-                  ":hover, :focus": {
-                    filter: "none",
-                  },
+                  height: '100%',
+                  borderTopLeftRadius: '25px',
+                  borderTopRightRadius: '25px',
+                  filter: 'none',
+                  ':hover, :focus': {
+                    filter: 'grayscale(100%)'
+                  }
                 }}
               />
             </Link>
@@ -80,30 +80,32 @@ const Listing = ({ articles }) => {
               px: 3,
               py: 2,
 
-              "@media (max-width: 30rem)": {
-                px: 3,
-              },
+              '@media (max-width: 30rem)': {
+                px: 3
+              }
             }}
           >
             <h2
               sx={{
                 m: 0,
                 pt: 2,
+                height: '6rem',
                 fontSize: [2, 3],
-                "@media (max-width: 30rem)": {
+                '@media (max-width: 30rem)': {
                   pt: 0,
-                },
+                  height: 'auto'
+                }
               }}
             >
               <Link
                 to={`article/${article.node.uid}`}
                 sx={{
-                  color: "inherit",
-                  textDecoration: "none",
-                  ":hover,:focus": {
-                    color: "secondary",
-                    textDecoration: "underline",
-                  },
+                  color: 'inherit',
+                  textDecoration: 'none',
+                  ':hover,:focus': {
+                    color: 'secondary',
+                    textDecoration: 'underline'
+                  }
                 }}
               >
                 {article.node.data.title.text}
@@ -112,21 +114,27 @@ const Listing = ({ articles }) => {
             <p
               sx={{
                 fontSize: [1, 2],
-                height: "8rem",
-                "@media screen and (max-width: 30rem)": {
-                  height: "auto",
-                },
+                height: '8rem',
+                '@media screen and (max-width: 30rem)': {
+                  height: 'auto'
+                }
               }}
             >
-              {truncateText(`${article.node.data.excerpt.text}`)}
+              {truncateText(`${article.node.data.excerpt.text}`)}&nbsp;
+              <Link
+                to={`article/${article.node.uid}`}
+                sx={{ variant: 'styles.a' }}
+              >
+                Read More
+              </Link>
             </p>
             <div
               sx={{
-                display: "flex",
-                flexFlow: "row wrap",
-                justifyContent: "flex-start",
-                alignItems: "center",
-                margin: "0 auto 0 -0.5rem",
+                display: 'flex',
+                flexFlow: 'row wrap',
+                justifyContent: 'flex-start',
+                alignItems: 'center',
+                margin: '0 auto 0 -0.5rem'
               }}
             >
               {article.node.data.categories.map((data, index) => {
@@ -144,9 +152,9 @@ const Listing = ({ articles }) => {
             <p
               sx={{
                 fontSize: 0,
-                fontWeight: "bold",
+                fontWeight: 'bold',
                 mb: 1,
-                py: 1,
+                py: 1
               }}
             >
               <em
@@ -160,7 +168,7 @@ const Listing = ({ articles }) => {
                 title="Time to read the article"
                 aria-label="Time to read the article"
               >
-                <FiClock style={{ marginBottom: "-0.1rem" }} />
+                <FiClock style={{ marginBottom: '-0.1rem' }} />
                 &nbsp;{article.node.data.read_time}&nbsp;min read
               </em>
             </p>
