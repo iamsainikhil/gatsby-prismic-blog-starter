@@ -27,45 +27,12 @@ const IndexPage = ({ data: { articles } }) => {
 
 export default IndexPage
 
-export const IndexQuery = graphql`
-  query Articles {
+export const query = graphql`
+  query {
     articles: allPrismicArticle {
       edges {
         node {
-          uid
-          tags
-          data {
-            title {
-              text
-            }
-            excerpt {
-              text
-            }
-            read_time
-            created
-            article_image {
-              alt
-              localFile {
-                childImageSharp {
-                  fluid(maxWidth: 300, maxHeight: 200) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-            }
-            categories {
-              category {
-                document {
-                  ... on PrismicCategory {
-                    data {
-                      name
-                    }
-                  }
-                }
-              }
-              slug
-            }
-          }
+          ...ArticleFragment
         }
       }
     }

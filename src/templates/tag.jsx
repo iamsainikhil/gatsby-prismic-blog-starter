@@ -43,44 +43,11 @@ const Tag = ({ data: { articles }, pageContext }) => {
 export default Tag
 
 export const TagQuery = graphql`
-  query TagQuery($tag: String) {
-    articles: allPrismicArticle(filter: { tags: { eq: $tag } }) {
+  query TagQuery($slug: String) {
+    articles: allPrismicArticle(filter: { tags: { eq: $slug } }) {
       edges {
         node {
-          uid
-          tags
-          data {
-            excerpt {
-              text
-            }
-            title {
-              text
-            }
-            read_time
-            created
-            article_image {
-              alt
-              localFile {
-                childImageSharp {
-                  fluid(maxWidth: 300) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-            }
-            categories {
-              category {
-                document {
-                  ... on PrismicCategory {
-                    data {
-                      name
-                    }
-                  }
-                }
-              }
-              slug
-            }
-          }
+          ...ArticleFragment
         }
       }
     }

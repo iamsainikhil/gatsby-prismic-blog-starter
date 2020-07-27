@@ -330,40 +330,8 @@ export const articleQuery = graphql`
     relatedArticles: allPrismicArticle {
       edges {
         node {
-          uid
+          ...ArticleFragment
           tags
-          data {
-            title {
-              text
-            }
-            excerpt {
-              text
-            }
-            read_time
-            created
-            article_image {
-              alt
-              localFile {
-                childImageSharp {
-                  fluid(maxWidth: 300, maxHeight: 200) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-            }
-            categories {
-              category {
-                document {
-                  ... on PrismicCategory {
-                    data {
-                      name
-                    }
-                  }
-                }
-              }
-              slug
-            }
-          }
         }
       }
     }

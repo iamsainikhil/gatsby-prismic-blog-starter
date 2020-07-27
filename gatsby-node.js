@@ -1,6 +1,6 @@
 // graphql function doesn't throw an error so we have to check to check for the result.errors to throw manually
-const wrapper = promise =>
-  promise.then(result => {
+const wrapper = (promise) =>
+  promise.then((result) => {
     if (result.errors) {
       throw result.errors
     }
@@ -10,9 +10,9 @@ const wrapper = promise =>
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const articleTemplate = require.resolve("./src/templates/article.jsx")
-  const tagTemplate = require.resolve("./src/templates/tag.jsx")
-  const categoryTemplate = require.resolve("./src/templates/category.jsx")
+  const articleTemplate = require.resolve('./src/templates/article.jsx')
+  const tagTemplate = require.resolve('./src/templates/tag.jsx')
+  const categoryTemplate = require.resolve('./src/templates/category.jsx')
 
   const result = await wrapper(
     graphql(
@@ -47,24 +47,24 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const articles = result.data.allPrismicArticle.edges
 
-  articles.forEach(article => {
+  articles.forEach((article) => {
     // article pages
     createPage({
       path: `/article/${article.node.uid}/`,
       component: articleTemplate,
       context: {
-        slug: article.node.uid,
-      },
+        slug: article.node.uid
+      }
     })
 
     // tag pages
-    article.node.tags.forEach(tag => {
+    article.node.tags.forEach((tag) => {
       createPage({
         path: `/tag/${tag}/`,
         component: tagTemplate,
         context: {
-          slug: tag,
-        },
+          slug: tag
+        }
       })
     })
 
@@ -74,8 +74,8 @@ exports.createPages = async ({ graphql, actions }) => {
         path: `/category/${slug}/`,
         component: categoryTemplate,
         context: {
-          slug: category.document.data.name,
-        },
+          slug: slug
+        }
       })
     })
   })

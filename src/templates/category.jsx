@@ -43,48 +43,13 @@ const Category = ({ data: { articles }, pageContext }) => {
 export default Category
 
 export const CategoryQuery = graphql`
-  query CategoryQuery($category: String) {
+  query CategoryQuery($slug: String) {
     articles: allPrismicArticle(
-      filter: {
-        data: { categories: { elemMatch: { slug: { eq: $category } } } }
-      }
+      filter: { data: { categories: { elemMatch: { slug: { eq: $slug } } } } }
     ) {
       edges {
         node {
-          tags
-          uid
-          data {
-            excerpt {
-              text
-            }
-            title {
-              text
-            }
-            read_time
-            created
-            article_image {
-              alt
-              localFile {
-                childImageSharp {
-                  fluid(maxWidth: 300) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-            }
-            categories {
-              category {
-                document {
-                  ... on PrismicCategory {
-                    data {
-                      name
-                    }
-                  }
-                }
-              }
-              slug
-            }
-          }
+          ...ArticleFragment
         }
       }
     }
