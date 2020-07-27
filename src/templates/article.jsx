@@ -38,12 +38,6 @@ const Article = ({
           title={`${article.data.title.text} | Article`}
           description={article.data.excerpt.text}
         />
-
-        <Img
-          fluid={article.data.article_image.localFile.childImageSharp.fluid}
-          alt={article.data.article_image.alt}
-          title={article.data.article_image.alt}
-        />
         <Styled.h1 sx={{ textAlign: 'center', letterSpacing: '0.1rem', mb: 3 }}>
           {article.data.title.text}
         </Styled.h1>
@@ -86,6 +80,15 @@ const Article = ({
           })}
         </div>
         <Styled.p sx={{ my: 4 }}>{article.data.excerpt.text}</Styled.p>
+
+        <Img
+          fluid={article.data.article_image.localFile.childImageSharp.fluid}
+          alt={article.data.article_image.alt}
+          title={article.data.article_image.alt}
+          sx={{
+            margin: '2rem auto'
+          }}
+        />
 
         {/* slices */}
         <SliceZone slices={article.data.body} />
