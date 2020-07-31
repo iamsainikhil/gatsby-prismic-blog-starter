@@ -12,7 +12,7 @@ exports.shouldUpdateScroll = ({
   routerProps: { location },
   getSavedScrollPosition
 }) => {
-  const currentPosition = getSavedScrollPosition(location)
+  const currentPosition = getSavedScrollPosition(location) || [0, 0]
   // const queriedPosition = getSavedScrollPosition({ pathname: `/random` })
 
   // false to not update the scroll position,
