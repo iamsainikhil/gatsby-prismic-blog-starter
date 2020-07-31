@@ -81,14 +81,35 @@ const Article = ({
         </div>
         <Styled.p sx={{ my: 4 }}>{article.data.excerpt.text}</Styled.p>
 
-        <Img
-          fluid={article.data.article_image.localFile.childImageSharp.fluid}
-          alt={article.data.article_image.alt}
-          title={article.data.article_image.alt}
+        <div
           sx={{
-            margin: '2rem auto'
+            boxSizing: 'border-box',
+            pb: 2,
+            my: 4,
+            mx: 'auto',
+            borderRadius: '15px',
+            borderWidth: '1px',
+            borderStyle: 'solid',
+            borderColor: 'highlight'
           }}
-        />
+        >
+          <Img
+            fluid={article.data.article_image.localFile.childImageSharp.fluid}
+            alt={article.data.article_image.alt}
+            title={article.data.article_image.alt}
+          />
+          <p
+            sx={{
+              textAlign: 'center',
+              pt: 2,
+              margin: '0 auto',
+              fontFamily: 'body',
+              fontSize: [2, 3]
+            }}
+          >
+            {article.data.article_image.alt}
+          </p>
+        </div>
 
         {/* slices */}
         <SliceZone slices={article.data.body} />
@@ -119,37 +140,6 @@ const Article = ({
         />
 
         <Author author={article.data.author.document.data} />
-
-        {/* {article.data.body.map((slice, index) => {
-        switch (slice.slice_type) {
-          case "banner_with_caption":
-            return (
-              <div key={index}>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: `${slice.primary.title_of_banner.text}`,
-                  }}
-                ></div>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: `${slice.primary.description.text}`,
-                  }}
-                ></div>
-              </div>
-            )
-          case "image_gallery":
-            return (
-              <div
-                key={index}
-                dangerouslySetInnerHTML={{
-                  __html: `${slice.primary.name_of_the_gallery.html}`,
-                }}
-              ></div>
-            )
-          default:
-            return null
-        }
-      })}*/}
 
         <RelatedArticles
           uid={pageContext.slug}
@@ -218,13 +208,15 @@ export const articleQuery = graphql`
             id
             slice_type
             primary {
-              description {
-                text
-              }
               image_banner {
                 alt
-                thumbnails
-                url
+                localFile {
+                  childImageSharp {
+                    fluid(maxWidth: 1280) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
               }
               title_of_banner {
                 text
@@ -241,6 +233,7 @@ export const articleQuery = graphql`
             }
             items {
               gallery_image {
+                alt
                 url
                 localFile {
                   childImageSharp {

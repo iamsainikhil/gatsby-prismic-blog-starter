@@ -12,7 +12,7 @@ const Gallery = ({ data: { items, primary } }) => {
 
   const images = items.map((item) => {
     return {
-      caption: item.image_caption.text,
+      caption: item.gallery_image.alt,
       alt: item.image_caption.text,
       source: item.gallery_image.url
     }
@@ -39,6 +39,9 @@ const Gallery = ({ data: { items, primary } }) => {
       ...navigationStyle
     }),
     view: () => ({
+      height: 'auto',
+      width: '75%',
+      margin: '0 auto',
       backgroundColor: theme.colors.accent
     }),
     footer: (base, state) => {
@@ -92,8 +95,8 @@ const Gallery = ({ data: { items, primary } }) => {
       >
         <Img
           fluid={items[0].gallery_image.localFile.childImageSharp.fluid}
-          alt={items[0].image_caption.text}
-          title={items[0].image_caption.text}
+          alt={items[0].gallery_image.alt}
+          title={items[0].gallery_image.alt}
         />
         <p
           style={{
