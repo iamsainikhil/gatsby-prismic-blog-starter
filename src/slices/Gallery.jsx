@@ -1,12 +1,9 @@
 import React, { useState } from 'react'
 import { useThemeUI } from 'theme-ui'
+import Img from 'gatsby-image'
 import Carousel, { Modal, ModalGateway } from 'react-images'
-import { StackCard } from 'react-stack-cards'
 
-const Gallery = ({ data: { items } }) => {
-  const isMobile = () => screen.width < 600
-  // screen width & height for stackCard images
-  const [screenDimensions, setScreenDimensions] = useState(screen)
+const Gallery = ({ data: { items, primary } }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const { theme } = useThemeUI()
   const toggleModal = () => {
@@ -20,7 +17,6 @@ const Gallery = ({ data: { items } }) => {
       source: item.gallery_image.url
     }
   })
-  const cardImages = images.map((image) => image.source)
 
   const navigationStyle = {
     backgroundColor: theme.colors.highlight,
@@ -60,11 +56,6 @@ const Gallery = ({ data: { items } }) => {
     }
   }
 
-  window.onresize = () => {
-    setScreenDimensions(screen)
-    console.log(screenDimensions)
-  }
-
   return (
     <>
       <ModalGateway>
@@ -74,43 +65,54 @@ const Gallery = ({ data: { items } }) => {
           </Modal>
         ) : null}
       </ModalGateway>
-      <div
+
+      <p
         style={{
-          margin: '3rem auto',
-          width: '50%',
-          height: 'auto',
-          display: 'flex',
-          justifyContent: 'center',
-          cursor: 'pointer'
+          textAlign: 'center',
+          margin: '2rem auto 0 auto',
+          fontFamily: theme.fonts.title,
+          fontSize: theme.fontSizes[5],
+          letterSpacing: '0.1rem'
         }}
       >
-        <StackCard
-          images={cardImages}
-          width={isMobile() ? '300' : screenDimensions.width}
-          height={
-            isMobile() ? '200' : Math.round(screenDimensions.height / 2.5)
-          }
-          direction="center"
-          duration={0}
-          color={theme.colors.muted}
-          isOpen={true}
+        {primary.name_of_the_gallery.text}
+      </p>
+      <div
+        style={{
+          width: '75%',
+          height: 'auto',
+          margin: '0 auto 2rem auto',
+          paddingBottom: '1rem',
+          cursor: 'pointer',
+          borderRadius: '25px',
+          boxShadow: `inset -5px -5px 12px ${theme.colors.shade1},
+      inset 5px 5px 12px ${theme.colors.shade2}`
+        }}
+        onClick={toggleModal}
+      >
+        <Img
+          fluid={items[0].gallery_image.localFile.childImageSharp.fluid}
+          alt={items[0].image_caption.text}
+          title={items[0].image_caption.text}
+        />
+        <p
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            borderWidth: '1px',
+            borderStyle: 'solid',
+            borderColor: theme.colors.highlight,
+            width: '200px',
+            height: '40px',
+            padding: '0.5rem',
+            margin: '0 auto 0 auto',
+            cursor: 'pointer'
+          }}
           onClick={toggleModal}
         >
-          <p
-            style={{
-              position: 'absolute',
-              bottom: 0,
-              right: 0,
-              marginBottom: 0,
-              marginRight: '1rem',
-              padding: '0.5rem',
-              backgroundColor: theme.colors.background
-            }}
-            onClick={toggleModal}
-          >
-            View Gallery
-          </p>
-        </StackCard>
+          View Gallery
+        </p>
       </div>
     </>
   )

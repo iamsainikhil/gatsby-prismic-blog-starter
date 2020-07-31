@@ -241,9 +241,14 @@ export const articleQuery = graphql`
             }
             items {
               gallery_image {
-                alt
-                thumbnails
                 url
+                localFile {
+                  childImageSharp {
+                    fluid(maxWidth: 1280) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
               }
               image_caption {
                 text
