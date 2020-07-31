@@ -17,6 +17,7 @@ import { FiClock } from 'react-icons/fi'
 import formatDate from '../utils/formatDate'
 import Img from 'gatsby-image'
 import Snakke from 'react-snakke'
+import { Banner } from '../slices'
 
 const Article = ({
   data: { article, relatedArticles },
@@ -82,7 +83,7 @@ const Article = ({
         </div>
         <Styled.p sx={{ my: 4 }}>{article.data.excerpt.text}</Styled.p>
 
-        <div
+        {/* <div
           sx={{
             boxSizing: 'border-box',
             pb: 2,
@@ -110,7 +111,8 @@ const Article = ({
           >
             {article.data.article_image.alt}
           </p>
-        </div>
+        </div> */}
+        <Banner image={article.data.article_image} />
 
         {/* slices */}
         <SliceZone slices={article.data.body} />
@@ -206,8 +208,7 @@ export const articleQuery = graphql`
               }
             }
           }
-          ... on PrismicArticleBodyBannerWithCaption {
-            id
+          ... on PrismicArticleBodyBanner {
             slice_type
             primary {
               image_banner {
@@ -220,13 +221,9 @@ export const articleQuery = graphql`
                   }
                 }
               }
-              title_of_banner {
-                text
-              }
             }
           }
           ... on PrismicArticleBodyImageGallery {
-            id
             slice_type
             primary {
               name_of_the_gallery {
@@ -251,7 +248,6 @@ export const articleQuery = graphql`
             }
           }
           ... on PrismicArticleBodyRawText {
-            id
             slice_type
             primary {
               raw_content {
@@ -260,7 +256,6 @@ export const articleQuery = graphql`
             }
           }
           ... on PrismicArticleBodyCode {
-            id
             slice_type
             primary {
               code {
@@ -273,13 +268,25 @@ export const articleQuery = graphql`
             }
           }
           ... on PrismicArticleBodyEmbed {
-            id
             slice_type
             primary {
               embed {
                 embed_url
               }
               platform
+            }
+          }
+          ... on PrismicArticleBodyMetaInformation {
+            slice_type
+            primary {
+              website_description {
+                text
+              }
+              website_image
+              website_url
+              website_title {
+                text
+              }
             }
           }
         }

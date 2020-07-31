@@ -4,7 +4,7 @@ import React from 'react'
 import Img from 'gatsby-image'
 import { jsx } from 'theme-ui'
 
-const Banner = ({ data: { primary } }) => {
+const Banner = ({ image }) => {
   return (
     <div
       sx={{
@@ -18,9 +18,9 @@ const Banner = ({ data: { primary } }) => {
       }}
     >
       <Img
-        fluid={primary.image_banner.localFile.childImageSharp.fluid}
-        alt={primary.image_banner.alt}
-        title={primary.image_banner.alt}
+        fluid={image.localFile.childImageSharp.fluid}
+        alt={image.alt}
+        title={image.alt}
       />
       <p
         sx={{
@@ -30,7 +30,7 @@ const Banner = ({ data: { primary } }) => {
           fontSize: [2, 3]
         }}
       >
-        {primary.title_of_banner.text}
+        {image.alt}
       </p>
     </div>
   )

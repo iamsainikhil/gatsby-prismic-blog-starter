@@ -82,7 +82,9 @@
               "display": "embed"
             }
           ],
-          "raw_text": []
+          "raw_text": [],
+          "banner": [],
+          "meta_information": []
         },
         "choices": {
           "text": {
@@ -118,42 +120,6 @@
                   "allowTargetBlank": true,
                   "label": "quote",
                   "placeholder": "Quote to be rendered in Blockquote"
-                }
-              }
-            },
-            "repeat": {}
-          },
-          "banner_with_caption": {
-            "type": "Slice",
-            "fieldset": "Banner with caption",
-            "description": "Banner with caption and button",
-            "icon": "chrome_reader_mode",
-            "non-repeat": {
-              "image_banner": {
-                "type": "Image",
-                "config": {
-                  "constraint": {
-                    "width": null,
-                    "height": null
-                  },
-                  "thumbnails": [],
-                  "label": "Image Banner"
-                }
-              },
-              "title_of_banner": {
-                "type": "StructuredText",
-                "config": {
-                  "multi": "heading2",
-                  "label": "Title Of banner",
-                  "placeholder": "My title of banner"
-                }
-              },
-              "description": {
-                "type": "StructuredText",
-                "config": {
-                  "multi": "paragraph",
-                  "label": "Description",
-                  "placeholder": "My description"
                 }
               }
             },
@@ -266,6 +232,67 @@
                   "allowTargetBlank": true,
                   "label": "raw_content",
                   "placeholder": "Raw text content"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "banner": {
+            "type": "Slice",
+            "fieldset": "Banner",
+            "description": "Banner with caption",
+            "icon": "image",
+            "non-repeat": {
+              "image_banner": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "width": null,
+                    "height": null
+                  },
+                  "thumbnails": [],
+                  "label": "Image Banner"
+                }
+              }
+            },
+            "repeat": {},
+            "display": "list"
+          },
+          "meta_information": {
+            "type": "Slice",
+            "fieldset": "Meta Information",
+            "description": "Meta information based on the URL",
+            "icon": "info",
+            "display": "list",
+            "non-repeat": {
+              "website_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label": "Website Title",
+                  "placeholder": "Title of the website"
+                }
+              },
+              "website_description": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                  "label": "Website Description",
+                  "placeholder": "Description of the website"
+                }
+              },
+              "website_image": {
+                "type": "Text",
+                "config": {
+                  "label": "Website Image",
+                  "placeholder": "Image URL of the website"
+                }
+              },
+              "website_url": {
+                "type": "Text",
+                "config": {
+                  "label": "Website URL",
+                  "placeholder": "URL of the website"
                 }
               }
             },
