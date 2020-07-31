@@ -79,7 +79,7 @@ const Gallery = ({ data: { items, primary } }) => {
           letterSpacing: '0.1rem'
         }}
       >
-        {primary.name_of_the_gallery.text}
+        {primary.name_of_the_gallery.text} - Gallery
       </p>
       <div
         style={{
@@ -107,6 +107,8 @@ const Gallery = ({ data: { items, primary } }) => {
             borderWidth: '1px',
             borderStyle: 'solid',
             borderColor: theme.colors.highlight,
+            borderRadius: '25px',
+            boxShadow: `inset -5px -5px 12px ${theme.colors.shade1}`,
             width: '200px',
             height: '40px',
             padding: '0.5rem',
