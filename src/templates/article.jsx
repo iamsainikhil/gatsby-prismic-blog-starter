@@ -245,7 +245,7 @@ export const articleQuery = graphql`
                 thumbnails
                 url
               }
-              image_captions {
+              image_caption {
                 text
               }
             }

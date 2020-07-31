@@ -175,12 +175,12 @@
               }
             },
             "repeat": {
-              "image_captions": {
+              "image_caption": {
                 "type": "StructuredText",
                 "config": {
                   "multi": "paragraph",
-                  "label": "Image captions",
-                  "placeholder": "Images captions"
+                  "label": "Image caption",
+                  "placeholder": "Images caption"
                 }
               },
               "gallery_image": {
