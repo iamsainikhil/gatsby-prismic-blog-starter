@@ -40,8 +40,9 @@ const Gallery = ({ data: { items, primary } }) => {
     }),
     view: () => ({
       height: 'auto',
-      width: '75%',
+      width: '100%',
       margin: '0 auto',
+      transform: `scale(${window.innerWidth > 1440 ? 0.7 : 1})`,
       backgroundColor: theme.colors.accent
     }),
     footer: (base, state) => {
@@ -82,8 +83,8 @@ const Gallery = ({ data: { items, primary } }) => {
       </p>
       <div
         style={{
-          width: '75%',
-          height: 'auto',
+          width: '600',
+          height: '450',
           margin: '0 auto 2rem auto',
           paddingBottom: '1rem',
           cursor: 'pointer',
