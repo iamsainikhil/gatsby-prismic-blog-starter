@@ -8,7 +8,7 @@ module.exports = {
     titleTemplate: '%s | Blog',
     description: `Personal blog with articles related to Web Development, Software Tools, Tips & Tricks, etc.`,
     author: `@iamsainikhil12`,
-    siteUrl: `https://blog-iamsainikhil.vercel.app/`
+    siteUrl: `https://blog.iamsainikhil.com`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

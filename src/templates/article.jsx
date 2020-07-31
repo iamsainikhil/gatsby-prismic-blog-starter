@@ -37,6 +37,7 @@ const Article = ({
         <SEO
           title={`${article.data.title.text} | Article`}
           description={article.data.excerpt.text}
+          image={article.data.article_image.url}
         />
         <Styled.h1 sx={{ textAlign: 'center', letterSpacing: '0.1rem', mb: 3 }}>
           {article.data.title.text}
@@ -178,6 +179,7 @@ export const articleQuery = graphql`
         read_time
         article_image {
           alt
+          url
           localFile {
             childImageSharp {
               fluid(maxWidth: 1280) {
