@@ -9,8 +9,8 @@ const Category = ({ data: { articles }, pageContext: { slug, name } }) => {
   return (
     <Layout>
       <SEO
-        title={`${name} | Category | Blog`}
-        description={`Articles related to ${name} category.`}
+        title={`${name || slug} | Category | Blog`}
+        description={`Articles related to ${name || slug} category.`}
       />
       <div style={{ textAlign: 'center' }}>
         <Styled.p
@@ -30,7 +30,7 @@ const Category = ({ data: { articles }, pageContext: { slug, name } }) => {
               letterSpacing: '0.05rem'
             }}
           >
-            {name}
+            {name || slug}
           </span>{' '}
           category.
         </Styled.p>
