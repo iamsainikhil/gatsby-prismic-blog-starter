@@ -87,7 +87,8 @@ export default {
     },
     h1: {
       variant: 'textStyles.title',
-      fontSize: [4, 5, 6]
+      fontSize: [4, 5, 6],
+      letterSpacing: '0.15rem'
     },
     h2: {
       variant: 'textStyles.heading',

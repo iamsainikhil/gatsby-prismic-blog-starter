@@ -40,7 +40,7 @@ const Article = ({
           description={article.data.excerpt.text}
           image={article.data.article_image.url}
         />
-        <Styled.h1 sx={{ textAlign: 'center', letterSpacing: '0.1rem', mb: 3 }}>
+        <Styled.h1 sx={{ textAlign: 'center', mb: 3 }}>
           {article.data.title.text}
         </Styled.h1>
         <p sx={{ fontWeight: 'bold', my: 0, pt: 0, textAlign: 'center' }}>
@@ -55,7 +55,7 @@ const Article = ({
             title="Time to read the article"
             aria-label="Time to read the article"
           >
-            <FiClock style={{ marginBottom: '-0.1rem' }} />
+            <FiClock style={{ marginBottom: '-0.15rem' }} />
             &nbsp;{article.data.read_time}&nbsp;min read
           </Styled.em>
         </p>

@@ -13,7 +13,7 @@ const IndexPage = ({ data: { articles } }) => {
         sx={{
           fontFamily: 'title',
           fontSize: [2, 3, 4],
-          letterSpacing: '0.1rem',
+          letterSpacing: '0.15rem',
           textAlign: 'center'
         }}
       >

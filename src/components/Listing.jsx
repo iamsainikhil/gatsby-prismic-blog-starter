@@ -172,7 +172,7 @@ const Listing = ({ articles }) => {
                 title="Time to read the article"
                 aria-label="Time to read the article"
               >
-                <FiClock style={{ marginBottom: '-0.1rem' }} />
+                <FiClock style={{ marginBottom: '-0.15rem' }} />
                 &nbsp;{article.node.data.read_time}&nbsp;min read
               </em>
             </p>
