@@ -23,7 +23,12 @@ const MetaInfo = ({ meta }) => {
       <div sx={{ px: 2 }}>
         <h5 sx={{ fontSize: [2], my: 0 }}>{meta.website_title.text}</h5>
         <p>{meta.website_description.text}</p>
-        <a href={meta.website_url} sx={{ variant: 'styles.a' }}>
+        <a
+          href={meta.website_url}
+          sx={{ variant: 'styles.a' }}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {meta.website_url}
         </a>
       </div>
