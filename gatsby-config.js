@@ -5,7 +5,7 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: 'Blog',
-    titleTemplate: '%s | Blog',
+    titleTemplate: '%s',
     description: `Personal blog with articles related to Web Development, Software Tools, Tips & Tricks, etc.`,
     author: `@iamsainikhil12`,
     siteUrl: `https://blog.iamsainikhil.com`
