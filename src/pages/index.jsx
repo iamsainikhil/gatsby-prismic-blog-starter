@@ -8,7 +8,7 @@ import { jsx, Styled } from 'theme-ui'
 const IndexPage = ({ data: { articles } }) => {
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Sai Nikhil | Blog" />
       <Styled.p
         sx={{
           fontFamily: 'title',
@@ -29,7 +29,7 @@ export default IndexPage
 
 export const query = graphql`
   query {
-    articles: allPrismicArticle {
+    articles: allPrismicArticle(sort: { order: DESC, fields: data___created }) {
       edges {
         node {
           ...ArticleFragment

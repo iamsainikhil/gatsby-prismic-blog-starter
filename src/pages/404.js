@@ -30,7 +30,7 @@ export default NotFoundPage
 
 export const listQuery = graphql`
   query {
-    articles: allPrismicArticle {
+    articles: allPrismicArticle(sort: { order: DESC, fields: data___created }) {
       edges {
         node {
           ...ArticleFragment

@@ -16,7 +16,8 @@ const MetaInfo = ({ meta }) => {
         borderStyle: 'solid',
         borderColor: 'highlight',
         fontSize: [1],
-        p: 3
+        p: 3,
+        my: 2
       }}
     >
       <div sx={{ px: 2 }}>
@@ -30,7 +31,7 @@ const MetaInfo = ({ meta }) => {
         <img
           src={meta.website_image}
           alt={meta.website_title.text}
-          sx={{ width: '200px', height: 'auto' }}
+          sx={{ width: '200px', maxHeight: '125px' }}
         />
       </div>
     </div>

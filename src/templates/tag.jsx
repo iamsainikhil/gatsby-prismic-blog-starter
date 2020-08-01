@@ -44,7 +44,10 @@ export default Tag
 
 export const TagQuery = graphql`
   query TagQuery($slug: String) {
-    articles: allPrismicArticle(filter: { tags: { eq: $slug } }) {
+    articles: allPrismicArticle(
+      filter: { tags: { eq: $slug } }
+      sort: { order: DESC, fields: data___created }
+    ) {
       edges {
         node {
           ...ArticleFragment

@@ -46,6 +46,7 @@ export const CategoryQuery = graphql`
   query CategoryQuery($slug: String) {
     articles: allPrismicArticle(
       filter: { data: { categories: { elemMatch: { slug: { eq: $slug } } } } }
+      sort: { order: DESC, fields: data___created }
     ) {
       edges {
         node {
