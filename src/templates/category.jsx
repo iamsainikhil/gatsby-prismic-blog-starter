@@ -5,12 +5,12 @@ import { graphql, Link } from 'gatsby'
 import { Layout, SEO, Listing } from '../components'
 import { jsx, Styled } from 'theme-ui'
 
-const Category = ({ data: { articles }, pageContext }) => {
+const Category = ({ data: { articles }, pageContext: { slug, name } }) => {
   return (
     <Layout>
       <SEO
-        title={`${pageContext.slug} | Category`}
-        description={`Articles related to ${pageContext.slug} category.`}
+        title={`${name} | Category`}
+        description={`Articles related to ${name} category.`}
       />
       <div style={{ textAlign: 'center' }}>
         <Styled.p
@@ -30,7 +30,7 @@ const Category = ({ data: { articles }, pageContext }) => {
               letterSpacing: '0.05rem'
             }}
           >
-            {pageContext.slug}
+            {name}
           </span>{' '}
           category.
         </Styled.p>

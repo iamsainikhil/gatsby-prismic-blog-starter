@@ -74,7 +74,8 @@ exports.createPages = async ({ graphql, actions }) => {
         path: `/category/${slug}/`,
         component: categoryTemplate,
         context: {
-          slug: slug
+          slug: slug,
+          name: category.document ? category.document.data.name : slug
         }
       })
     })
