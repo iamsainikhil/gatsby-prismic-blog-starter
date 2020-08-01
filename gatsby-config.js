@@ -30,7 +30,6 @@ module.exports = {
         name: `Sai Nikhil | Blog`,
         short_name: `Blog`,
         description: `Personal blog with articles related to Web Development, Software Tools, Tips & Tricks, etc.`,
-        scope: '.',
         start_url: `/`,
         background_color: `#f7f8f9`,
         theme_color: `#181818`,

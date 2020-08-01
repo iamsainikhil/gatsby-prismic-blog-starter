@@ -114,7 +114,7 @@ export default {
       fontSize: [1, 2, 3]
     },
     em: {
-      fontSize: [0, 1, 2]
+      fontSize: [1, 2, 3]
     },
     a: {
       color: 'gatsby',
@@ -160,7 +160,10 @@ export default {
       px: 2
     },
     ul: {
-      listStyleType: 'square'
+      listStyleType: 'disc'
+    },
+    li: {
+      my: 2
     },
     table: {
       width: '100%',

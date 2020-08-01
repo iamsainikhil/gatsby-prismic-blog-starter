@@ -1,26 +1,26 @@
 /** @jsx jsx */
 
-import React from "react"
-import { jsx } from "theme-ui"
+import React from 'react'
+import { jsx } from 'theme-ui'
 
 const RawContent = ({ data: { primary } }) =>
   primary.raw_content.raw.map((block, index) => {
     switch (block.type) {
-      case "o-list-item":
+      case 'o-list-item':
         return (
           <ol key={index}>
             <li
               dangerouslySetInnerHTML={{ __html: block.text }}
-              sx={{ variant: "styles", my: 4 }}
+              sx={{ variant: 'styles' }}
             ></li>
           </ol>
         )
-      case "list-item":
+      case 'list-item':
         return (
           <ul key={index}>
             <li
               dangerouslySetInnerHTML={{ __html: block.text }}
-              sx={{ variant: "styles", my: 4 }}
+              sx={{ variant: 'styles' }}
             ></li>
           </ul>
         )
@@ -29,7 +29,7 @@ const RawContent = ({ data: { primary } }) =>
           <div
             key={index}
             dangerouslySetInnerHTML={{ __html: block.text }}
-            sx={{ variant: "styles", my: 4 }}
+            sx={{ variant: 'styles', my: 4 }}
           ></div>
         )
     }

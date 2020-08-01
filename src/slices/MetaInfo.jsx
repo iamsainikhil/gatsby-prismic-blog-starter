@@ -17,7 +17,10 @@ const MetaInfo = ({ meta }) => {
         borderColor: 'highlight',
         fontSize: [1],
         p: 3,
-        my: 2
+        my: 2,
+        '@media (max-width: 30em)': {
+          flexFlow: 'column-reverse wrap'
+        }
       }}
     >
       <div sx={{ px: 2 }}>
@@ -36,7 +39,10 @@ const MetaInfo = ({ meta }) => {
         <img
           src={meta.website_image}
           alt={meta.website_title.text}
-          sx={{ width: '200px', maxHeight: '125px' }}
+          sx={{
+            width: '200px',
+            maxHeight: '125px'
+          }}
         />
       </div>
     </div>
