@@ -6,43 +6,43 @@ import { jsx } from 'theme-ui'
 
 const Banner = ({ image: { localFile, alt } }) => {
   return (
-    localFile.childImageSharp && (
-      <div
+    <div
+      sx={{
+        pb: 2,
+        my: 4,
+        mx: 'auto',
+        borderRadius: '15px',
+        borderWidth: '1px',
+        borderStyle: 'solid',
+        borderColor: 'highlight',
+        overflow: 'hidden'
+      }}
+    >
+      {
+        // svg support
+        !localFile.childImageSharp && localFile.extension === 'svg' ? (
+          <img
+            src={localFile.publicURL}
+            alt={alt}
+            title={alt}
+            sx={{ width: '100%', height: 'auto' }}
+          />
+        ) : (
+          <Img fluid={localFile.childImageSharp.fluid} alt={alt} title={alt} />
+        )
+      }
+
+      <p
         sx={{
-          pb: 2,
-          my: 4,
-          mx: 'auto',
-          borderRadius: '15px',
-          borderWidth: '1px',
-          borderStyle: 'solid',
-          borderColor: 'highlight'
+          textAlign: 'center',
+          margin: '0 auto',
+          fontFamily: 'heading',
+          fontSize: [2, 3]
         }}
       >
-        {
-          // svg support
-          !localFile.childImageSharp && localFile.extension === 'svg' ? (
-            <img src={localFile.publicURL} alt={alt} title={alt} />
-          ) : (
-            <Img
-              fluid={localFile.childImageSharp.fluid}
-              alt={alt}
-              title={alt}
-            />
-          )
-        }
-
-        <p
-          sx={{
-            textAlign: 'center',
-            margin: '0 auto',
-            fontFamily: 'heading',
-            fontSize: [2, 3]
-          }}
-        >
-          {alt}
-        </p>
-      </div>
-    )
+        {alt}
+      </p>
+    </div>
   )
 }
 

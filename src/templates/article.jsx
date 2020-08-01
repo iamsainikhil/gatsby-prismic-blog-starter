@@ -163,8 +163,6 @@ export const articleQuery = graphql`
                 ...GatsbyImageSharpFluid
               }
             }
-            extension
-            publicURL
           }
         }
         body {
