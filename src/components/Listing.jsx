@@ -140,7 +140,7 @@ const Listing = ({ articles }) => {
               }}
             >
               {article.node.data.categories.map((data, index) => {
-                return (
+                return data.category.document ? (
                   <Chip
                     name={data.category.document.data.name}
                     slug={data.slug}
@@ -148,7 +148,7 @@ const Listing = ({ articles }) => {
                     page="listing"
                     key={index}
                   />
-                )
+                ) : null
               })}
             </div>
             <p
