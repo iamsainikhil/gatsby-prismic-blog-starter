@@ -38,16 +38,18 @@ export default {
     }
   },
   fonts: {
-    body: "'Inter', 'Lato', sans-serif",
-    heading: "'Inter', 'Lato', sans-serif",
+    body: "'CeraRoundPro', 'Inter', 'Lato', sans-serif",
+    light: "'CeraRoundPro-Light', 'Inter', 'Lato', sans-serif",
+    medium: "'CeraRoundPro-Medium', 'Inter', 'Lato', sans-serif",
+    heading: "'CeraRoundPro-Bold', 'Inter', 'Lato', sans-serif",
     code: "'Fira Code', monospace",
     title: "'Damion', 'Inter', 'Lato', sans-serif"
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
   fontWeights: {
     body: 400,
+    medium: 500,
     heading: 700,
-    display: 900
   },
   lineHeights: {
     body: 1.5,
@@ -59,12 +61,9 @@ export default {
       fontWeight: 'heading',
       lineHeight: 'heading'
     },
-    display: {
-      variant: 'textStyles.heading',
-      fontSize: [3, 4, 5, 6],
-      fontWeight: 'display',
-      letterSpacing: '-0.03em',
-      mt: 3
+    medium: {
+      variant: 'medium',
+      fontWeight: 'medium',
     },
     heading: {
       fontFamily: 'heading',
@@ -96,24 +95,27 @@ export default {
     },
     h3: {
       variant: 'textStyles.heading',
-      fontSize: [2, 3, 4]
+      fontSize: [3, 4],
+      color: 'primary'
     },
     h4: {
-      variant: 'textStyles.heading',
-      fontSize: 3
+      variant: 'textStyles.medium',
+      fontSize: [3, 4],
+      color: 'primary'
     },
     h5: {
-      variant: 'textStyles.heading',
+      variant: 'textStyles.medium',
       fontSize: 2
     },
     h6: {
-      variant: 'textStyles.heading',
+      variant: 'textStyles.medium',
       fontSize: 1
     },
     p: {
       fontSize: [1, 2, 3]
     },
     em: {
+      fontFamily: 'light',
       fontSize: [1, 2, 3]
     },
     a: {
