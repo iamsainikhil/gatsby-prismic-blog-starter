@@ -9,7 +9,7 @@ const Category = ({ data: { articles }, pageContext: { slug, name } }) => {
   return (
     <Layout>
       <SEO
-        title={`${name} | Category`}
+        title={`${name} | Category | Blog`}
         description={`Articles related to ${name} category.`}
       />
       <div style={{ textAlign: 'center' }}>

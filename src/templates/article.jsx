@@ -36,7 +36,7 @@ const Article = ({
       />
       <Layout>
         <SEO
-          title={`${article.data.title.text} | Article`}
+          title={`${article.data.title.text} | Article | Blog`}
           description={article.data.excerpt.text}
           image={article.data.article_image.url}
         />

@@ -9,7 +9,7 @@ const Tag = ({ data: { articles }, pageContext }) => {
   return (
     <Layout>
       <SEO
-        title={`${pageContext.slug} | Tag`}
+        title={`${pageContext.slug} | Tag | Blog`}
         description={`Articles related to ${pageContext.slug} tag.`}
       />
       <div style={{ textAlign: 'center' }}>
