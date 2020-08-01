@@ -85,35 +85,6 @@ const Article = ({
         </div>
         <Styled.p sx={{ my: 4 }}>{article.data.excerpt.text}</Styled.p>
 
-        {/* <div
-          sx={{
-            boxSizing: 'border-box',
-            pb: 2,
-            my: 4,
-            mx: 'auto',
-            borderRadius: '15px',
-            borderWidth: '1px',
-            borderStyle: 'solid',
-            borderColor: 'highlight'
-          }}
-        >
-          <Img
-            fluid={article.data.article_image.localFile.childImageSharp.fluid}
-            alt={article.data.article_image.alt}
-            title={article.data.article_image.alt}
-          />
-          <p
-            sx={{
-              textAlign: 'center',
-              pt: 2,
-              margin: '0 auto',
-              fontFamily: 'body',
-              fontSize: [2, 3]
-            }}
-          >
-            {article.data.article_image.alt}
-          </p>
-        </div> */}
         <Banner image={article.data.article_image} />
 
         {/* slices */}
@@ -192,6 +163,8 @@ export const articleQuery = graphql`
                 ...GatsbyImageSharpFluid
               }
             }
+            extension
+            publicURL
           }
         }
         body {
@@ -223,6 +196,8 @@ export const articleQuery = graphql`
                       ...GatsbyImageSharpFluid
                     }
                   }
+                  extension
+                  publicURL
                 }
               }
             }
