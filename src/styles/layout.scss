@@ -58,6 +58,12 @@ pre {
   font-size: 0.875rem;
 }
 
+blockquote {
+  padding: 0 0 0 1rem;
+  margin: 1rem 1.45rem 1.45rem 1.45rem;
+  border-left: 2px solid green;
+}
+
 // table {
 //   padding: 0;
 //   margin: 0 0 1.45rem 0;
@@ -65,12 +71,6 @@ pre {
 //   line-height: 1.45rem;
 //   border-collapse: collapse;
 //   width: 100%;
-// }
-
-// blockquote {
-//   padding: 0 0 0 1rem;
-//   margin: 1rem 1.45rem 1.45rem 1.45rem;
-//   border-left: 2px solid green;
 // }
 
 // form,

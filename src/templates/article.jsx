@@ -72,12 +72,14 @@ const Article = ({
         >
           {article.data.categories.map((data, index) => {
             return (
-              <Chip
-                name={data.category.document.data.name}
-                slug={data.slug}
-                type="category"
-                key={index}
-              />
+              data.category.document && (
+                <Chip
+                  name={data.category.document.data.name}
+                  slug={data.slug}
+                  type="category"
+                  key={index}
+                />
+              )
             )
           })}
         </div>
@@ -142,7 +144,9 @@ const Article = ({
           articleName={article.data.title.text}
         />
 
-        <Author author={article.data.author.document.data} />
+        {article.data.author.document && (
+          <Author author={article.data.author.document.data} />
+        )}
 
         <RelatedArticles
           uid={pageContext.slug}

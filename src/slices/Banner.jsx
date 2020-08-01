@@ -17,11 +17,13 @@ const Banner = ({ image }) => {
         borderColor: 'highlight'
       }}
     >
-      <Img
-        fluid={image.localFile.childImageSharp.fluid}
-        alt={image.alt}
-        title={image.alt}
-      />
+      {image.localFile.childImageSharp && (
+        <Img
+          fluid={image.localFile.childImageSharp.fluid}
+          alt={image.alt}
+          title={image.alt}
+        />
+      )}
       <p
         sx={{
           textAlign: 'center',
