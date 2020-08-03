@@ -1,8 +1,8 @@
 {
-  "name": "iamsainikhil-blog",
+  "name": "gatsby-prismic-blog-starter",
   "private": true,
-  "description": "My personal blog built with Gatsby and Prismic",
-  "version": "0.1.0",
+  "description": "Blog starter template built with Gatsby and Prismic",
+  "version": "1.0.0",
   "author": "Sai Nikhil <contact@iamsainikhil.com>",
   "dependencies": {
     "dayjs": "^1.8.28",
@@ -44,12 +44,14 @@
     "prettier": "2.0.5"
   },
   "keywords": [
-    "iamsainikhil",
     "blog",
     "gatsby",
     "prismic",
     "theme UI",
-    "prismjs"
+    "prismjs",
+    "react",
+    "typeface",
+    "scss"
   ],
   "license": "MIT",
   "scripts": {
@@ -60,13 +62,13 @@
     "start": "run-s clean develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/iamsainikhil/blog"
+    "url": "https://github.com/iamsainikhil/gatsby-prismic-blog-starter"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/iamsainikhil/gatsby-prismic-blog-starter/issues"
   }
 }
