@@ -183,8 +183,8 @@ const Listing = ({ articles }) => {
   )
 }
 
-export default Listing
-
 Listing.propTypes = {
   articles: PropTypes.array
 }
+
+export default Listing

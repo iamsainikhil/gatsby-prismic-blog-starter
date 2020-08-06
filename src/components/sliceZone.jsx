@@ -38,8 +38,8 @@ const SliceZone = ({ slices }) => {
   })
 }
 
-export default SliceZone
-
 SliceZone.propTypes = {
   slices: PropTypes.array
 }
+
+export default SliceZone

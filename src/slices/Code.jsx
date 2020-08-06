@@ -10,7 +10,12 @@ import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { ToastContainer, toast, Slide } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
-/* custom syntax highlight theme */
+/**
+ * You can customize the code syntax style using prism themes
+ * custom syntax highlight theme
+ * generate your own theme at
+ * http://k88hudson.github.io/syntax-highlighting-theme-generator/www/
+ */
 // import "../styles/prism-theme.css"
 
 const Code = ({ data: { primary } }) => {

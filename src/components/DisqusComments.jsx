@@ -23,6 +23,7 @@ const DisqusComments = ({ slug, title, pathname }) => {
   }
   return (
     <>
+      {/* enable the below commentCount component if you want to show count of comments  */}
       {/* <CommentCount config={disqusConfig} placeholder={"..."} /> */}
       {/* Post Contents */}
       <Disqus config={disqusConfig} sx={{ variant: 'styles' }} />
@@ -30,10 +31,10 @@ const DisqusComments = ({ slug, title, pathname }) => {
   )
 }
 
-export default DisqusComments
-
 DisqusComments.propTypes = {
   slug: PropTypes.string,
   title: PropTypes.string,
   pathname: PropTypes.string
 }
+
+export default DisqusComments

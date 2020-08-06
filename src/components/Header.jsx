@@ -1,14 +1,23 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 import Headroom from 'react-headroom'
 import { Styled, useThemeUI } from 'theme-ui'
-// import { GoSearch } from "react-icons/go"
 import { FiSun, FiMoon } from 'react-icons/fi'
 import '../styles/header.scss'
 
-const Header = ({ siteTitle = '' }) => {
+const Header = () => {
   const { theme, colorMode, setColorMode } = useThemeUI()
+  // Gatsby's useStaticQuery component
+  // See: https://www.gatsbyjs.org/docs/use-static-query/
+  const data = useStaticQuery(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
 
   return (
     <Headroom disableInlineStyles upTolerance={10} downTolerance={10}>
@@ -20,26 +29,11 @@ const Header = ({ siteTitle = '' }) => {
           <div>
             <Styled.h1 style={{ margin: '0' }}>
               <Styled.a as={Link} to="/" style={{ textDecoration: 'none' }}>
-                {siteTitle}
+                {data.site.siteMetadata.title}
               </Styled.a>
             </Styled.h1>
           </div>
           <div className="header-links">
-            {/* <Styled.h2 style={{ margin: "0 1rem" }}>
-              <Styled.a as={Link} to="/">
-                Tags
-              </Styled.a>
-            </Styled.h2> */}
-            {/* <p>
-              <GoSearch
-                title="Search"
-                style={{
-                  fontSize: "1.2rem",
-                  verticalAlign: "middle",
-                  marginTop: "0.2rem",
-                }}
-              />
-            </p> */}
             <p>
               {colorMode === 'dark' ? (
                 <Styled.a title="Light Mode" aria-label="Enable Light Mode">
@@ -66,10 +60,6 @@ const Header = ({ siteTitle = '' }) => {
       </header>
     </Headroom>
   )
-}
-
-Header.propTypes = {
-  siteTitle: PropTypes.string
 }
 
 export default Header

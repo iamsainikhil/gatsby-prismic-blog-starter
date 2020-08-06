@@ -5,8 +5,9 @@ import { jsx } from 'theme-ui'
 import PropTypes from 'prop-types'
 
 /**
- *
- * @param {String} tag (category | tag)
+ * @param {String} slug (ID)
+ * @param {String} type (category | tag)
+ * @param {String} page (fontSize will be small on listing page compared to article page)
  */
 const Chip = ({ name, slug, type, page = 'article' }) => {
   return (
@@ -38,10 +39,10 @@ const Chip = ({ name, slug, type, page = 'article' }) => {
   )
 }
 
-export default Chip
-
 Chip.propTypes = {
   name: PropTypes.string,
   slug: PropTypes.string,
   type: PropTypes.string
 }
+
+export default Chip

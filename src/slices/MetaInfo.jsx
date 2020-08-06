@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { jsx } from 'theme-ui'
+import PropTypes from 'prop-types'
 
 const MetaInfo = ({ meta }) => {
   return (
@@ -47,6 +48,19 @@ const MetaInfo = ({ meta }) => {
       </div>
     </div>
   )
+}
+
+MetaInfo.defaultProps = {
+  meta: {
+    website_title: '',
+    website_image: '',
+    website_description: '',
+    website_url: ''
+  }
+}
+
+MetaInfo.propTypes = {
+  meta: PropTypes.object
 }
 
 export default MetaInfo

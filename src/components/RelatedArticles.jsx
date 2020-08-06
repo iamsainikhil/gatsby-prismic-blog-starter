@@ -37,7 +37,7 @@ const RelatedArticles = ({ uid, categories, tags: articleTags, related }) => {
       }
     })
     .filter((article) => article !== undefined) // for articles that don't match both category & tag will be undefined
-    .slice(0, 3) // limit relatedArticles number to 3
+    .slice(0, 3) // limit relatedArticles number to 3 or any number of your choice
 
   return (
     <>
@@ -62,11 +62,11 @@ const RelatedArticles = ({ uid, categories, tags: articleTags, related }) => {
   )
 }
 
-export default RelatedArticles
-
 RelatedArticles.propTypes = {
   uid: PropTypes.string,
   categories: PropTypes.array,
   articleTags: PropTypes.array,
   related: PropTypes.object
 }
+
+export default RelatedArticles

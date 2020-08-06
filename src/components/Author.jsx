@@ -67,8 +67,8 @@ const Author = ({ author }) => {
   )
 }
 
-export default Author
-
 Author.propTypes = {
   author: PropTypes.object
 }
+
+export default Author

@@ -1,105 +1,106 @@
 /** @jsx jsx */
 
-import React from "react"
-import { jsx } from "theme-ui"
+import React from 'react'
+import { jsx } from 'theme-ui'
 import {
   GrLinkedinOption,
   GrMedium,
   GrFacebookOption,
   GrTwitter,
-  GrGithub,
-} from "react-icons/gr"
-import { FiCodepen } from "react-icons/fi"
-import { IoIosGlobe, IoLogoWhatsapp } from "react-icons/io"
+  GrGithub
+} from 'react-icons/gr'
+import { FiCodepen } from 'react-icons/fi'
+import { IoIosGlobe, IoLogoWhatsapp } from 'react-icons/io'
+import PropTypes from 'prop-types'
 
 const Icon = ({ name, url, style }) => {
   const renderIcon = () => {
     switch (name) {
-      case "Facebook":
+      case 'Facebook':
         return (
           <GrFacebookOption
             sx={{
               ...style,
-              "&:hover": {
-                color: "#3b5998",
-              },
+              '&:hover': {
+                color: '#3b5998'
+              }
             }}
           />
         )
-      case "Twitter":
+      case 'Twitter':
         return (
           <GrTwitter
             sx={{
               ...style,
-              "&:hover": {
-                color: "#1da1f2",
-              },
+              '&:hover': {
+                color: '#1da1f2'
+              }
             }}
           />
         )
-      case "LinkedIn":
+      case 'LinkedIn':
         return (
           <GrLinkedinOption
             sx={{
               ...style,
-              "&:hover": {
-                color: "#0077b5",
-              },
+              '&:hover': {
+                color: '#0077b5'
+              }
             }}
           />
         )
-      case "Medium":
+      case 'Medium':
         return (
           <GrMedium
             sx={{
               ...style,
-              "&:hover": {
-                color: "#00ab6c",
-              },
+              '&:hover': {
+                color: '#00ab6c'
+              }
             }}
           />
         )
-      case "GitHub":
+      case 'GitHub':
         return (
           <GrGithub
             sx={{
               ...style,
-              "&:hover": {
-                color: "#333",
-              },
+              '&:hover': {
+                color: '#333'
+              }
             }}
           />
         )
-      case "CodePen":
+      case 'CodePen':
         return (
           <FiCodepen
             sx={{
               ...style,
-              "&:hover": {
-                color: "#ae63e4",
-              },
+              '&:hover': {
+                color: '#ae63e4'
+              }
             }}
           />
         )
-      case "Portfolio":
+      case 'Portfolio':
         return (
           <IoIosGlobe
             sx={{
               ...style,
-              "&:hover": {
-                color: "#fc7740",
-              },
+              '&:hover': {
+                color: '#fc7740'
+              }
             }}
           />
         )
-      case "WhatsApp":
+      case 'WhatsApp':
         return (
           <IoLogoWhatsapp
             sx={{
               ...style,
-              "&:hover": {
-                color: "#128c7e",
-              },
+              '&:hover': {
+                color: '#128c7e'
+              }
             }}
           />
         )
@@ -119,6 +120,12 @@ const Icon = ({ name, url, style }) => {
       {renderIcon()}
     </a>
   )
+}
+
+Icon.propTypes = {
+  name: PropTypes.string,
+  url: PropTypes.string,
+  style: PropTypes.object
 }
 
 export default Icon

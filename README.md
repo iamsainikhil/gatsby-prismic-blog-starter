@@ -209,7 +209,7 @@ Therefore the starter has following features:
 
    Your site is now running at `http://localhost:8000`!
 
-   \_Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql).\_
+   _Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
    Open the `<name>` directory in your code editor of choice and edit `gatsby-config.js`. Save your changes and the browser will update in real time!
 
@@ -265,29 +265,17 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 ```
 
 1. **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
-
 2. **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
-
 3. **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
-
 4. **`.eslintrc.js`**: This is a configuration file for [ESLint](https://eslint.org/). ESLint is a tool to help find and fix problems in the JavaScript code.
-
 5. **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
-
 6. **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
-
 7. **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
-
 8. **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-
 9. **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-
 10. **`LICENSE`**: Gatsby Prismic Blog Starter is licensed under the MIT license.
-
 11. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
 12. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
 13. **`README.md`**: A text file containing useful reference information about your project.
 
 ## 🔬 **What's inside the `src`?**
@@ -310,25 +298,15 @@ src
 ```
 
 1. `**components**`: This directory contain all of the reusable React components like Chip, Icon, Image, Listing, Layout, SEO, SliceZone, etc.
-
 2. **`fonts`:** This directory contain any custom font files which are imported in `styles/_fonts.scss` and later consumed in `gatsby-plugin-theme-ui/theme.js`.
-
 3. `**gatsby-plugin-theme-ui`:\*\* This directory contain custom theme files related to [theme-ui](https://theme-ui.com/theme-spec) custom theme configuration.
-
 4. **`graphql_fragments`:** This directory contain [GraphQL](https://www.gatsbyjs.org/docs/using-graphql-fragments/) query fragments which will significantly make these fragments reusable across several queries in the components.
-
 5. **`images`:** This directory contain images which are used in the components and later be created in the `public/static` during gatsby build.
-
 6. **`pages`:** This directory contain files which represent web pages like 404, index.js (homepage), etc. Moreover, you can generate pages based on the data using `createPage` method in `gatsby-node.js`.
-
 7. **`schemas`:** This directory contain JSON schema files which represent each custom type defined in Prismic.
-
 8. **`slices`:** This directory is the ❤️ of the article page with files representing the slices discussed earlier in Prismic setup section.
-
 9. **`styles`:** This directory contain scss files which include further styling of the HTML using old school process. PS: New process is to just use `Emotion` based `CSS-in-JS` styling which is also used extensively across the project.
-
 10. **`templates`:** This directory contain UI templates (components) for the dynamically generated pages as discussed in `6`.
-
 11. **`utils`:** This directory contain general utility JS functions to reuse the functionality across the components.
 
 ## 🔌 Plugins
@@ -336,23 +314,14 @@ src
 A list of plugins used in this starter project.
 
 1. **`gatsby-source-prismic`:** Gatsby source plugin for building websites using [prismic.io](http://prismic.io/) as a data source. Note: this is different from `gatsby-source-prismic-graphql` . Check for more info [here](https://user-guides.prismic.io/en/articles/3647135-how-to-migrate-a-project-from-gatsby-source-prismic-to-gatsby-source-prismic-graphql).
-
 2. **`gatsby-plugin-react-helmet`:** Provides drop-in support for server rendering data added with [React Helmet](https://github.com/nfl/react-helmet). Ract Helmet is a component which lets you control your document head using their React component. For more info, check [here](https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/).
-
 3. **`gatsby-plugin-theme-ui`:** Gatsby plugin for adding Theme UI to the project. For more info, check [here](https://theme-ui.com/packages/gatsby-plugin/).
-
 4. **`gatsby-plugin-sass`:** Plugin to help use `scss` in Gatsby project. For more info, check [here](https://www.gatsbyjs.org/docs/sass/).
-
 5. **`gatsby-plugin-sitemap`:** Plugin to create a sitemap for your Gatsby site. For more info, check [here](https://www.gatsbyjs.org/packages/gatsby-plugin-sitemap/).
-
 6. **`gatsby-source-filesystem`:** A Gatsby source plugin for sourcing data into your Gatsby application from your local filesystem. For more info, check [here](https://www.gatsbyjs.org/packages/gatsby-source-filesystem/).
-
 7. **`gatsby-transformer-sharp` & `gatsby-plugin-sharp`:** Creates ImageSharp nodes from image types that are supported by the Sharp image processing library and provides fields in their GraphQL types for processing your images in a variety of ways including resizing, cropping, and creating responsive images. For more info, check [here](https://www.gatsbyjs.org/packages/gatsby-transformer-sharp/).
-
 8. **`gatsby-plugin-manifest`:** Plugin provides generation of web app manifest for PWA. For more info, check [here](https://www.gatsbyjs.org/packages/gatsby-plugin-manifest/).
-
 9. **`gatsby-plugin-disqus`:** A plugin that simplifies adding DISQUS comments to your Gatsby website. For more info, check [here](https://www.gatsbyjs.org/packages/gatsby-plugin-disqus/).
-
 10. **`gatsby-plugin-offline`:** Adds drop-in support for making a Gatsby site work offline and more resistant to bad network connections. For more info, check [here](https://www.gatsbyjs.org/packages/gatsby-plugin-offline/).
 
 ## 🧰 3rd Party Packages
@@ -360,27 +329,16 @@ A list of plugins used in this starter project.
 A list of packages used in this starter project.
 
 1. **`dayjs`:** A 2KB immutable date library alternative to Moment.js with the same modern API. For more info, check [here](https://github.com/iamkun/dayjs).
-
 2. **`npm-run-all`:** A CLI tool to run multiple npm-scripts in parallel or sequential. For more info, check [here](https://github.com/mysticatea/npm-run-all).
-
 3. **`theme-ui`:** Build consistent, themeable React apps based on constraint-based design principles. For more info, check [here](https://github.com/system-ui/theme-ui).
-
 4. **`prism-react-renderer`:** Renders highlighted Prism output to React (+ theming & vendored Prism). This package is used to syntax highlight the code blocks in article. For more info, check [here](https://github.com/FormidableLabs/prism-react-renderer).
-
 5. **`react-copy-to-clipboard`:** Copy-to-clipboard React component used in Code slice `src/slices/Code.jsx`. For more info, check [here](https://github.com/nkbt/react-copy-to-clipboard).
-
 6. **`react-gist`:** Github Gist React component used in Embed slice `src/slices/Embed.jsx`. For more info, check [here](https://github.com/tleunen/react-gist).
-
 7. **`react-headroom`:** A handy react component to hide the site header until you need it. For more info, check [here](https://github.com/KyleAMathews/react-headroom).
-
 8. **`react-icons`:** Absolutely useful package to get svg react icons of popular icon packs. For more info, check [here](https://github.com/react-icons/react-icons).
-
 9. **`react-images`:** A mobile-friendly, highly customizable, carousel component for displaying media in ReactJS. For more info, check [here](https://github.com/jossmac/react-images).
-
 10. **`react-snakke`:** Reading position indicator for React used to display the progress of the article as you scroll down the page. For more info, check [here](https://github.com/diogomoretti/react-snakke). This is one of the package which can be completely avoidable if you don't want it 😄.
-
 11. **`react-toastify`:** React notification made easy. This is used to notify users of which code block they copied to clipboard used in Code slice `src/slices/Code.jsx`. For more info, check [here](https://github.com/fkhadra/react-toastify).
-
 12. **`typeface-damion` & `typeface-fira-code` & `typeface-inter`:** Typeface is a beautiful package which allows installation of fonts through npm. Damion is used for titles, Fira Code is used for code blocks where it supports font ligatures, and Inter for body. For more info, check [here](https://github.com/KyleAMathews/typefaces/tree/master/packages).
 
 ## ⛏️ Customization
@@ -388,9 +346,7 @@ A list of packages used in this starter project.
 List of files where you can customize stuff to make this starter your own!!
 
 1. **`gatsby-browser.js`:** You can enable/disable `typefaces` declared here. You can also customize `shouldUpdateScroll` method provided by Gatsby to update the scroll position of the page you visited earlier.
-
 2. **`gatsby-config.js`:** As the name suggests, bulk of the customization resides in this file. I left so many comments which help you customize the options for several plugins. Note: Update `siteMetadata` & `gatsby-plugin-manifest` options for sure!!
-
 3. **`theme.js`:** This is the 👁️ of the project with all the theme options declared in this file. Take some time understanding the theme-ui configuration [here](https://theme-ui.com/theme-spec).
 
 ## 🏎 Roadmap

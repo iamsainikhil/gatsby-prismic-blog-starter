@@ -26,9 +26,10 @@ const PrismicLogo = ({ style, title }) => (
     )}
   />
 )
-export default PrismicLogo
 
 PrismicLogo.propTypes = {
   style: PropTypes.object,
   title: PropTypes.string
 }
+
+export default PrismicLogo

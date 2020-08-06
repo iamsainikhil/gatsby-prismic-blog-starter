@@ -3,6 +3,7 @@
 import React from 'react'
 import Img from 'gatsby-image'
 import { jsx } from 'theme-ui'
+import PropTypes from 'prop-types'
 
 const Banner = ({ image: { localFile, alt } }) => {
   return (
@@ -44,6 +45,17 @@ const Banner = ({ image: { localFile, alt } }) => {
       </p>
     </div>
   )
+}
+
+Banner.defaultProps = {
+  image: {
+    localFile: null,
+    alt: ''
+  }
+}
+
+Banner.propTypes = {
+  image: PropTypes.object
 }
 
 export default Banner

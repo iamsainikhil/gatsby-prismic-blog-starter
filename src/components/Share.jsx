@@ -58,9 +58,9 @@ const Share = ({ articleURL, articleName }) => {
   )
 }
 
-export default Share
-
 Share.propTypes = {
   articleURL: PropTypes.string,
   articleName: PropTypes.string
 }
+
+export default Share
