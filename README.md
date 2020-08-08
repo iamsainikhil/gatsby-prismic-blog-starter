@@ -73,22 +73,22 @@ Therefore the starter has following features:
   - **read_time** → Total time to read the article
   - **article_image** → Image of the article (ex- Thumbnail)
 
-  ![Primary data fields Image](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/19712de6-efa4-4ac5-a34e-721f3f232668/prismic_article_data_fields_part_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200803%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200803T050809Z&X-Amz-Expires=86400&X-Amz-Signature=68dbed4e669fe07804a0e01507ba50fbe67e67194be52e37c958388ec3d3caca&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22prismic_article_data_fields_part_1.png%22)
+  ![Primary data fields Image](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/prismic_article_data_fields_part_1.png)
 
 - **`Slices`**(Optional):
 
   - **Text** (Rich Text Section) **→** Rich WYSIWYG editor content which is consumed in the UI as the HTML
 
-    ![Rich Text Slice](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/6b50d5be-3f7c-44db-bdc1-d407c7de4868/prismic_article_data_fields_slice_text.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200803%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200803T050908Z&X-Amz-Expires=86400&X-Amz-Signature=9b6e5271a6cc8391764496b2cc5311301afa1cc434eaa9f2de87d13ea2e28c84&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22prismic_article_data_fields_slice_text.png%22)
+    ![Rich Text Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/prismic_article_data_fields_slice_text.png)
 
   - **Raw Text** (Raw Text Section) → WYSIWYG editor content which is consumed in the UI as the raw content i.e unescaped HTML content. Use case of this slice is to mark any inline code content.
 
 
-        ![Raw Text Slice](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/49e50a6f-4e2a-474d-bead-45451f211162/prismic_article_data_fields_slice_raw_content.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200803%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200803T050947Z&X-Amz-Expires=86400&X-Amz-Signature=bbb32cf2b8ee86f81f93437194466459f94306e244b3083aad240c52015b3d07&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22prismic_article_data_fields_slice_raw_content.png%22)
+        ![Raw Text Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/prismic_article_data_fields_slice_raw_content.png)
 
     - **Quote** (Blockquote Section) → Use this slice to have any blockquote content in the article
 
-        ![Quote Slice](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9a9fd6e2-cee4-404d-b721-7ed4e4bee4a6/prismic_article_data_fields_slice_quote.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200803%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200803T051034Z&X-Amz-Expires=86400&X-Amz-Signature=c05efb95e1d5aff48505921ceafb37173d02831c8b12ad26bb0eeb9256905925&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22prismic_article_data_fields_slice_quote.png%22)
+        ![Quote Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/prismic_article_data_fields_slice_quote.png)
 
     - **Image Gallery** (slideshow kind of images Section) → Use this slice to have many images grouped together to be shown in a gallery view.
 
@@ -103,17 +103,17 @@ Therefore the starter has following features:
         - **gallery_image →** Image
         - **image_caption →** Caption of the image
 
-        ![Image Gallery Slice](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/957aefc0-a61a-4468-aec6-070e5c8b2a35/prismic_article_data_fields_slice_gallery.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200803%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200803T051105Z&X-Amz-Expires=86400&X-Amz-Signature=70fc1872282def3b4369c85586b6d9e87606ad39d4cd2a443db9e2f97dca2128&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22prismic_article_data_fields_slice_gallery.png%22)
+        ![Image Gallery Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/prismic_article_data_fields_slice_gallery.png)
 
     - **Banner** (Single image with caption Section) **→** Use this slice to show a single image with caption.
 
-        ![Banner Slice](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/bb1e8cac-c223-46ba-b44c-7ac14101d077/prismic_article_data_fields_slice_banner.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200803%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200803T051134Z&X-Amz-Expires=86400&X-Amz-Signature=98b964142cdb0323d7476f25bdf03c0c8a8cba662210d80c7f64971fbb0065ab&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22prismic_article_data_fields_slice_banner.png%22)
+        ![Banner Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/prismic_article_data_fields_slice_banner.png)
 
     - **Embed** → Use this slice to embed any platform content like YouTube, Vimeo, GitHub Gist, CodeSandbox, CodePen, etc.
         - **platform** → name of the platform like "GitHub", "YouTube", etc.
         - **embed →** URL of the embed which will be consumed in an iframe in the UI
 
-        ![Embed Slice](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b19f7449-e157-40c1-afd6-4f4327fcc7f7/prismic_article_data_fields_slice_embed.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200803%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200803T051157Z&X-Amz-Expires=86400&X-Amz-Signature=1e61d5c807b9c0828e19c8e442ba5baa5ff4609f51f03797f2df0089f519804e&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22prismic_article_data_fields_slice_embed.png%22)
+        ![Embed Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/prismic_article_data_fields_slice_embed.png)
 
     - **Meta Information** (Website URL meta info Section) → Use this slice to show a meta info of any URL. You can obtain all the below information using [https://www.heymeta.com/](https://www.heymeta.com/)
         - **website_title →** Title of the website
@@ -121,14 +121,14 @@ Therefore the starter has following features:
         - **website_image** → Image of the website
         - **website_url →** URL of the website
 
-        ![Meta Information Slice](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a31b64ec-5ad0-48fb-b1dc-5c904a20520e/prismic_article_data_fields_slice_meta_info.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200803%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200803T051327Z&X-Amz-Expires=86400&X-Amz-Signature=4e96236fda38d55fcc6187f1afd32a412ec185961c59cec812d76da1bf89a643&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22prismic_article_data_fields_slice_meta_info.png%22)
+        ![Meta Information Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/prismic_article_data_fields_slice_meta_info.png)
 
     - **Code →** Use this slice to show any code block in the article
         - **type →** Mention the type of scenario where this code block is used. For ex- type of "list" will add some padding to the code block.
         - **lang →** Language of the code to have appropriate syntax highlighting using PrismJS
         - **code →** Actual code content
 
-        ![Code Slice](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/01844618-4b7f-4d23-8902-d9973d38bbf2/prismic_article_data_fields_slice_code.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200803%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200803T051358Z&X-Amz-Expires=86400&X-Amz-Signature=d243c4697914f676fbc25b9808671530dcc335054cbd32759ad80b1360be3ccb&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22prismic_article_data_fields_slice_code.png%22)
+        ![Code Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/prismic_article_data_fields_slice_code.png)
 
 - **`Meta`** (meta information of the article)
 
@@ -143,7 +143,7 @@ Therefore the starter has following features:
 
 - **`Tags` →** This is not defined in the Article type but can be set when you create any article like below:
 
-  ![Tags](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/2c0f9bc2-9bbd-4b55-8e6d-f8756d5d38ad/prismic_article_tags.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200803%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200803T051429Z&X-Amz-Expires=86400&X-Amz-Signature=bf0b4701dcea6ee216004c371b7107777be9b82e19a3e466f737e5e6ae09f7ff&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22prismic_article_tags.png%22)
+  ![Tags](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/prismic_article_tags.png)
 
 ### Author
 
@@ -373,16 +373,16 @@ Prismic Webhook allows you to automatically or manually trigger a deployment pro
 
 - Create a Deploy Hook in Vercel [here](https://vercel.com/iamsainikhil/gatsby-prismic-blog-starter/settings/git-integration). For more info, check [here](https://vercel.com/docs/v2/more/deploy-hooks)
 
-![deploy_hook_vercel](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d09ec15f-453c-4c35-971c-15937368fccc/deploy_hook_vercel.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200808%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200808T210259Z&X-Amz-Expires=86400&X-Amz-Signature=9db31594fd21c24f0a4589fe5ce85739980b15494ccf64f0696dbc4c695dc6ae&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22deploy_hook_vercel.png%22)
+![deploy_hook_vercel](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/deploy_hook_vercel.png)
 
 - Copy the hook link and past in the URL section of the prismic Webhook
 - Create a Prismic Webhook [here](https://iamsainikhil-blog.prismic.io/settings/webhooks/). For more info, check [here](https://user-guides.prismic.io/en/articles/790505-webhooks). -
 
-![prismic_webhook](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d32f22ad-44a9-4548-8dda-1d40d304f80c/prismic_webhook.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200808%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200808T210347Z&X-Amz-Expires=86400&X-Amz-Signature=6979b8563221ba8302e82ed6df387fec3a3ab4a25cc7697409210e0ecbd7ee0c&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22prismic_webhook.png%22)
+![prismic_webhook](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/prismic_webhook.png)
 
 - After successful creation of the Webhook, you can manually trigger it and can also see the logs.
 
-![prismic_webhoks](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/611e2560-c141-4e32-9d18-438e52ac9327/prismic_webhooks.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200808%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200808T211004Z&X-Amz-Expires=86400&X-Amz-Signature=7e6b7cc7b45922669a5816c0e8e8942828bf4c6057398b75432aa5a3d7904831&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22prismic_webhooks.png%22)
+![prismic_webhoks](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/prismic_webhooks.png)
 
 > You can any number of Webhooks for a prismic project!
 
