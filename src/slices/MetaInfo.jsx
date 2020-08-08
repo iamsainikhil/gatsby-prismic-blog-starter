@@ -40,6 +40,7 @@ const MetaInfo = ({ meta }) => {
         <img
           src={meta.website_image}
           alt={meta.website_title.text}
+          title={meta.website_title.text}
           sx={{
             width: '200px',
             maxHeight: '125px'

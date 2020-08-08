@@ -7,9 +7,10 @@ import { FaHeart } from 'react-icons/fa'
 import '../styles/footer.scss'
 import PrismicLogo from './PrismicLogo'
 import Icon from './Icon'
+import trackGAEvent from './../utils/trackGAEvent'
 
 /**
- * you can customize the icons, links, and entire content
+ * you can customize the icons, links, GA tracking events and entire content
  */
 const Footer = () => {
   return (
@@ -29,6 +30,13 @@ const Footer = () => {
               aria-label="GitHub"
               title="GitHub"
               sx={{ color: 'primary' }}
+              onClick={() =>
+                trackGAEvent(
+                  'footer links',
+                  `clicked on GitHub link in Footer`,
+                  'link click'
+                )
+              }
             >
               GitHub
             </a>
@@ -42,6 +50,13 @@ const Footer = () => {
               aria-label="Documentation"
               title="Documentation"
               sx={{ color: 'primary' }}
+              onClick={() =>
+                trackGAEvent(
+                  'footer links',
+                  `clicked on Documentation link in Footer`,
+                  'link click'
+                )
+              }
             >
               Documentation
             </a>
@@ -123,6 +138,13 @@ const Footer = () => {
             aria-label="Portfolio"
             title="Portfolio"
             sx={{ color: 'primary' }}
+            onClick={() =>
+              trackGAEvent(
+                'footer links',
+                `clicked on copyright link in Footer`,
+                'text click'
+              )
+            }
           >
             Gatsby Prismic Blog Starter
           </a>

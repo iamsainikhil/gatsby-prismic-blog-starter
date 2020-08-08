@@ -6,7 +6,7 @@ Kick off your project with this blog starter. This starter ships with the main G
 
 _Have another more specific idea? You may want to check out the vibrant collection of Gatsby's [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
 
-# Demo
+# 👀 Demo
 
 - [https://gatsby-prismic-blog-starter.vercel.app/](https://gatsby-prismic-blog-starter.vercel.app/)
 - [https://blog.iamsainikhil.com](https://blog.iamsainikhil.com/)
@@ -82,6 +82,8 @@ Therefore the starter has following features:
     ![Rich Text Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/prismic_article_data_fields_slice_text.png)
 
   - **Raw Text** (Raw Text Section) → WYSIWYG editor content which is consumed in the UI as the raw content i.e unescaped HTML content. Use case of this slice is to mark any inline code content.
+
+  > Note: enclose any content inside `code` tag like `<code>inline code content</code>` to apply styling of inline code.
 
 
         ![Raw Text Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/prismic_article_data_fields_slice_raw_content.png)
@@ -348,7 +350,7 @@ A list of packages used in this starter project.
 9. **`react-images`:** A mobile-friendly, highly customizable, carousel component for displaying media in ReactJS. For more info, check [here](https://github.com/jossmac/react-images).
 10. **`react-snakke`:** Reading position indicator for React used to display the progress of the article as you scroll down the page. For more info, check [here](https://github.com/diogomoretti/react-snakke). This is one of the package which can be completely avoidable if you don't want it 😄.
 11. **`react-toastify`:** React notification made easy. This is used to notify users of which code block they copied to clipboard used in Code slice `src/slices/Code.jsx`. For more info, check [here](https://github.com/fkhadra/react-toastify).
-12. **`typeface-fira-code` & `typeface-inter`:** Typeface is a beautiful package which allows installation of fonts through npm. Damion is used for titles, Fira Code is used for code blocks where it supports font ligatures, and Inter for body. For more info, check [here](https://github.com/KyleAMathews/typefaces/tree/master/README_images/packages).
+12. **`typeface-fira-code` & `typeface-inter`:** Typeface is a beautiful package which allows installation of fonts through npm. Damion is used for titles, Fira Code is used for code blocks where it supports font ligatures, and Inter for body. For more info, check [here](https://github.com/KyleAMathews/typefaces/tree/master/README_images/packages). If you don't want these fonts or use typeface based fonts, uninstall these packages as well as remove loading these fonts in `gatsby-browser.js`.
 
 # ⛏️ Customization
 
@@ -357,7 +359,7 @@ List of files where you can customize stuff to make this starter your own!!
 1. **`gatsby-browser.js`:** You can enable/disable `typefaces` declared here. You can also customize `shouldUpdateScroll` method provided by Gatsby to update the scroll position of the page you visited earlier.
 2. **`gatsby-config.js`:** As the name suggests, bulk of the customization resides in this file. I left so many comments which help you customize the options for several plugins. Note: Update `siteMetadata` & `gatsby-plugin-manifest` options for sure!!
 3. **`theme.js`:** This is the 👁️ of the project with all the theme options declared in this file. Take some time understanding the theme-ui configuration [here](https://theme-ui.com/theme-spec).
-4. `**Listing.jsx`:\*\* Sample tracking logic is setup in the code which can be used as an example to customize the GA tracking events.
+4. **`Listing.jsx` & `Footer.jsx`:** Sample tracking logic is setup in the code which can be used as an example to customize the GA tracking events. You can remove this code logic entirely or customize to your needs.
 
 # 🚀 Deploy
 
