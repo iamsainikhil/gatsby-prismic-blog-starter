@@ -6,11 +6,18 @@ module.exports = {
   siteMetadata: {
     title: 'Blog',
     titleTemplate: '%s',
-    description: `Personal blog with articles related to Web Development, Software Tools, Tips & Tricks, etc.`,
+    description: `A blog starter template developed using Gatsby and Prismic.`,
     author: `@iamsainikhil12`,
-    siteUrl: `https://blog.iamsainikhil.com`
+    siteUrl: `https://gatsby-prismic-blog-starter.vercel.app/`
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // replace "UA-XXXXXXXXX-X" with your own Tracking ID
+        trackingId: 'UA-XXXXXXXXX-X'
+      }
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-theme-ui`,
     `gatsby-plugin-sass`,

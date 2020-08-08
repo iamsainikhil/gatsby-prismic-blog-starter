@@ -9,6 +9,7 @@ import styled from '@emotion/styled'
 import { FiClock } from 'react-icons/fi'
 import formatDate from '../utils/formatDate'
 import Chip from './Chip'
+import trackGAEvent from './../utils/trackGAEvent'
 
 /**
  * Truncate the excerpt text based on character count
@@ -109,6 +110,13 @@ const Listing = ({ articles }) => {
                     textDecoration: 'underline'
                   }
                 }}
+                onClick={() =>
+                  trackGAEvent(
+                    'home',
+                    `clicked on ${article.node.uid} article title`,
+                    'text click'
+                  )
+                }
               >
                 {article.node.data.title.text}
               </Link>
@@ -127,6 +135,13 @@ const Listing = ({ articles }) => {
                 to={`article/${article.node.uid}`}
                 sx={{ variant: 'styles.a' }}
                 title={'Read the article'}
+                onClick={() =>
+                  trackGAEvent(
+                    'home',
+                    `clicked on ${article.node.uid} article read more`,
+                    'link click'
+                  )
+                }
               >
                 Read More
               </Link>
@@ -149,6 +164,13 @@ const Listing = ({ articles }) => {
                       type="category"
                       page="listing"
                       key={index}
+                      onClick={() =>
+                        trackGAEvent(
+                          'home',
+                          `clicked on ${data.category.document.data.name}`,
+                          'chip click'
+                        )
+                      }
                     />
                   )
                 )
