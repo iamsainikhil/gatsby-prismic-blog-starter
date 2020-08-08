@@ -36,7 +36,7 @@ Therefore the starter has following features:
   - Favicons
 - Offline Support
 - WebApp Manifest Support
-- [Typeface](https://github.com/KyleAMathews/typefaces/tree/master/packages) package based fonts
+- [Typeface](https://github.com/KyleAMathews/typefaces/tree/master/README_images/packages) package based fonts
 - Configurable
 
   - Use the `gatsby-config.js` to easily change the most important information
@@ -54,7 +54,7 @@ Therefore the starter has following features:
 ## API Token
 
 - After creating an account, head over to settings of the project you created earlier.
-- Go to _API & Security_ section, grab the Permanent Access Token with _Access to Master_.
+- Go to _API & Security_ section, grab the Permanent Access Token with _Access to master/README_images_.
 
 ## Custom Types
 
@@ -73,22 +73,22 @@ Therefore the starter has following features:
   - **read_time** → Total time to read the article
   - **article_image** → Image of the article (ex- Thumbnail)
 
-  ![Primary data fields Image](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/prismic_article_data_fields_part_1.png)
+  ![Primary data fields Image](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/prismic_article_data_fields_part_1.png)
 
 - **`Slices`**(Optional):
 
   - **Text** (Rich Text Section) **→** Rich WYSIWYG editor content which is consumed in the UI as the HTML
 
-    ![Rich Text Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/prismic_article_data_fields_slice_text.png)
+    ![Rich Text Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/prismic_article_data_fields_slice_text.png)
 
   - **Raw Text** (Raw Text Section) → WYSIWYG editor content which is consumed in the UI as the raw content i.e unescaped HTML content. Use case of this slice is to mark any inline code content.
 
 
-        ![Raw Text Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/prismic_article_data_fields_slice_raw_content.png)
+        ![Raw Text Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/prismic_article_data_fields_slice_raw_content.png)
 
     - **Quote** (Blockquote Section) → Use this slice to have any blockquote content in the article
 
-        ![Quote Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/prismic_article_data_fields_slice_quote.png)
+        ![Quote Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/prismic_article_data_fields_slice_quote.png)
 
     - **Image Gallery** (slideshow kind of images Section) → Use this slice to have many images grouped together to be shown in a gallery view.
 
@@ -103,17 +103,17 @@ Therefore the starter has following features:
         - **gallery_image →** Image
         - **image_caption →** Caption of the image
 
-        ![Image Gallery Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/prismic_article_data_fields_slice_gallery.png)
+        ![Image Gallery Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/prismic_article_data_fields_slice_gallery.png)
 
     - **Banner** (Single image with caption Section) **→** Use this slice to show a single image with caption.
 
-        ![Banner Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/prismic_article_data_fields_slice_banner.png)
+        ![Banner Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/prismic_article_data_fields_slice_banner.png)
 
     - **Embed** → Use this slice to embed any platform content like YouTube, Vimeo, GitHub Gist, CodeSandbox, CodePen, etc.
         - **platform** → name of the platform like "GitHub", "YouTube", etc.
         - **embed →** URL of the embed which will be consumed in an iframe in the UI
 
-        ![Embed Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/prismic_article_data_fields_slice_embed.png)
+        ![Embed Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/prismic_article_data_fields_slice_embed.png)
 
     - **Meta Information** (Website URL meta info Section) → Use this slice to show a meta info of any URL. You can obtain all the below information using [https://www.heymeta.com/](https://www.heymeta.com/)
         - **website_title →** Title of the website
@@ -121,14 +121,14 @@ Therefore the starter has following features:
         - **website_image** → Image of the website
         - **website_url →** URL of the website
 
-        ![Meta Information Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/prismic_article_data_fields_slice_meta_info.png)
+        ![Meta Information Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/prismic_article_data_fields_slice_meta_info.png)
 
     - **Code →** Use this slice to show any code block in the article
         - **type →** Mention the type of scenario where this code block is used. For ex- type of "list" will add some padding to the code block.
         - **lang →** Language of the code to have appropriate syntax highlighting using PrismJS
         - **code →** Actual code content
 
-        ![Code Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/prismic_article_data_fields_slice_code.png)
+        ![Code Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/prismic_article_data_fields_slice_code.png)
 
 - **`Meta`** (meta information of the article)
 
@@ -143,7 +143,7 @@ Therefore the starter has following features:
 
 - **`Tags` →** This is not defined in the Article type but can be set when you create any article like below:
 
-  ![Tags](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/prismic_article_tags.png)
+  ![Tags](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/prismic_article_tags.png)
 
 ### Author
 
@@ -184,7 +184,7 @@ Therefore the starter has following features:
 
 3. **Environment File**
 
-   - Go to _API & Security_ section of your _Prismic_ project, grab the Permanent Access Token with _Access to Master_.
+   - Go to _API & Security_ section of your _Prismic_ project, grab the Permanent Access Token with _Access to master/README_images_.
    - The Repository Name is the name you have entered at the creation of the repository (you’ll also find it as the subdomain in the URL)
    - This project has the support for [DISQUS](https://disqus.com/) comments section which need your DISQUS project name which can be found at _https://<your-project-shortname>.disqus.com/admin/settings/general/_
    - Create an `.env` file in the root directory of the project. Add the following properties in it:
@@ -348,7 +348,7 @@ A list of packages used in this starter project.
 9. **`react-images`:** A mobile-friendly, highly customizable, carousel component for displaying media in ReactJS. For more info, check [here](https://github.com/jossmac/react-images).
 10. **`react-snakke`:** Reading position indicator for React used to display the progress of the article as you scroll down the page. For more info, check [here](https://github.com/diogomoretti/react-snakke). This is one of the package which can be completely avoidable if you don't want it 😄.
 11. **`react-toastify`:** React notification made easy. This is used to notify users of which code block they copied to clipboard used in Code slice `src/slices/Code.jsx`. For more info, check [here](https://github.com/fkhadra/react-toastify).
-12. **`typeface-fira-code` & `typeface-inter`:** Typeface is a beautiful package which allows installation of fonts through npm. Damion is used for titles, Fira Code is used for code blocks where it supports font ligatures, and Inter for body. For more info, check [here](https://github.com/KyleAMathews/typefaces/tree/master/packages).
+12. **`typeface-fira-code` & `typeface-inter`:** Typeface is a beautiful package which allows installation of fonts through npm. Damion is used for titles, Fira Code is used for code blocks where it supports font ligatures, and Inter for body. For more info, check [here](https://github.com/KyleAMathews/typefaces/tree/master/README_images/packages).
 
 # ⛏️ Customization
 
@@ -373,16 +373,16 @@ Prismic Webhook allows you to automatically or manually trigger a deployment pro
 
 - Create a Deploy Hook in Vercel [here](https://vercel.com/iamsainikhil/gatsby-prismic-blog-starter/settings/git-integration). For more info, check [here](https://vercel.com/docs/v2/more/deploy-hooks)
 
-![deploy_hook_vercel](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/deploy_hook_vercel.png)
+![deploy_hook_vercel](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/deploy_hook_vercel.png)
 
 - Copy the hook link and past in the URL section of the prismic Webhook
 - Create a Prismic Webhook [here](https://iamsainikhil-blog.prismic.io/settings/webhooks/). For more info, check [here](https://user-guides.prismic.io/en/articles/790505-webhooks). -
 
-![prismic_webhook](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/prismic_webhook.png)
+![prismic_webhook](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/prismic_webhook.png)
 
 - After successful creation of the Webhook, you can manually trigger it and can also see the logs.
 
-![prismic_webhoks](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/prismic_webhooks.png)
+![prismic_webhoks](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/prismic_webhooks.png)
 
 > You can any number of Webhooks for a prismic project!
 
@@ -398,12 +398,12 @@ Prismic Webhook allows you to automatically or manually trigger a deployment pro
 # **🙌 Contribution**
 
 - Open pull request with improvements.
-- If you have any new idea, check the **[feature request](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/.github/ISSUE_TEMPLATE/feature_request.md)** template to create a request.
-- If you found any issue or a bug, check the **[bug report](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/.github/ISSUE_TEMPLATE/bug_report.md)** template to create a report.
+- If you have any new idea, check the **[feature request](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/.github/ISSUE_TEMPLATE/feature_request.md)** template to create a request.
+- If you found any issue or a bug, check the **[bug report](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/.github/ISSUE_TEMPLATE/bug_report.md)** template to create a report.
 
 # **📃 License**
 
-Have a look at the **[license file](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/LICENSE)** for details
+Have a look at the **[license file](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/LICENSE)** for details
 
 # **📧 Contact**
 
