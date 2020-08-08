@@ -4,7 +4,7 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Prismic Blog Starter',
+    title: 'Blog',
     titleTemplate: '%s',
     description: `A blog starter template developed using Gatsby and Prismic.`,
     author: `@iamsainikhil12`,
