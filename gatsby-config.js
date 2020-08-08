@@ -14,8 +14,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        // replace "UA-XXXXXXXXX-X" with your own Tracking ID
-        trackingId: 'UA-XXXXXXXXX-X'
+        // add your own GA_ID in the env file
+        trackingId: `${process.env.GA_ID}`
       }
     },
     `gatsby-plugin-react-helmet`,
