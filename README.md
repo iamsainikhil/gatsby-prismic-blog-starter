@@ -10,7 +10,7 @@ _Have another more specific idea? You may want to check out the vibrant collecti
 
 - [https://gatsby-prismic-blog-starter.vercel.app/](https://gatsby-prismic-blog-starter.vercel.app/)
 - [https://blog.iamsainikhil.com](https://blog.iamsainikhil.com/)
-- Demo article → [https://gatsby-prismic-blog-starter.vercel.app/article/demo-article](https://gatsby-prismic-blog-starter.vercel.app/article/demo-article)
+- Prismic Slices available with the starter can be seen in action [here](https://gatsby-prismic-blog-starter.vercel.app/article/prismic-slices).
 
 # 🎉 **Features**
 
@@ -360,6 +360,7 @@ List of files where you can customize stuff to make this starter your own!!
 2. **`gatsby-config.js`:** As the name suggests, bulk of the customization resides in this file. I left so many comments which help you customize the options for several plugins. Note: Update `siteMetadata` & `gatsby-plugin-manifest` options for sure!!
 3. **`theme.js`:** This is the 👁️ of the project with all the theme options declared in this file. Take some time understanding the theme-ui configuration [here](https://theme-ui.com/theme-spec).
 4. **`Listing.jsx` & `Footer.jsx`:** Sample tracking logic is setup in the code which can be used as an example to customize the GA tracking events. You can remove this code logic entirely or customize to your needs.
+5. **`src/images/site_image.png`:** Replace this image to update website meta image.
 
 # 🚀 Deploy
 

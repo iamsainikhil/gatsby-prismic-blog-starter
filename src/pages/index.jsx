@@ -8,7 +8,7 @@ import { jsx, Styled } from 'theme-ui'
 const IndexPage = ({ data: { articles } }) => {
   return (
     <Layout>
-      <SEO title="Sai Nikhil | Blog" />
+      <SEO title="Gatsby Prismic Blog Starter | Home" />
       <Styled.p
         sx={{
           fontSize: [2, 3, 4],
