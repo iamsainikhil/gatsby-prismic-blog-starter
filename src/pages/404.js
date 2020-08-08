@@ -13,14 +13,14 @@ const NotFoundPage = ({ data: { articles } }) => (
     <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
     <p
       sx={{
-        fontFamily: 'title',
         fontSize: [2, 3, 4],
-        letterSpacing: '0.15rem',
         textAlign: 'center'
       }}
     >
-      Dive into many interesting articles related to Web Development, Software
-      Tools, Tips&nbsp;&&nbsp;Tricks,&nbsp;etc.
+      <em>
+        Dive into many interesting articles related to Web Development, Software
+        Tools, Tips&nbsp;&&nbsp;Tricks,&nbsp;etc.
+      </em>
     </p>
     <Listing articles={articles} />
   </Layout>

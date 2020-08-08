@@ -15,24 +15,12 @@ const Tag = ({ data: { articles }, pageContext }) => {
       <div style={{ textAlign: 'center' }}>
         <Styled.p
           sx={{
-            fontFamily: 'title',
+            fontFamily: 'light',
             fontSize: [2, 3, 4],
-            letterSpacing: '0.15rem',
             textAlign: 'center'
           }}
         >
-          The articles related to{' '}
-          <span
-            sx={{
-              fontFamily: 'heading',
-              fontWeight: 'bold',
-              fontSize: [1, 2, 3],
-              letterSpacing: '0.05rem'
-            }}
-          >
-            {pageContext.slug}
-          </span>{' '}
-          tag.
+          The articles related to <strong>{pageContext.slug}</strong> tag.
         </Styled.p>
       </div>
       <Listing articles={articles} />

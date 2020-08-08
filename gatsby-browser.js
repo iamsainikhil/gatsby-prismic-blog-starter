@@ -1,5 +1,4 @@
 // custom typefaces
-require('typeface-damion')
 require('typeface-inter')
 require('typeface-fira-code')
 

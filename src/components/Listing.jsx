@@ -126,6 +126,7 @@ const Listing = ({ articles }) => {
               <Link
                 to={`article/${article.node.uid}`}
                 sx={{ variant: 'styles.a' }}
+                title={'Read the article'}
               >
                 Read More
               </Link>
@@ -156,14 +157,17 @@ const Listing = ({ articles }) => {
             <p
               sx={{
                 fontSize: 0,
-                fontWeight: 'bold',
                 mb: 1,
                 py: 1
               }}
             >
               <em
-                title={formatDate(article.node.data.created)}
-                aria-label={formatDate(article.node.data.created)}
+                title={`Article posted on ${formatDate(
+                  article.node.data.created
+                )}`}
+                aria-label={`Article posted on ${formatDate(
+                  article.node.data.created
+                )}`}
               >
                 {formatDate(article.node.data.created)}
               </em>
