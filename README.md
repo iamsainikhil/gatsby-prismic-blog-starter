@@ -6,7 +6,13 @@ Kick off your project with this blog starter. This starter ships with the main G
 
 _Have another more specific idea? You may want to check out the vibrant collection of Gatsby's [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
 
-## 🎉 **Features**
+# Demo
+
+- [https://gatsby-prismic-blog-starter.vercel.app/](https://gatsby-prismic-blog-starter.vercel.app/)
+- [https://blog.iamsainikhil.com](https://blog.iamsainikhil.com/)
+- Demo article → [https://gatsby-prismic-blog-starter.vercel.app/article/demo-article](https://gatsby-prismic-blog-starter.vercel.app/article/demo-article)
+
+# 🎉 **Features**
 
 Multiple features of Prismic are used in this starter:
 
@@ -38,14 +44,14 @@ Therefore the starter has following features:
 
   **⚠️ Note: This blog starter uses [Prismic](https://prismic.io/) as the Content Management System. Hence, you need to have the required data first before start using this starter.**
 
-## 🛠️ **Prismic Setup**
+# 🛠️ **Prismic Setup**
 
-### Account
+## Account
 
 - Create your Prismic account [here](https://prismic.io/signup)
 - Create a project
 
-### API Token
+## API Token
 
 - After creating an account, head over to settings of the project you created earlier.
 - Go to _API & Security_ section, grab the Permanent Access Token with _Access to Master_.
@@ -159,7 +165,7 @@ Therefore the starter has following features:
 - Contents:
   - **name →** Name of the category
 
-## **🚀 Quick start**
+# 💻 Quick start
 
 1. **Create a Gatsby site.**
 
@@ -184,13 +190,15 @@ Therefore the starter has following features:
    - Create an `.env` file in the root directory of the project. Add the following properties in it:
 
    ```json
-   PRISMIC_REPOSITORY_NAME=<your prismic repository name> (Required)
+    GA_ID=<your Google Analytics tracking ID> (Optional)
 
-   PRISMIC_ACCESS_TOKEN=<your prismic permanent access token> (Required)
+    PRISMIC_REPOSITORY_NAME=<your prismic repository name> (Required)
 
-   GATSBY_DISQUS_NAME=<your disqus project shortname> (Required)
+    PRISMIC_ACCESS_TOKEN=<your prismic permanent access token> (Required)
 
-   GATSBY_TELEMETRY_DISABLED=1 (Optional to disable GATSBY analytics)
+    GATSBY_DISQUS_NAME=<your disqus project shortname> (Required)
+
+    GATSBY_TELEMETRY_DISABLED=1 (Optional to disable GATSBY analytics)
    ```
 
 4. **Start developing.**
@@ -209,11 +217,11 @@ Therefore the starter has following features:
 
    Your site is now running at `http://localhost:8000`!
 
-   _Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+   \_Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql).\_
 
    Open the `<name>` directory in your code editor of choice and edit `gatsby-config.js`. Save your changes and the browser will update in real time!
 
-## ⚙️ Available Scripts
+# ⚙️ Available Scripts
 
 ---
 
@@ -241,7 +249,7 @@ See the section about **[deployment](https://www.gatsbyjs.org/docs/overview-of-
 
 Formats the app files like _js, jsx, json, and md_ using Prettier. You can learn more about the format **[here](https://prettier.io/docs/en/install.html)**.
 
-## **🧐 What's inside?**
+# **🧐 What's inside?**
 
 A quick look at the top-level files and directories you'll see in a Gatsby project.
 
@@ -278,7 +286,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 12. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
 13. **`README.md`**: A text file containing useful reference information about your project.
 
-## 🔬 **What's inside the `src`?**
+# 🔬 **What's inside the `src`?**
 
 A quick look at the top-level files and directories you'll see in a `src`.
 
@@ -309,7 +317,7 @@ src
 10. **`templates`:** This directory contain UI templates (components) for the dynamically generated pages as discussed in `6`.
 11. **`utils`:** This directory contain general utility JS functions to reuse the functionality across the components.
 
-## 🔌 Plugins
+# 🔌 Plugins
 
 A list of plugins used in this starter project.
 
@@ -323,8 +331,9 @@ A list of plugins used in this starter project.
 8. **`gatsby-plugin-manifest`:** Plugin provides generation of web app manifest for PWA. For more info, check [here](https://www.gatsbyjs.org/packages/gatsby-plugin-manifest/).
 9. **`gatsby-plugin-disqus`:** A plugin that simplifies adding DISQUS comments to your Gatsby website. For more info, check [here](https://www.gatsbyjs.org/packages/gatsby-plugin-disqus/).
 10. **`gatsby-plugin-offline`:** Adds drop-in support for making a Gatsby site work offline and more resistant to bad network connections. For more info, check [here](https://www.gatsbyjs.org/packages/gatsby-plugin-offline/).
+11. `**gatsby-plugin-google-analytics`:\*\* Easily add Google Analytics tracking to your Gatsby site. For more info, check [here](https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/).
 
-## 🧰 3rd Party Packages
+# 🧰 3rd Party Packages
 
 A list of packages used in this starter project.
 
@@ -339,41 +348,70 @@ A list of packages used in this starter project.
 9. **`react-images`:** A mobile-friendly, highly customizable, carousel component for displaying media in ReactJS. For more info, check [here](https://github.com/jossmac/react-images).
 10. **`react-snakke`:** Reading position indicator for React used to display the progress of the article as you scroll down the page. For more info, check [here](https://github.com/diogomoretti/react-snakke). This is one of the package which can be completely avoidable if you don't want it 😄.
 11. **`react-toastify`:** React notification made easy. This is used to notify users of which code block they copied to clipboard used in Code slice `src/slices/Code.jsx`. For more info, check [here](https://github.com/fkhadra/react-toastify).
-12. **`typeface-damion` & `typeface-fira-code` & `typeface-inter`:** Typeface is a beautiful package which allows installation of fonts through npm. Damion is used for titles, Fira Code is used for code blocks where it supports font ligatures, and Inter for body. For more info, check [here](https://github.com/KyleAMathews/typefaces/tree/master/packages).
+12. **`typeface-fira-code` & `typeface-inter`:** Typeface is a beautiful package which allows installation of fonts through npm. Damion is used for titles, Fira Code is used for code blocks where it supports font ligatures, and Inter for body. For more info, check [here](https://github.com/KyleAMathews/typefaces/tree/master/packages).
 
-## ⛏️ Customization
+# ⛏️ Customization
 
 List of files where you can customize stuff to make this starter your own!!
 
 1. **`gatsby-browser.js`:** You can enable/disable `typefaces` declared here. You can also customize `shouldUpdateScroll` method provided by Gatsby to update the scroll position of the page you visited earlier.
 2. **`gatsby-config.js`:** As the name suggests, bulk of the customization resides in this file. I left so many comments which help you customize the options for several plugins. Note: Update `siteMetadata` & `gatsby-plugin-manifest` options for sure!!
 3. **`theme.js`:** This is the 👁️ of the project with all the theme options declared in this file. Take some time understanding the theme-ui configuration [here](https://theme-ui.com/theme-spec).
+4. `**Listing.jsx`:\*\* Sample tracking logic is setup in the code which can be used as an example to customize the GA tracking events.
 
-## 🏎 Roadmap
+# 🚀 Deploy
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
+
+# ⚓ Prismic Webhook
+
+Prismic Webhook allows you to automatically or manually trigger a deployment process in Netlify or Vercel if any post is published or unpublished OR for other events in Prismic. I use Vercel as the example and I guess it might be quite similar for Nettlify or any other cloud service.
+
+## Steps:
+
+- Create a Deploy Hook in Vercel [here](https://vercel.com/iamsainikhil/gatsby-prismic-blog-starter/settings/git-integration). For more info, check [here](https://vercel.com/docs/v2/more/deploy-hooks)
+
+![deploy_hook_vercel](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d09ec15f-453c-4c35-971c-15937368fccc/deploy_hook_vercel.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200808%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200808T210259Z&X-Amz-Expires=86400&X-Amz-Signature=9db31594fd21c24f0a4589fe5ce85739980b15494ccf64f0696dbc4c695dc6ae&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22deploy_hook_vercel.png%22)
+
+- Copy the hook link and past in the URL section of the prismic Webhook
+- Create a Prismic Webhook [here](https://iamsainikhil-blog.prismic.io/settings/webhooks/). For more info, check [here](https://user-guides.prismic.io/en/articles/790505-webhooks). -
+
+![prismic_webhook](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d32f22ad-44a9-4548-8dda-1d40d304f80c/prismic_webhook.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200808%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200808T210347Z&X-Amz-Expires=86400&X-Amz-Signature=6979b8563221ba8302e82ed6df387fec3a3ab4a25cc7697409210e0ecbd7ee0c&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22prismic_webhook.png%22)
+
+- After successful creation of the Webhook, you can manually trigger it and can also see the logs.
+
+![prismic_webhoks](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/611e2560-c141-4e32-9d18-438e52ac9327/prismic_webhooks.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200808%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200808T211004Z&X-Amz-Expires=86400&X-Amz-Signature=7e6b7cc7b45922669a5816c0e8e8942828bf4c6057398b75432aa5a3d7904831&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22prismic_webhooks.png%22)
+
+> You can any number of Webhooks for a prismic project!
+
+# 🏎 Roadmap
 
 - [x] Publish this starter as a template
-- [ ] Analytics support (Google Analytics, Hotjar)
+- [x] Analytics support (Google Analytics)
 - [ ] Pagination Feature
 - [ ] Search Feature
-- [ ] Unit Testing
+- [ ] Testing
+- [ ] Prismic Preview Setup
 
-## **🙌 Contribution**
+# **🙌 Contribution**
 
 - Open pull request with improvements.
 - If you have any new idea, check the **[feature request](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/.github/ISSUE_TEMPLATE/feature_request.md)** template to create a request.
 - If you found any issue or a bug, check the **[bug report](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/.github/ISSUE_TEMPLATE/bug_report.md)** template to create a report.
 
-## **📃 License**
+# **📃 License**
 
 Have a look at the **[license file](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/blob/master/LICENSE)** for details
 
-## **📧 Contact**
+# **📧 Contact**
 
 Whether you’d like to discuss about this starter template or simply say “hello”, I’d love to hear from you.
 
 Email: **[contact@iamsainikhil.com](mailto:contact@iamsainikhil.com)**
 
-## 🙏 Acknowledgements
+# 🙏 Acknowledgements
 
 Special thanks to [Kyle Mathews](https://github.com/KyleAMathews) & [Lennart](https://github.com/LekoArts) for creating respective gatsby based starter templates from which I gained a lot of knowledge and developed this template.
 
@@ -383,22 +421,16 @@ PS: If you need to develop a customizable whole webiste using Gatsby & Prismic, 
 
 See this [page](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/wiki/Acknowledgements) on the wiki for a list of Acknowledgements for the plugins used in this starter.
 
-## **🎓 Learning Gatsby**
+# **🎓 Learning Gatsby**
 
 Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
 
 - **For most developers, I recommend starting with the [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
 - **To dive straight into code samples, head [to the documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the *Guides*, *API Reference*, and *Advanced Tutorials* sections in the sidebar.
 
-## **🎓 Learning Prsimic**
+# **🎓 Learning Prsimic**
 
 Looking for more guidance? Full documentation for Prismic lives [on the website](https://prismic.io/docs). Here are some places to start:
 
 - **For most developers, I recommend starting with our [in-depth tutorial for creating a site with Gatsby & Prismic](https://prismic.io/docs/gatsby/getting-started/home).** It starts with zero assumptions about your level of ability and walks through every step of the process.
 - **To dive straight into code samples, check the** [How To Guides](https://user-guides.prismic.io/en/collections/22550-how-to-guides)**.**
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
