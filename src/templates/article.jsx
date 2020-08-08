@@ -247,8 +247,8 @@ export const articleQuery = graphql`
           ... on PrismicArticleBodyEmbed {
             slice_type
             primary {
-              embed {
-                embed_url
+              embed_url {
+                url
               }
               platform
             }

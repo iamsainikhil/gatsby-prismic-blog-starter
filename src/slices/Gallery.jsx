@@ -75,8 +75,7 @@ const Gallery = ({ data: { items, primary } }) => {
           textAlign: 'center',
           margin: '2rem auto 0 auto',
           fontFamily: theme.fonts.title,
-          fontSize: theme.fontSizes[5],
-          letterSpacing: '0.15rem'
+          fontSize: theme.fontSizes[5]
         }}
       >
         {primary.name_of_the_gallery.text} - Gallery

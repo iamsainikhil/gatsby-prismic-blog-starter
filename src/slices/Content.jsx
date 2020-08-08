@@ -7,9 +7,9 @@ const Content = ({ data: { primary } }) => {
   const contentRef = useRef(null)
 
   /**
-   * there is a bug with <a> tags in HTML coming from prismic not having target attribute
-   * even though set to true and open in new tab in Prismic
-   * TODO: remove this temporary fix in future
+   * hyperlinks with target _blank cannot be set when parsing the HTML directly
+   * raw content should be used which gives more control over the elements but is so tedious
+   * TODO: remove this temporary fix in future and use raw content instead of HTML
    */
   useEffect(() => {
     const links = contentRef.current.querySelectorAll('a')

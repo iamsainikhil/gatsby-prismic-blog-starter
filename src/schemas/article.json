@@ -208,11 +208,11 @@
                   "placeholder": "Platform of the embed URL"
                 }
               },
-              "embed": {
-                "type": "Embed",
+              "embed_url": {
+                "type": "Link",
                 "config": {
-                  "label": "embed",
-                  "placeholder": "Embed block"
+                  "label": "embed_url",
+                  "placeholder": "URL"
                 }
               }
             },
