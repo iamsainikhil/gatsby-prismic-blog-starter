@@ -12,7 +12,7 @@ import {
 } from '../slices'
 
 const SliceZone = ({ slices }) => {
-  console.log(slices)
+  // console.log(slices)
   return slices.map((slice, index) => {
     if (!slice) return null
     switch (slice.slice_type) {

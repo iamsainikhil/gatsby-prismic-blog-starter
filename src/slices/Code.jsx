@@ -108,12 +108,12 @@ const Code = ({ data: { primary } }) => {
         )}
       </Highlight>
       <ToastContainer
+        autoClose={2500}
         closeOnClick
         newestOnTop
         pauseOnHover
         transition={Slide}
         draggable
-        draggablePercent={60}
         role="alert"
       />
     </Fragment>
