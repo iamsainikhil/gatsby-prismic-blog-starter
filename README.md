@@ -7,6 +7,12 @@
   Gatsby Prismic Blog Starter
 </h1>
 
+<p align="center">
+<img alt="npm" src="https://img.shields.io/npm/v/gatsby-prismic-blog-starter?style=for-the-badge">
+<img style="margin: 0 1rem" alt="GitHub deployments" src="https://img.shields.io/github/deployments/iamsainikhil/gatsby-prismic-blog-starter/Production?style=for-the-badge">
+<img alt="GitHub" src="https://img.shields.io/github/license/iamsainikhil/gatsby-prismic-blog-starter?style=for-the-badge">
+</p>
+
 Kick off your project with this blog starter. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
 
 _Have another more specific idea? You may want to check out the vibrant collection of Gatsby's [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
