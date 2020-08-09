@@ -1,5 +1,7 @@
+/** @jsx jsx */
+
 import React, { useState } from 'react'
-import { useThemeUI } from 'theme-ui'
+import { jsx, useThemeUI } from 'theme-ui'
 import Img from 'gatsby-image'
 import Carousel, { Modal, ModalGateway } from 'react-images'
 
@@ -53,9 +55,8 @@ const Gallery = ({ data: { items, primary } }) => {
         ...base,
         opacity,
         transition,
-        fontFamily: theme.fonts.title,
-        fontSize: theme.fontSizes[5],
-        letterSpacing: '0.15rem'
+        fontFamily: theme.fonts.body,
+        fontSize: theme.fontSizes[3]
       }
     }
   }
@@ -71,11 +72,11 @@ const Gallery = ({ data: { items, primary } }) => {
       </ModalGateway>
 
       <p
-        style={{
+        sx={{
           textAlign: 'center',
           margin: '2rem auto 0 auto',
-          fontFamily: theme.fonts.title,
-          fontSize: theme.fontSizes[5]
+          fontFamily: 'medium',
+          fontSize: [3, 4, 5]
         }}
       >
         {primary.name_of_the_gallery.text} - Gallery

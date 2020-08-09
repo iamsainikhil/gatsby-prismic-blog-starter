@@ -53,7 +53,7 @@ Therefore the starter has following features:
   - Use the `gatsby-config.js` to easily change the most important information
   - Themeable with `theme.js`
 
-  **⚠️ Note: This blog starter uses [Prismic](https://prismic.io/) as the Content Management System. Hence, you need to have the required data first before start using this starter.**
+**⚠️ Note: This blog starter uses [Prismic](https://prismic.io/) as the Content Management System. Hence, you need to have the required data first before start using this starter.**
 
 # 🛠️ **Prismic Setup**
 
@@ -226,7 +226,13 @@ Therefore the starter has following features:
    npm run start
    ```
 
-5. **Open the source code and start editing!**
+5. **Troubleshooting**
+
+   If the application start process got stuck, just kill the process and restart the application.
+
+   > **Known issue**: _Gatsby develop process sometimes get stuck at onPostBootstrap process. When this happens, just kill and restart the app. For more info, check [here](https://github.com/gatsbyjs/gatsby/issues/25216)._
+
+6. **Open the source code and start editing!**
 
    Your site is now running at `http://localhost:8000`!
 
@@ -318,9 +324,9 @@ src
 ├── utils
 ```
 
-1. `**components**`: This directory contain all of the reusable React components like Chip, Icon, Image, Listing, Layout, SEO, SliceZone, etc.
+1. **`components`:** This directory contain all of the reusable React components like Chip, Icon, Image, Listing, Layout, SEO, SliceZone, etc.
 2. **`fonts`:** This directory contain any custom font files which are imported in `styles/_fonts.scss` and later consumed in `gatsby-plugin-theme-ui/theme.js`.
-3. `**gatsby-plugin-theme-ui`:\*\* This directory contain custom theme files related to [theme-ui](https://theme-ui.com/theme-spec) custom theme configuration.
+3. **`gatsby-plugin-theme-ui`:** This directory contain custom theme files related to [theme-ui](https://theme-ui.com/theme-spec) custom theme configuration.
 4. **`graphql_fragments`:** This directory contain [GraphQL](https://www.gatsbyjs.org/docs/using-graphql-fragments/) query fragments which will significantly make these fragments reusable across several queries in the components.
 5. **`images`:** This directory contain images which are used in the components and later be created in the `public/static` during gatsby build.
 6. **`pages`:** This directory contain files which represent web pages like 404, index.js (homepage), etc. Moreover, you can generate pages based on the data using `createPage` method in `gatsby-node.js`.

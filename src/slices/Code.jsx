@@ -15,6 +15,8 @@ import 'react-toastify/dist/ReactToastify.css'
  * custom syntax highlight theme
  * generate your own theme at
  * http://k88hudson.github.io/syntax-highlighting-theme-generator/www/
+ * if you do want to use the custom theme,
+ * then remove light & dark themes from prism-react-rendered
  */
 // import "../styles/prism-theme.css"
 
