@@ -34,7 +34,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Sai Nikhil | Blog`,
+        name: `Gatsby Prismic Blog Starter`,
         short_name: `Blog`,
         description: `Personal blog with articles related to Web Development, Software Tools, Tips & Tricks, etc.`,
         start_url: `/`,
@@ -42,7 +42,7 @@ module.exports = {
         theme_color: `#181818`,
         display: `standalone`,
         orientation: `potrait`,
-        icon: `src/images/logo.svg` // This path is relative to the root of the site.
+        icon: `src/images/logo.svg` // The images inside src will be optimized and be available in public/static after build
       }
     },
     {

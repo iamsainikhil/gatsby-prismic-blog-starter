@@ -1,3 +1,8 @@
+<p align="center">
+  <a href="https://gatsby-prismic-blog-starter.vercel.app/">
+    <img alt="Gatsby" src="https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/gatsby_prismic.png" width="300" />
+  </a>
+</p>
 <h1 align="center">
   Gatsby Prismic Blog Starter
 </h1>
