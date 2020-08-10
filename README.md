@@ -8,9 +8,12 @@
 </h1>
 
 <p align="center">
+<a href="https://www.npmjs.com/package/gatsby-prismic-blog-starter" target="_blank" rel="noreferrer noopener">
 <img alt="npm" src="https://img.shields.io/npm/v/gatsby-prismic-blog-starter?style=for-the-badge">
-<img style="margin: 0 1rem" alt="GitHub deployments" src="https://img.shields.io/github/deployments/iamsainikhil/gatsby-prismic-blog-starter/Production?style=for-the-badge">
+</a>
+<a href="https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/LICENSE" target="_blank" rel="noreferrer noopener">
 <img alt="GitHub" src="https://img.shields.io/github/license/iamsainikhil/gatsby-prismic-blog-starter?style=for-the-badge">
+</a>
 </p>
 
 Kick off your project with this blog starter. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
