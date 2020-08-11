@@ -1,9 +1,14 @@
-@import "partials";
+@import 'partials';
 
 .links-row {
   @extend %flex;
-  justify-content: space-around;
+  justify-content: center;
   padding: 0.5rem;
+  margin-bottom: 0.5rem;
+
+  a {
+    margin: 0 1.5rem;
+  }
 
   @media screen and (max-width: 767px) {
     flex-direction: column;

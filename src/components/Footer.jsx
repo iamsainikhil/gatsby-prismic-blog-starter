@@ -61,6 +61,26 @@ const Footer = () => {
               Documentation
             </a>
           </div>
+          <div>
+            <a
+              href="https://gatsby-prismic-blog-starter.vercel.app/sitemap.xml"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="special-link"
+              aria-label="Sitemap"
+              title="Sitemap"
+              sx={{ color: 'primary' }}
+              onClick={() =>
+                trackGAEvent(
+                  'footer links',
+                  `clicked on Sitemap link in Footer`,
+                  'link click'
+                )
+              }
+            >
+              Sitemap
+            </a>
+          </div>
         </div>
 
         <div

@@ -23,7 +23,12 @@ const getGistId = (url) => {
 const Embed = ({ data: { primary } }) => {
   {
     if (primary.platform === 'GitHub') {
-      return <Gist id={getGistId(primary.embed_url.url)} />
+      return (
+        <Gist
+          id={getGistId(primary.embed_url.url)}
+          title={`${primary.platform} Embed`}
+        />
+      )
     }
     return (
       <iframe

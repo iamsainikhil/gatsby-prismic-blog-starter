@@ -38,12 +38,13 @@ const MetaInfo = ({ meta }) => {
       </div>
       <div>
         <img
-          src={meta.website_image}
+          src={'xyz'}
           alt={meta.website_title.text}
           title={meta.website_title.text}
           sx={{
             width: '200px',
-            maxHeight: '125px'
+            maxHeight: '125px',
+            background: 'gray'
           }}
         />
       </div>
