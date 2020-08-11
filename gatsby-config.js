@@ -36,7 +36,7 @@ module.exports = {
       options: {
         name: `Gatsby Prismic Blog Starter`,
         short_name: `Blog`,
-        description: `Personal blog with articles related to Web Development, Software Tools, Tips & Tricks, etc.`,
+        description: `A blog starter template developed using Gatsby and Prismic. This starter is styled using Theme UI which allows for more easy customization.`,
         start_url: `/`,
         background_color: `#f7f8f9`,
         theme_color: `#181818`,
