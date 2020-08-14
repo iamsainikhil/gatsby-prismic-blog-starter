@@ -11,6 +11,9 @@
 <a href="https://www.npmjs.com/package/gatsby-prismic-blog-starter" target="_blank" rel="noreferrer noopener">
 <img alt="npm" src="https://img.shields.io/npm/v/gatsby-prismic-blog-starter?style=for-the-badge">
 </a>
+<a href="https://www.npmjs.com/package/gatsby-prismic-blog-starter" target="_blank" rel="noreferrer noopener" style="margin: 0 0.25rem;">
+<img alt="npm downloads" src="https://img.shields.io/npm/dw/gatsby-prismic-blog-starter?style=for-the-badge">
+</a>
 <a href="https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/LICENSE" target="_blank" rel="noreferrer noopener">
 <img alt="GitHub" src="https://img.shields.io/github/license/iamsainikhil/gatsby-prismic-blog-starter?style=for-the-badge">
 </a>
