@@ -406,11 +406,12 @@ Prismic Webhook allows you to automatically or manually trigger a deployment pro
 
 ![prismic_webhook](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/prismic_webhook.png)
 
+- The `Secret` field is _optional_ in the Prismic Webhook. If you set it, Prismic will send the content to your server, so that you can verify that the request is coming from prismic.io.
 - After successful creation of the Webhook, you can manually trigger it and can also see the logs.
 
 ![prismic_webhoks](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/prismic_webhooks.png)
 
-> You can any number of Webhooks for a prismic project!
+> You can create any number of Webhooks for a prismic project!
 
 # 🏎 Roadmap
 
