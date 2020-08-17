@@ -393,7 +393,7 @@ List of files where you can customize stuff to make this starter your own!!
 
 # ⚓ Prismic Webhook
 
-Prismic Webhook allows you to automatically or manually trigger a deployment process in Netlify or Vercel if any post is published or unpublished OR for other events in Prismic. I use Vercel as the example and I guess it might be quite similar for Nettlify or any other cloud service.
+Prismic Webhook allows you to automatically or manually trigger a deployment process in Netlify or Vercel if any post is published or unpublished OR for other events in Prismic. I use Vercel as the example and I guess it might be quite similar for Netlify or any other cloud service.
 
 ## Steps:
 
