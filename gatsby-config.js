@@ -70,8 +70,6 @@ module.exports = {
           // Route for blog articles
           if (doc.type === 'article') {
             return '/article/' + doc.uid
-          } else if (doc.type === 'tag') {
-            return '/tag/' + doc.uid
           } else if (doc.type === 'category') {
             return '/category' + doc.uid
           }
@@ -127,6 +125,27 @@ module.exports = {
           // Return true to download the image or false to skip.
           return true
         }
+
+        // Provide a default set of Imgix image transformations applied to
+        // Imgix-backed gatsby-image fields. These options will override the
+        // defaults set by Prismic.
+        // See: https://docs.imgix.com/apis/url
+        // imageImgixParams: {
+        //   auto: 'compress,format',
+        //   fit: 'max',
+        //   q: 50,
+        // },
+
+        // Provide a default set of Imgix image transformations applied to
+        // the placeholder images of Imgix-backed gatsby-image fields. These
+        // parameters will be applied over those provided in the above
+        // `imageImgixParams` option.
+        // See: https://docs.imgix.com/apis/url
+        // imagePlaceholderImgixParams: {
+        //   w: 100,
+        //   blur: 15,
+        //   q: 50,
+        // },
 
         // Set the prefix for the filename where type paths for your schemas are
         // stored. The filename will include the MD5 hash of your schemas after
