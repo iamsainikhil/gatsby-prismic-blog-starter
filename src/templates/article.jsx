@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { graphql } from 'gatsby'
+import { withPreview } from 'gatsby-source-prismic'
 import {
   Layout,
   SEO,
@@ -139,7 +140,7 @@ const Article = ({
   )
 }
 
-export default Article
+export default withPreview(Article)
 
 export const articleQuery = graphql`
   query Article($slug: String) {

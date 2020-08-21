@@ -211,7 +211,7 @@ Therefore the starter has following features:
    ```json
     GA_ID=<your Google Analytics tracking ID> (Optional)
 
-    PRISMIC_REPOSITORY_NAME=<your prismic repository name> (Required)
+    GATSBY_PRISMIC_REPOSITORY_NAME=<your prismic repository name> (Required)
 
     PRISMIC_ACCESS_TOKEN=<your prismic permanent access token> (Required)
 
@@ -219,6 +219,8 @@ Therefore the starter has following features:
 
     GATSBY_TELEMETRY_DISABLED=1 (Optional to disable GATSBY analytics)
    ```
+
+   > Note: For variable PRISMIC_REPOSITORY_NAME, you should always prepend it with `GATSBY*`since this env variable is also needed on the client side (`preview.js`).
 
 4. **Start developing.**
 

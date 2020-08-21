@@ -51,7 +51,7 @@ module.exports = {
         // The name of your prismic.io repository. This is required.
         // Example: 'gatsby-source-prismic-test-site' if your prismic.io address
         // is 'gatsby-source-prismic-test-site.prismic.io'.
-        repositoryName: `${process.env.PRISMIC_REPOSITORY_NAME}`,
+        repositoryName: `${process.env.GATSBY_PRISMIC_REPOSITORY_NAME}`,
 
         // An API access token to your prismic.io repository. This is required.
         // You can generate an access token in the "API & Security" section of
@@ -67,9 +67,9 @@ module.exports = {
         // different link resolver logic for each field if necessary.
         // See: https://prismic.io/docs/javascript/query-the-api/link-resolving
         linkResolver: () => (doc) => {
-          // Route for blog posts
-          if (doc.type === 'post') {
-            return '/post/' + doc.uid
+          // Route for blog articles
+          if (doc.type === 'article') {
+            return '/article/' + doc.uid
           } else if (doc.type === 'tag') {
             return '/tag/' + doc.uid
           } else if (doc.type === 'category') {
@@ -115,7 +115,7 @@ module.exports = {
         // Add the Prismic Toolbar script to the site. Defaults to false.
         // Set to "legacy" if your repository requires the older toolbar script.
         // See: https://prismic.io/docs/rest-api/beyond-the-api/the-preview-feature
-        // prismicToolbar: true,
+        prismicToolbar: true,
 
         // Set a function to determine if images are downloaded locally and made
         // available for gatsby-transformer-sharp for use with gatsby-image.

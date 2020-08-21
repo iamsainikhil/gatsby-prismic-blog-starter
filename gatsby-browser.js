@@ -1,13 +1,15 @@
+import * as React from 'react'
+import { PreviewStoreProvider } from 'gatsby-source-prismic'
 // custom typefaces
-require('typeface-inter')
-require('typeface-fira-code')
+import 'typeface-inter'
+import 'typeface-fira-code'
 
 /**
  * Should return either an [x, y] Array of coordinates to scroll to,
  * a string of the id or name of an element to scroll to,
  * a boolean value of the scrollBehavior
  */
-exports.shouldUpdateScroll = ({
+export const shouldUpdateScroll = ({
   routerProps: { location },
   getSavedScrollPosition
 }) => {
@@ -22,3 +24,7 @@ exports.shouldUpdateScroll = ({
 
   return defaultScrollBehavior
 }
+
+export const wrapRootElement = ({ element }) => (
+  <PreviewStoreProvider>{element}</PreviewStoreProvider>
+)

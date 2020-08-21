@@ -6,6 +6,11 @@ import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import { Listing } from '../components'
 
+import { withUnpublishedPreview } from 'gatsby-source-prismic'
+import Article from './../templates/article'
+import Category from './../templates/category'
+import Tag from '../templates/tag'
+
 const NotFoundPage = ({ data: { articles } }) => (
   <Layout>
     <SEO title="404: Not found | Blog" />
@@ -26,7 +31,13 @@ const NotFoundPage = ({ data: { articles } }) => (
   </Layout>
 )
 
-export default NotFoundPage
+export default withUnpublishedPreview(NotFoundPage, {
+  templateMap: {
+    article: Article,
+    category: Category,
+    tag: Tag
+  }
+})
 
 export const listQuery = graphql`
   query {
