@@ -66,16 +66,16 @@ module.exports = {
         // provided to the function, as seen below. This allows you to use
         // different link resolver logic for each field if necessary.
         // See: https://prismic.io/docs/javascript/query-the-api/link-resolving
-        linkResolver: () => (doc) => {
-          // Route for blog articles
-          if (doc.type === 'article') {
-            return '/article/' + doc.uid
-          } else if (doc.type === 'category') {
-            return '/category' + doc.uid
-          }
-          // Homepage route fallback
-          return '/'
-        },
+        // linkResolver: ({ node, key, value }) => (doc) => {
+        //   // Route for blog articles
+        //   if (doc.type === 'article') {
+        //     return '/article/' + doc.uid
+        //   } else if (doc.type === 'category') {
+        //     return `/category/${doc.uid}`
+        //   }
+        //   // Homepage route fallback
+        //   return '/'
+        // },
 
         // Set a list of links to fetch and be made available in your link
         // resolver function.

@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { graphql, Link } from 'gatsby'
-import { withPreview } from 'gatsby-source-prismic'
 import { Layout, SEO, Listing } from '../components'
 import { jsx, Styled } from 'theme-ui'
 
@@ -29,7 +28,7 @@ const Category = ({ data: { articles }, pageContext: { slug, name } }) => {
   )
 }
 
-export default withPreview(Category)
+export default Category
 
 export const CategoryQuery = graphql`
   query CategoryQuery($slug: String) {

@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { graphql, Link } from 'gatsby'
-import { withPreview } from 'gatsby-source-prismic'
 import { Layout, SEO, Listing } from '../components'
 import { jsx, Styled } from 'theme-ui'
 
@@ -29,7 +28,7 @@ const Tag = ({ data: { articles }, pageContext }) => {
   )
 }
 
-export default withPreview(Tag)
+export default Tag
 
 export const TagQuery = graphql`
   query TagQuery($slug: String) {

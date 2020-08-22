@@ -8,8 +8,6 @@ import { Listing } from '../components'
 
 import { withUnpublishedPreview } from 'gatsby-source-prismic'
 import Article from './../templates/article'
-import Category from './../templates/category'
-import Tag from '../templates/tag'
 
 const NotFoundPage = ({ data: { articles } }) => (
   <Layout>
@@ -33,9 +31,7 @@ const NotFoundPage = ({ data: { articles } }) => (
 
 export default withUnpublishedPreview(NotFoundPage, {
   templateMap: {
-    article: Article,
-    category: Category,
-    tag: Tag
+    article: Article
   }
 })
 
