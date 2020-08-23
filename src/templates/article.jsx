@@ -159,6 +159,7 @@ export const articleQuery = graphql`
           fluid(maxWidth: 1280) {
             ...GatsbyPrismicImageFluid
           }
+          url
         }
         body {
           ... on PrismicArticleBodyCode {

@@ -17,6 +17,7 @@ export const ArticleFragment = graphql`
         fluid(maxWidth: 300) {
           ...GatsbyPrismicImageFluid
         }
+        url
       }
       categories {
         category {
