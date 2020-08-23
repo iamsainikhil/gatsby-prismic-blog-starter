@@ -1,7 +1,7 @@
 {
   "name": "gatsby-prismic-blog-starter",
   "description": "Blog starter template built with Gatsby and Prismic",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "author": "Sai Nikhil <contact@iamsainikhil.com>",
   "dependencies": {
     "dayjs": "^1.8.28",
