@@ -5,7 +5,7 @@ import Img from 'gatsby-image'
 import { jsx } from 'theme-ui'
 import PropTypes from 'prop-types'
 
-const Banner = ({ image: { localFile, alt } }) => {
+const Banner = ({ image: { alt, fluid } }) => {
   return (
     <div
       sx={{
@@ -19,24 +19,13 @@ const Banner = ({ image: { localFile, alt } }) => {
         overflow: 'hidden'
       }}
     >
-      {
-        // svg support
-        !localFile.childImageSharp && localFile.extension === 'svg' ? (
-          <img
-            src={localFile.publicURL}
-            alt={alt}
-            title={alt}
-            sx={{ width: '100%', height: 'auto' }}
-          />
-        ) : (
-          <Img fluid={localFile.childImageSharp.fluid} alt={alt} title={alt} />
-        )
-      }
+      <Img fluid={fluid} alt={alt} title={alt} />
 
       <p
         sx={{
           textAlign: 'center',
           margin: '0 auto',
+          pt: 2,
           fontFamily: 'heading',
           fontSize: [2, 3]
         }}
@@ -49,8 +38,8 @@ const Banner = ({ image: { localFile, alt } }) => {
 
 Banner.defaultProps = {
   image: {
-    localFile: null,
-    alt: ''
+    alt: '',
+    fluid: null
   }
 }
 

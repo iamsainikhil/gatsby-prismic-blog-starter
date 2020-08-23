@@ -4,7 +4,7 @@ import React from 'react'
 import { jsx } from 'theme-ui'
 
 const RawContent = ({ data: { primary } }) =>
-  primary.raw_content.raw.map((block, index) => {
+  primary.content.raw.map((block, index) => {
     switch (block.type) {
       case 'o-list-item':
         return (

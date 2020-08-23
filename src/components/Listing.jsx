@@ -60,10 +60,7 @@ const Listing = ({ articles }) => {
           <div>
             <Link to={`article/${article.node.uid}`}>
               <Img
-                fluid={
-                  article.node.data.article_image.localFile.childImageSharp
-                    .fluid
-                }
+                fluid={article.node.data.article_image.fluid}
                 alt={article.node.data.article_image.alt}
                 title={article.node.data.article_image.alt}
                 sx={{

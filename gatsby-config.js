@@ -51,7 +51,7 @@ module.exports = {
         // The name of your prismic.io repository. This is required.
         // Example: 'gatsby-source-prismic-test-site' if your prismic.io address
         // is 'gatsby-source-prismic-test-site.prismic.io'.
-        repositoryName: `${process.env.PRISMIC_REPOSITORY_NAME}`,
+        repositoryName: `${process.env.GATSBY_PRISMIC_REPOSITORY_NAME}`,
 
         // An API access token to your prismic.io repository. This is required.
         // You can generate an access token in the "API & Security" section of
@@ -67,13 +67,9 @@ module.exports = {
         // different link resolver logic for each field if necessary.
         // See: https://prismic.io/docs/javascript/query-the-api/link-resolving
         linkResolver: () => (doc) => {
-          // Route for blog posts
-          if (doc.type === 'post') {
-            return '/post/' + doc.uid
-          } else if (doc.type === 'tag') {
-            return '/tag/' + doc.uid
-          } else if (doc.type === 'category') {
-            return '/category' + doc.uid
+          // Route for blog articles
+          if (doc.type === 'article') {
+            return '/article/' + doc.uid
           }
           // Homepage route fallback
           return '/'
@@ -125,7 +121,7 @@ module.exports = {
         // This defaults to always return false.
         shouldDownloadImage: ({ node, key, value }) => {
           // Return true to download the image or false to skip.
-          return true
+          return false
         }
 
         // Set the prefix for the filename where type paths for your schemas are

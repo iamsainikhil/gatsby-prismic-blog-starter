@@ -4,19 +4,20 @@ import React, { useState } from 'react'
 import { jsx, useThemeUI } from 'theme-ui'
 import Img from 'gatsby-image'
 import Carousel, { Modal, ModalGateway } from 'react-images'
+import PropTypes from 'prop-types'
 
-const Gallery = ({ data: { items, primary } }) => {
+const Gallery = ({ data: { items } }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const { theme } = useThemeUI()
   const toggleModal = () => {
     setModalIsOpen(!modalIsOpen)
   }
 
-  const images = items.map((item) => {
+  const images = items.map(({ image }) => {
     return {
-      caption: item.gallery_image.alt,
-      alt: item.image_caption.text,
-      source: item.gallery_image.url
+      caption: image.alt,
+      alt: image.alt,
+      source: image.url
     }
   })
 
@@ -71,44 +72,38 @@ const Gallery = ({ data: { items, primary } }) => {
         ) : null}
       </ModalGateway>
 
-      <p
-        sx={{
-          textAlign: 'center',
-          margin: '2rem auto 0 auto',
-          fontFamily: 'medium',
-          fontSize: [3, 4, 5]
-        }}
-      >
-        {primary.name_of_the_gallery.text} - Gallery
-      </p>
       <div
         style={{
-          width: '600',
-          height: '450',
+          position: 'relative',
           margin: '0 auto 2rem auto',
-          paddingBottom: '1rem',
           cursor: 'pointer',
           borderRadius: '25px',
           boxShadow: `inset -5px -5px 12px ${theme.colors.shade1},
-      inset 5px 5px 12px ${theme.colors.shade2}`
+      inset 5px 5px 12px ${theme.colors.shade2}`,
+          overflow: 'hidden'
         }}
         onClick={toggleModal}
       >
         <Img
-          fluid={items[0].gallery_image.localFile.childImageSharp.fluid}
-          alt={items[0].gallery_image.alt}
-          title={items[0].gallery_image.alt}
+          fluid={items[0].image.fluid}
+          alt={items[0].image.alt}
+          title={items[0].image.alt}
         />
         <p
           style={{
+            position: 'absolute',
+            left: 0,
+            right: 0,
+            bottom: 15,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            color: '#fff',
+            backgroundColor: 'rgba(0,0,0,0.3)',
             borderWidth: '1px',
             borderStyle: 'solid',
-            borderColor: theme.colors.highlight,
+            borderColor: '#f7f8f9',
             borderRadius: '25px',
-            boxShadow: `inset -5px -5px 12px ${theme.colors.shade1}`,
             width: '200px',
             height: '40px',
             padding: '0.5rem',
@@ -122,6 +117,20 @@ const Gallery = ({ data: { items, primary } }) => {
       </div>
     </>
   )
+}
+
+Gallery.defaultProps = {
+  data: {
+    items: {
+      alt: '',
+      fluid: null,
+      url: ''
+    }
+  }
+}
+
+Gallery.propTypes = {
+  data: PropTypes.object
 }
 
 export default Gallery

@@ -42,7 +42,7 @@
             }
           },
           "platform_url": {
-            "type": "Link",
+            "type": "Text",
             "config": {
               "label": "platform_url",
               "placeholder": "URL of the platform"

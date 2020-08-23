@@ -38,9 +38,9 @@ const MetaInfo = ({ meta }) => {
       </div>
       <div>
         <img
-          src={'xyz'}
-          alt={meta.website_title.text}
-          title={meta.website_title.text}
+          srcSet={meta.website_image.fluid.srcSet}
+          alt={meta.website_title.alt}
+          title={meta.website_title.alt}
           sx={{
             width: '200px',
             maxHeight: '125px',
@@ -55,7 +55,11 @@ const MetaInfo = ({ meta }) => {
 MetaInfo.defaultProps = {
   meta: {
     website_title: '',
-    website_image: '',
+    website_image: {
+      alt: '',
+      fluid: null,
+      url: ''
+    },
     website_description: '',
     website_url: ''
   }
