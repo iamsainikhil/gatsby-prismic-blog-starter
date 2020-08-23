@@ -164,6 +164,8 @@ Therefore the starter has following features:
 
 ![Author schema](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/prismic_author.png)
 
+![Author social links schema](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/prismic_author_social_links.png)
+
 ### Category
 
 - Create a _Repeatable_ custom type with name _Category._

@@ -26,7 +26,7 @@ const getGistId = (url) => {
 
 const Embed = ({ data: { primary } }) => {
   {
-    if (primary.type === 'GitHub') {
+    if (primary.type === 'GitHub Gist') {
       return (
         <Gist id={getGistId(primary.embed_url)} title={primary.embed_title} />
       )
