@@ -46,6 +46,7 @@ Therefore the starter has following features:
   - The right image size for every screen size
   - Traced SVG Loading (Lazy-Loading)
   - WebP Support
+  - Prismic Imgix transformations
 - SEO
   - Sitemap
   - OpenGraph Tags
@@ -78,7 +79,7 @@ Therefore the starter has following features:
 ### Article
 
 - Create a _Repeatable_ custom type with name _Article._
-- Simply paste the JSON schema in _src/schemas/article.json_ file in the _JSON editor_ of the _Article_ type in _Prismic_. This will create all the below fields in the _Article_ type on the fly for you.
+- Simply paste the JSON schema in `_src/schemas/article.json_` file in the _JSON editor_ of the `_Article_` type in _Prismic_. This will create all the below fields in the _Article_ type on the fly for you.
 - Beauty of Prismic Slices is that they are optional data sections which can be customized very easily in the Prismic UI.
 - **`Primary`** content of the article:
 
@@ -94,43 +95,27 @@ Therefore the starter has following features:
 
 - **`Slices`**(Optional):
 
-  - **Text** (Rich Text Section) **→** Rich WYSIWYG editor content which is consumed in the UI as the HTML
+  - **Content**: This slice has 3 types (Rich Text, Raw Text, and Quote) based on which the `content` is rendered in the UI.
 
-    ![Rich Text Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/prismic_article_data_fields_slice_text.png)
+    - **Text** (Rich Text Section) **→** Rich WYSIWYG editor content which is consumed in the UI as the HTML
 
-  - **Raw Text** (Raw Text Section) → WYSIWYG editor content which is consumed in the UI as the raw content i.e unescaped HTML content. Use case of this slice is to mark any inline code content.
+    - **Raw Text** (Raw Text Section) → WYSIWYG editor content which is consumed in the UI as the raw content i.e unescaped HTML content. Use case of this type is to mark any inline code content.
 
-  > Note: enclose any content inside `code` tag like `<code>inline code content</code>` to apply styling of inline code.
+    > Note: enclose any content inside `code` tag like `<code>inline code content</code>` to apply styling of inline code.
 
+    - **Quote** (Blockquote Section) → Select this type to have any blockquote content in the article
 
-        ![Raw Text Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/prismic_article_data_fields_slice_raw_content.png)
+  ![Content Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/prismic_article_data_fields_slice_content.png)
 
-    - **Quote** (Blockquote Section) → Use this slice to have any blockquote content in the article
+  - **Image** (banner or gallery) → Use this slice to show a `banner` (single image with caption) or a `gallery` (group of images)
 
-        ![Quote Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/prismic_article_data_fields_slice_quote.png)
+    ![Image Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/prismic_article_data_fields_slice_image.png)
 
-    - **Image Gallery** (slideshow kind of images Section) → Use this slice to have many images grouped together to be shown in a gallery view.
-
-        This slice has two fields:
-
-           Non-repeatable fields
-
-        - **name_of_the_gallery →** Name of the gallery
-
-          Repeatable Fields
-
-        - **gallery_image →** Image
-        - **image_caption →** Caption of the image
-
-        ![Image Gallery Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/prismic_article_data_fields_slice_gallery.png)
-
-    - **Banner** (Single image with caption Section) **→** Use this slice to show a single image with caption.
-
-        ![Banner Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/prismic_article_data_fields_slice_banner.png)
 
     - **Embed** → Use this slice to embed any platform content like YouTube, Vimeo, GitHub Gist, CodeSandbox, CodePen, etc.
-        - **platform** → name of the platform like "GitHub", "YouTube", etc.
-        - **embed →** URL of the embed which will be consumed in an iframe in the UI
+        - **type** → Type of the embed like `GitHub Gist` or `Default` (YouTube, Vimeo, CodeSandbox, etc).
+        - **embed_title** → Title of the embed.
+        - **embed_url →** URL of the embed which will be consumed in an iframe in the UI
 
         ![Embed Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/prismic_article_data_fields_slice_embed.png)
 
@@ -143,7 +128,7 @@ Therefore the starter has following features:
         ![Meta Information Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/prismic_article_data_fields_slice_meta_info.png)
 
     - **Code →** Use this slice to show any code block in the article
-        - **type →** Mention the type of scenario where this code block is used. For ex- type of "list" will add some padding to the code block.
+        - **type →** Mention the type of scenario where this code block is used. For ex- type of "List" will add some padding to the code block.
         - **lang →** Language of the code to have appropriate syntax highlighting using PrismJS
         - **code →** Actual code content
 
@@ -167,7 +152,7 @@ Therefore the starter has following features:
 ### Author
 
 - Create a _Repeatable_ custom type with name _Author._
-- Simply paste the JSON schema in _src/schemas/author.json_ file in the _JSON editor_ of the _Author_ type in _Prismic_. This will create all the below fields in the _Author_ type on the fly for you.
+- Simply paste the JSON schema in `_src/schemas/author.json_` file in the _JSON editor_ of the `_Author_` type in _Prismic_. This will create all the below fields in the _Author_ type on the fly for you.
 - Contents:
   - **uid →** URL slug of the author
   - **name →** Name of the author
@@ -177,10 +162,12 @@ Therefore the starter has following features:
     - **platform_name →** Name of the platform (Facebook, Twitter, LinkedIn, Medium, GitHub, CodePen, Portfolio (website). However, you can customize the icons which is discussed later.
     - **platform_url →** URL of the platform
 
+![Author schema](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/prismic_author.png)
+
 ### Category
 
 - Create a _Repeatable_ custom type with name _Category._
-- Simply paste the JSON schema in _src/schemas/category.json_ file in the _JSON editor_ of the _Category_ type in _Prismic_. This will create all the below fields in the _Category_ type on the fly for you.
+- Simply paste the JSON schema in `_src/schemas/category.json_` file in the _JSON editor_ of the `_Category_` type in _Prismic_. This will create all the below fields in the _Category_ type on the fly for you.
 - Contents:
   - **name →** Name of the category
 
@@ -211,7 +198,7 @@ Therefore the starter has following features:
    ```json
     GA_ID=<your Google Analytics tracking ID> (Optional)
 
-    PRISMIC_REPOSITORY_NAME=<your prismic repository name> (Required)
+    GATSBY_PRISMIC_REPOSITORY_NAME=<your prismic repository name> (Required)
 
     PRISMIC_ACCESS_TOKEN=<your prismic permanent access token> (Required)
 
@@ -417,10 +404,10 @@ Prismic Webhook allows you to automatically or manually trigger a deployment pro
 
 - [x] Publish this starter as a template
 - [x] Analytics support (Google Analytics)
+- [ ] Prismic Preview Setup
 - [ ] Pagination Feature
 - [ ] Search Feature
 - [ ] Testing
-- [ ] Prismic Preview Setup
 
 # **🙌 Contribution**
 
