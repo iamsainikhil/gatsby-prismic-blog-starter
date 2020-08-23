@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+import {graphql} from 'gatsby'
 
 export const ArticleFragment = graphql`
   fragment ArticleFragment on PrismicArticle {
