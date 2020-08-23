@@ -99,10 +99,7 @@
               "type": {
                 "type": "Select",
                 "config": {
-                  "options": [
-                    "Normal",
-                    "List"
-                  ],
+                  "options": ["Normal", "List"],
                   "default_value": "Normal",
                   "label": "type",
                   "placeholder": "Mention the type of scenario where this code block is used. For ex- type of \"list\" will add some padding to the code block."
@@ -136,10 +133,7 @@
               "type": {
                 "type": "Select",
                 "config": {
-                  "options": [
-                    "Default",
-                    "GitHub Gist"
-                  ],
+                  "options": ["Default", "GitHub Gist"],
                   "default_value": "Default",
                   "label": "type",
                   "placeholder": "Type of the embed"
@@ -213,11 +207,7 @@
               "type": {
                 "type": "Select",
                 "config": {
-                  "options": [
-                    "Rich Text",
-                    "Raw Text",
-                    "Quote"
-                  ],
+                  "options": ["Rich Text", "Raw Text", "Quote"],
                   "default_value": "Rich Text",
                   "label": "type",
                   "placeholder": "Type of the content"
@@ -244,10 +234,7 @@
               "type": {
                 "type": "Select",
                 "config": {
-                  "options": [
-                    "Banner",
-                    "Gallery"
-                  ],
+                  "options": ["Banner", "Gallery"],
                   "default_value": "Banner",
                   "label": "type",
                   "placeholder": "Is it a single image or a gallery of images"
@@ -278,9 +265,7 @@
             "type": "Link",
             "config": {
               "select": "document",
-              "customtypes": [
-                "category"
-              ],
+              "customtypes": ["category"],
               "label": "category",
               "placeholder": "Link to the category"
             }
@@ -300,9 +285,7 @@
       "type": "Link",
       "config": {
         "select": "document",
-        "customtypes": [
-          "author"
-        ],
+        "customtypes": ["author"],
         "label": "author",
         "placeholder": "Author of the article"
       }
