@@ -1,5 +1,9 @@
+/** @jsx jsx */
+
 import React from 'react'
+import { jsx } from 'theme-ui'
 import Gist from 'react-gist'
+import PropTypes from 'prop-types'
 
 const iframeStyle = {
   minWidth: '200px',
@@ -22,22 +26,46 @@ const getGistId = (url) => {
 
 const Embed = ({ data: { primary } }) => {
   {
-    if (primary.platform === 'GitHub') {
+    if (primary.type === 'GitHub') {
       return (
-        <Gist
-          id={getGistId(primary.embed_url.url)}
-          title={`${primary.platform} Embed`}
-        />
+        <Gist id={getGistId(primary.embed_url)} title={primary.embed_title} />
       )
     }
     return (
-      <iframe
-        src={primary.embed_url.url}
-        style={iframeStyle}
-        title={`${primary.platform} Embed`}
-      ></iframe>
+      <>
+        <iframe
+          src={primary.embed_url}
+          style={iframeStyle}
+          alt={primary.embed_title}
+        ></iframe>
+
+        <p
+          sx={{
+            textAlign: 'center',
+            margin: '0 auto',
+            fontFamily: 'heading',
+            fontSize: [2, 3]
+          }}
+        >
+          {primary.embed_title}
+        </p>
+      </>
     )
   }
+}
+
+Embed.defaultProps = {
+  data: {
+    primary: {
+      type: 'Default',
+      embed_title: '',
+      embed_url: ''
+    }
+  }
+}
+
+Embed.propTypes = {
+  data: PropTypes.object
 }
 
 export default Embed

@@ -73,7 +73,7 @@ const Code = ({ data: { primary } }) => {
             style={{
               ...style,
               backgroundColor: theme.colors.code,
-              marginLeft: primary.type === 'list' ? '2.5rem' : null,
+              marginLeft: primary.type === 'List' ? '2.5rem' : null,
               borderWidth: '1px',
               borderStyle: 'solid',
               borderColor: theme.colors.shade2,

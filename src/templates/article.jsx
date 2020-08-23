@@ -156,113 +156,69 @@ export const articleQuery = graphql`
         read_time
         article_image {
           alt
-          url
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 1280) {
-                ...GatsbyImageSharpFluid
-              }
-            }
+          fluid(maxWidth: 1280) {
+            ...GatsbyPrismicImageFluid
           }
         }
         body {
-          ... on PrismicArticleBodyText {
+          ... on PrismicArticleBodyCode {
             slice_type
             primary {
+              lang
+              type
+              code {
+                text
+              }
+            }
+          }
+          ... on PrismicArticleBodyEmbed {
+            slice_type
+            primary {
+              type
+              embed_title
+              embed_url
+            }
+          }
+          ... on PrismicArticleBodyMetaInformation {
+            slice_type
+            primary {
+              website_url
+              website_title {
+                text
+              }
+              website_image {
+                alt
+                fluid(maxWidth: 200, maxHeight: 125) {
+                  ...GatsbyPrismicImageFluid
+                }
+              }
+              website_description {
+                text
+              }
+            }
+          }
+          ... on PrismicArticleBodyContent {
+            slice_type
+            primary {
+              type
               content {
                 html
                 raw
               }
             }
           }
-          ... on PrismicArticleBodyQuote {
+          ... on PrismicArticleBodyImage {
             slice_type
             primary {
-              quote {
-                html
-              }
-            }
-          }
-          ... on PrismicArticleBodyBanner {
-            slice_type
-            primary {
-              image_banner {
-                alt
-                localFile {
-                  childImageSharp {
-                    fluid(maxWidth: 1280) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                  extension
-                  publicURL
-                }
-              }
-            }
-          }
-          ... on PrismicArticleBodyImageGallery {
-            slice_type
-            primary {
-              name_of_the_gallery {
-                text
-              }
-            }
-            items {
-              gallery_image {
-                alt
-                url
-                localFile {
-                  childImageSharp {
-                    fluid(maxWidth: 1280) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                }
-              }
-              image_caption {
-                text
-              }
-            }
-          }
-          ... on PrismicArticleBodyRawText {
-            slice_type
-            primary {
-              raw_content {
-                raw
-              }
-            }
-          }
-          ... on PrismicArticleBodyCode {
-            slice_type
-            primary {
-              code {
-                raw
-                text
-                html
-              }
-              lang
               type
             }
-          }
-          ... on PrismicArticleBodyEmbed {
-            slice_type
-            primary {
-              embed_url {
+            items {
+              image {
+                alt
+                fluid(maxWidth: 1280) {
+                  ...GatsbyPrismicImageFluid
+                }
                 url
-              }
-              platform
-            }
-          }
-          ... on PrismicArticleBodyMetaInformation {
-            slice_type
-            primary {
-              website_description {
-                text
-              }
-              website_image
-              website_url
-              website_title {
-                text
               }
             }
           }
@@ -286,22 +242,15 @@ export const articleQuery = graphql`
                 name
                 social_links {
                   platform_name
-                  platform_url {
-                    url
-                  }
+                  platform_url
                 }
                 bio {
                   html
                 }
                 avatar {
                   alt
-                  localFile {
-                    childImageSharp {
-                      fluid(maxWidth: 100, maxHeight: 100) {
-                        ...GatsbyImageSharpFluid_withWebp
-                        ...GatsbyImageSharpFluidLimitPresentationSize
-                      }
-                    }
+                  fluid(maxWidth: 100, maxHeight: 75) {
+                    ...GatsbyPrismicImageFluid
                   }
                 }
               }

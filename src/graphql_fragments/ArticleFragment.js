@@ -14,12 +14,8 @@ export const ArticleFragment = graphql`
       created
       article_image {
         alt
-        localFile {
-          childImageSharp {
-            fluid(maxWidth: 300) {
-              ...GatsbyImageSharpFluid
-            }
-          }
+        fluid(maxWidth: 300) {
+          ...GatsbyPrismicImageFluid
         }
       }
       categories {

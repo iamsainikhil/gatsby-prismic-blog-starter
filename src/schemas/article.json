@@ -84,84 +84,11 @@
           ],
           "raw_text": [],
           "banner": [],
-          "meta_information": []
+          "meta_information": [],
+          "content": [],
+          "image": []
         },
         "choices": {
-          "text": {
-            "type": "Slice",
-            "fieldset": "Text",
-            "description": "Rich Text Section",
-            "icon": "text_fields",
-            "non-repeat": {
-              "content": {
-                "type": "StructuredText",
-                "config": {
-                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
-                  "allowTargetBlank": true,
-                  "label": "content",
-                  "placeholder": "Text content of the article"
-                }
-              }
-            },
-            "repeat": {},
-            "display": "list"
-          },
-          "quote": {
-            "type": "Slice",
-            "fieldset": "Quote",
-            "description": "Quote Section",
-            "icon": "format_quote",
-            "display": "list",
-            "non-repeat": {
-              "quote": {
-                "type": "StructuredText",
-                "config": {
-                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
-                  "allowTargetBlank": true,
-                  "label": "quote",
-                  "placeholder": "Quote to be rendered in Blockquote"
-                }
-              }
-            },
-            "repeat": {}
-          },
-          "image_gallery": {
-            "type": "Slice",
-            "fieldset": "Image Gallery",
-            "description": "Image Gallery with a title and a caption for each image",
-            "icon": "photo_library",
-            "non-repeat": {
-              "name_of_the_gallery": {
-                "type": "StructuredText",
-                "config": {
-                  "single": "heading2",
-                  "label": "Name of the gallery",
-                  "placeholder": "My beautiful paintings"
-                }
-              }
-            },
-            "repeat": {
-              "image_caption": {
-                "type": "StructuredText",
-                "config": {
-                  "multi": "paragraph",
-                  "label": "Image caption",
-                  "placeholder": "Images caption"
-                }
-              },
-              "gallery_image": {
-                "type": "Image",
-                "config": {
-                  "constraint": {
-                    "width": null,
-                    "height": null
-                  },
-                  "thumbnails": [],
-                  "label": "Gallery Image"
-                }
-              }
-            }
-          },
           "code": {
             "type": "Slice",
             "fieldset": "code",
@@ -170,8 +97,10 @@
             "display": "list",
             "non-repeat": {
               "type": {
-                "type": "Text",
+                "type": "Select",
                 "config": {
+                  "options": ["Normal", "List"],
+                  "default_value": "Normal",
                   "label": "type",
                   "placeholder": "Mention the type of scenario where this code block is used. For ex- type of \"list\" will add some padding to the code block."
                 }
@@ -201,62 +130,31 @@
             "icon": "filter_drama",
             "display": "list",
             "non-repeat": {
-              "platform": {
+              "type": {
+                "type": "Select",
+                "config": {
+                  "options": ["Default", "GitHub Gist"],
+                  "default_value": "Default",
+                  "label": "type",
+                  "placeholder": "Type of the embed"
+                }
+              },
+              "embed_title": {
                 "type": "Text",
                 "config": {
-                  "label": "platform",
-                  "placeholder": "Platform of the embed URL"
+                  "label": "embed_title",
+                  "placeholder": "Title of the Embed Iframe"
                 }
               },
               "embed_url": {
-                "type": "Link",
+                "type": "Text",
                 "config": {
                   "label": "embed_url",
-                  "placeholder": "URL"
+                  "placeholder": "URL of the embed"
                 }
               }
             },
             "repeat": {}
-          },
-          "raw_text": {
-            "type": "Slice",
-            "fieldset": "Raw Text",
-            "description": "Raw text Section with inline code block",
-            "icon": "comment",
-            "display": "list",
-            "non-repeat": {
-              "raw_content": {
-                "type": "StructuredText",
-                "config": {
-                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, embed, list-item, o-list-item, o-list-item",
-                  "allowTargetBlank": true,
-                  "label": "raw_content",
-                  "placeholder": "Raw text content"
-                }
-              }
-            },
-            "repeat": {}
-          },
-          "banner": {
-            "type": "Slice",
-            "fieldset": "Banner",
-            "description": "Banner with caption",
-            "icon": "image",
-            "non-repeat": {
-              "image_banner": {
-                "type": "Image",
-                "config": {
-                  "constraint": {
-                    "width": null,
-                    "height": null
-                  },
-                  "thumbnails": [],
-                  "label": "Image Banner"
-                }
-              }
-            },
-            "repeat": {},
-            "display": "list"
           },
           "meta_information": {
             "type": "Slice",
@@ -281,22 +179,78 @@
                   "placeholder": "Description of the website"
                 }
               },
-              "website_image": {
-                "type": "Text",
-                "config": {
-                  "label": "Website Image",
-                  "placeholder": "Image URL of the website"
-                }
-              },
               "website_url": {
                 "type": "Text",
                 "config": {
                   "label": "Website URL",
                   "placeholder": "URL of the website"
                 }
+              },
+              "website_image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Website Image"
+                }
               }
             },
             "repeat": {}
+          },
+          "content": {
+            "type": "Slice",
+            "fieldset": "Content",
+            "description": "Content can be Rich Text or Raw Text or a Quote",
+            "icon": "border_color",
+            "display": "list",
+            "non-repeat": {
+              "type": {
+                "type": "Select",
+                "config": {
+                  "options": ["Rich Text", "Raw Text", "Quote"],
+                  "default_value": "Rich Text",
+                  "label": "type",
+                  "placeholder": "Type of the content"
+                }
+              },
+              "content": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                  "label": "content",
+                  "placeholder": "Type the content..."
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "image": {
+            "type": "Slice",
+            "fieldset": "Image",
+            "description": "Image slice consists of one or more images",
+            "icon": "collections",
+            "display": "list",
+            "non-repeat": {
+              "type": {
+                "type": "Select",
+                "config": {
+                  "options": ["Banner", "Gallery"],
+                  "default_value": "Banner",
+                  "label": "type",
+                  "placeholder": "Is it a single image or a gallery of images"
+                }
+              }
+            },
+            "repeat": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "image"
+                }
+              }
+            }
           }
         }
       }
@@ -313,7 +267,7 @@
               "select": "document",
               "customtypes": ["category"],
               "label": "category",
-              "placeholder": "Category of the article"
+              "placeholder": "Link to the category"
             }
           },
           "slug": {

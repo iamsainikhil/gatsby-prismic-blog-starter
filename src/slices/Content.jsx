@@ -25,7 +25,8 @@ const Content = ({ data: { primary } }) => {
       ref={contentRef}
       dangerouslySetInnerHTML={{ __html: primary.content.html }}
       sx={{
-        variant: 'styles'
+        variant: 'styles',
+        mt: 5
       }}
     ></div>
   )

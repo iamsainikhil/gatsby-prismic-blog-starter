@@ -23,7 +23,7 @@ const Quote = ({ data: { primary } }) => {
   return (
     <blockquote
       ref={contentRef}
-      dangerouslySetInnerHTML={{ __html: primary.quote.html }}
+      dangerouslySetInnerHTML={{ __html: primary.content.html }}
       sx={{ variant: 'styles' }}
     ></blockquote>
   )

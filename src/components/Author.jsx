@@ -34,10 +34,10 @@ const Author = ({ author }) => {
       }}
     >
       <Img
-        fluid={author.avatar.localFile.childImageSharp.fluid}
+        fluid={author.avatar.fluid}
         alt={author.avatar.alt}
         title={author.avatar.alt}
-        sx={{ height: '100%', borderRadius: '50%' }}
+        sx={{ height: '75%', borderRadius: '50%' }}
       />
       <div>
         <h3
@@ -55,7 +55,7 @@ const Author = ({ author }) => {
               <div key={index} sx={{ mx: 2, my: 1 }}>
                 <Icon
                   name={platform.platform_name}
-                  url={platform.platform_url.url}
+                  url={platform.platform_url}
                   style={{ color: 'secondary', fontSize: [2, 3, 4] }}
                 />
               </div>

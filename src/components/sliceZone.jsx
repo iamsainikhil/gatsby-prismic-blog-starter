@@ -12,24 +12,27 @@ import {
 } from '../slices'
 
 const SliceZone = ({ slices }) => {
-  // console.log(slices)
   return slices.map((slice, index) => {
     if (!slice) return null
     switch (slice.slice_type) {
-      case 'quote':
-        return <Quote key={index} data={slice} />
-      case 'text':
-        return <Content key={index} data={slice} />
-      case 'raw_text':
-        return <RawContent key={index} data={slice} />
+      case 'content':
+        if (slice.primary.type === 'Rich Text') {
+          return <Content key={index} data={slice} />
+        } else if (slice.primary.type === 'Raw Text') {
+          return <RawContent key={index} data={slice} />
+        } else {
+          return <Quote key={index} data={slice} />
+        }
       case 'code':
         return <Code key={index} data={slice} />
       case 'embed':
         return <Embed key={index} data={slice} />
-      case 'image_gallery':
-        return <Gallery key={index} data={slice} />
-      case 'banner':
-        return <Banner key={index} image={slice.primary.image_banner} />
+      case 'image':
+        if (slice.primary.type === 'Banner') {
+          return <Banner key={index} image={slice.items[0].image} />
+        } else {
+          return <Gallery key={index} data={slice} />
+        }
       case 'meta_information':
         return <MetaInfo key={index} meta={slice.primary} />
       default:
