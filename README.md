@@ -29,6 +29,8 @@ _Have another more specific idea? You may want to check out the vibrant collecti
 - [https://blog.iamsainikhil.com](https://blog.iamsainikhil.com/)
 - Prismic Slices available with the starter can be seen in action [here](https://gatsby-prismic-blog-starter.vercel.app/article/prismic-slices).
 
+[![Edit Gatsby Prismic Blog Starter](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/gatsby-prismic-blog-starter-fh9sf?fontsize=14&hidenavigation=1&theme=dark)
+
 # 🎉 **Features**
 
 Multiple features of Prismic are used in this starter:
