@@ -203,7 +203,7 @@ const Listing = ({ articles }) => {
 }
 
 Listing.propTypes = {
-  articles: PropTypes.array
+  articles: PropTypes.object
 }
 
 export default Listing
