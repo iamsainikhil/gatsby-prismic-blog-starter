@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import React from 'react'
+import React, { useState } from 'react'
 import { graphql } from 'gatsby'
 import {
   Layout,
@@ -24,6 +24,10 @@ const Article = ({
   pageContext,
   location
 }) => {
+  const [showComments, setShowComments] = useState(false)
+  const toggleComments = () => {
+    setShowComments(!showComments)
+  }
   return (
     <>
       <Snakke
@@ -126,14 +130,42 @@ const Article = ({
           related={relatedArticles}
         />
 
+        <p style={{ textAlign: 'center' }}>
+          <button
+            onClick={toggleComments}
+            sx={{
+              margin: '1rem auto 0.5rem auto',
+              py: 2,
+              px: 4,
+              color: 'text',
+              backgroundColor: 'shade2',
+              fontFamily: 'light',
+              fontSize: [1, 2],
+              textTransform: 'uppercase',
+              letterSpacing: '2px',
+              border: 'none',
+              borderRadius: '2rem',
+              cursor: 'pointer',
+              '&:hover': {
+                color: 'accent',
+                backgroundColor: 'shade1'
+              }
+            }}
+          >
+            {showComments ? 'Hide' : 'Show'} Comments
+          </button>
+        </p>
+
         {/* Disqus comments */}
-        <div sx={{ mt: 6 }}>
-          <DisqusComments
-            slug={pageContext.slug}
-            title={article.data.title.text}
-            pathname={location.pathname}
-          />
-        </div>
+        {showComments ? (
+          <div sx={{ mt: 4 }}>
+            <DisqusComments
+              slug={pageContext.slug}
+              title={article.data.title.text}
+              pathname={location.pathname}
+            />
+          </div>
+        ) : null}
       </Layout>
     </>
   )
