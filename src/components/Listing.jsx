@@ -16,8 +16,8 @@ import trackGAEvent from './../utils/trackGAEvent'
  * @param {String} text
  */
 const truncateText = (text) => {
-  if (text.length > 175) {
-    return text.slice(0, 175).concat('...')
+  if (text.length > 140) {
+    return text.slice(0, 140).concat('...')
   }
   return text
 }
@@ -66,11 +66,7 @@ const Listing = ({ articles }) => {
                 sx={{
                   height: '100%',
                   borderTopLeftRadius: '25px',
-                  borderTopRightRadius: '25px',
-                  filter: 'none',
-                  ':hover, :focus': {
-                    filter: 'grayscale(100%)'
-                  }
+                  borderTopRightRadius: '25px'
                 }}
               />
             </Link>
