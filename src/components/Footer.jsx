@@ -151,12 +151,12 @@ const Footer = () => {
         <p style={{ textAlign: 'center', marginTop: '0.5rem' }}>
           © {new Date().getFullYear()}{' '}
           <a
-            href="https://github.com/iamsainikhil/gatsby-prismic-blog-starter"
+            href="https://github.com/iamsainikhil"
             target="_blank"
             rel="noreferrer noopener"
             className="special-link"
-            aria-label="Portfolio"
-            title="Portfolio"
+            aria-label="GitHub Profile"
+            title="GitHub Profile"
             sx={{ color: 'primary' }}
             onClick={() =>
               trackGAEvent(
@@ -166,7 +166,7 @@ const Footer = () => {
               )
             }
           >
-            Gatsby Prismic Blog Starter
+            Sai Nikhil
           </a>
         </p>
       </div>
