@@ -35,21 +35,37 @@ const Header = () => {
           </div>
           <div className="header-links">
             <p>
-              {colorMode === 'dark' ? (
-                <Styled.a title="Light Mode" aria-label="Enable Light Mode">
+              {colorMode === 'light' ? (
+                <Styled.a
+                  title="Switch to Dark Mode"
+                  aria-label="Switch to Dark Mode"
+                >
                   <FiSun
                     className="theme-icon"
                     onClick={() => {
-                      setColorMode('light')
+                      setColorMode('dark')
+                      trackGAEvent(
+                        'toggle theme',
+                        `enabled dark theme`,
+                        'icon click'
+                      )
                     }}
                   />
                 </Styled.a>
               ) : (
-                <Styled.a title="Dark Mode" aria-label="Enable Dark Mode">
+                <Styled.a
+                  title="Switch to Light Mode"
+                  aria-label="Switch to Light Mode"
+                >
                   <FiMoon
                     className="theme-icon"
                     onClick={() => {
-                      setColorMode('dark')
+                      setColorMode('light')
+                      trackGAEvent(
+                        'toggle theme',
+                        `enabled light theme`,
+                        'icon click'
+                      )
                     }}
                   />
                 </Styled.a>
