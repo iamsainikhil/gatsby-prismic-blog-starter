@@ -37,7 +37,7 @@ const Author = ({ author }) => {
         fluid={author.avatar.fluid}
         alt={author.avatar.alt}
         title={author.avatar.alt}
-        sx={{ height: '75%', borderRadius: '50%' }}
+        sx={{ height: '100px', borderRadius: '50%' }}
       />
       <div>
         <h3
