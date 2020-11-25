@@ -3,6 +3,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby'
 import Headroom from 'react-headroom'
 import { Styled, useThemeUI } from 'theme-ui'
 import { FiSun, FiMoon } from 'react-icons/fi'
+import trackGAEvent from '../utils/trackGAEvent'
 import '../styles/header.scss'
 
 const Header = () => {

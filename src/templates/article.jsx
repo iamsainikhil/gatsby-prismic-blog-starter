@@ -221,7 +221,7 @@ export const articleQuery = graphql`
               }
               website_image {
                 alt
-                fluid(maxWidth: 200, maxHeight: 125) {
+                fluid(maxWidth: 200, maxHeight: 100) {
                   ...GatsbyPrismicImageFluid
                 }
               }
