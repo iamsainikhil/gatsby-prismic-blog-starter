@@ -1,31 +1,31 @@
-import Layout from './Layout'
-import SEO from './SEO'
-import Header from './Header'
-import Listing from './Listing'
-import Footer from './Footer'
-import PrismicLogo from './PrismicLogo'
-import SliceZone from './sliceZone'
-import Image from './Image'
-import Chip from './Chip'
 import Author from './Author'
-import Icon from './Icon'
-import Share from './Share'
+import Chip from './Chip'
 import DisqusComments from './DisqusComments'
+import Footer from './Footer'
+import Header from './Header'
+import Icon from './Icon'
+import Image from './Image'
+import Layout from './Layout'
+import Listing from './Listing'
+import PrismicLogo from './PrismicLogo'
 import RelatedArticles from './RelatedArticles'
+import SEO from './SEO'
+import Share from './Share'
+import SliceZone from './sliceZone'
 
 export {
-  Layout,
-  SEO,
-  Header,
-  Listing,
-  Footer,
-  Image,
-  PrismicLogo,
-  SliceZone,
-  Icon,
-  Chip,
   Author,
-  Share,
+  Chip,
   DisqusComments,
-  RelatedArticles
+  Footer,
+  Header,
+  Icon,
+  Image,
+  Layout,
+  Listing,
+  PrismicLogo,
+  RelatedArticles,
+  SEO,
+  Share,
+  SliceZone
 }
