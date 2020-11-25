@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect } from 'react'
 import { jsx } from 'theme-ui'
+import sanitizeHTML from './../utils/sanitizeHTML'
 
 const Quote = ({ data: { primary } }) => {
   const contentRef = useRef(null)
@@ -23,7 +24,7 @@ const Quote = ({ data: { primary } }) => {
   return (
     <blockquote
       ref={contentRef}
-      dangerouslySetInnerHTML={{ __html: primary.content.html }}
+      dangerouslySetInnerHTML={{ __html: sanitizeHTML(primary.content.html) }}
       sx={{ variant: 'styles' }}
     ></blockquote>
   )

@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect } from 'react'
 import { jsx } from 'theme-ui'
+import sanitizeHTML from './../utils/sanitizeHTML'
 
 const Content = ({ data: { primary } }) => {
   const contentRef = useRef(null)
@@ -23,7 +24,7 @@ const Content = ({ data: { primary } }) => {
   return (
     <div
       ref={contentRef}
-      dangerouslySetInnerHTML={{ __html: primary.content.html }}
+      dangerouslySetInnerHTML={{ __html: sanitizeHTML(primary.content.html) }}
       sx={{
         variant: 'styles',
         mt: 5

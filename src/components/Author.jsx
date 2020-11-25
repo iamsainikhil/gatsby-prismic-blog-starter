@@ -5,6 +5,7 @@ import { jsx, Styled } from 'theme-ui'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 import Icon from './Icon'
+import sanitizeHTML from './../utils/sanitizeHTML'
 
 const flexbox = {
   display: 'flex',
@@ -48,7 +49,9 @@ const Author = ({ author }) => {
         >
           {author.name}
         </h3>
-        <p dangerouslySetInnerHTML={{ __html: author.bio.html }}></p>
+        <p
+          dangerouslySetInnerHTML={{ __html: sanitizeHTML(author.bio.html) }}
+        ></p>
         <div sx={{ ...flexbox, mt: -1 }}>
           {author.social_links.map((platform, index) => {
             return (

@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { jsx } from 'theme-ui'
+import sanitizeHTML from './../utils/sanitizeHTML'
 
 const RawContent = ({ data: { primary } }) =>
   primary.content.raw.map((block, index) => {
@@ -10,7 +11,7 @@ const RawContent = ({ data: { primary } }) =>
         return (
           <ol key={index}>
             <li
-              dangerouslySetInnerHTML={{ __html: block.text }}
+              dangerouslySetInnerHTML={{ __html: sanitizeHTML(block.text) }}
               sx={{ variant: 'styles' }}
             ></li>
           </ol>
@@ -19,7 +20,7 @@ const RawContent = ({ data: { primary } }) =>
         return (
           <ul key={index}>
             <li
-              dangerouslySetInnerHTML={{ __html: block.text }}
+              dangerouslySetInnerHTML={{ __html: sanitizeHTML(block.text) }}
               sx={{ variant: 'styles' }}
             ></li>
           </ul>
@@ -28,7 +29,7 @@ const RawContent = ({ data: { primary } }) =>
         return (
           <div
             key={index}
-            dangerouslySetInnerHTML={{ __html: block.text }}
+            dangerouslySetInnerHTML={{ __html: sanitizeHTML(block.text) }}
             sx={{ variant: 'styles', my: 4 }}
           ></div>
         )
