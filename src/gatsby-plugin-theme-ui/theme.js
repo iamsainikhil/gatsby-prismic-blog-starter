@@ -152,7 +152,7 @@ export default {
       borderStyle: 'solid',
       borderWidth: 2
     },
-    code: {
+    span: {
       fontFamily: 'code',
       fontSize: 1,
       color: 'muted',

@@ -44,8 +44,7 @@ const Gallery = ({ data: { items } }) => {
     view: () => ({
       height: 'auto',
       width: '100%',
-      margin: '0 auto',
-      transform: `scale(${window.innerWidth > 1440 ? 0.7 : 1})`,
+      margin: '0 auto -1rem auto',
       backgroundColor: theme.colors.accent
     }),
     footer: (base, state) => {
@@ -57,7 +56,7 @@ const Gallery = ({ data: { items } }) => {
         opacity,
         transition,
         fontFamily: theme.fonts.body,
-        fontSize: theme.fontSizes[3]
+        fontSize: theme.fontSizes[(3, 4)]
       }
     }
   }

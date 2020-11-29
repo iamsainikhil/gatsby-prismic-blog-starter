@@ -16,8 +16,8 @@ import trackGAEvent from './../utils/trackGAEvent'
  * @param {String} text
  */
 const truncateText = (text) => {
-  if (text.length > 140) {
-    return text.slice(0, 140).concat('...')
+  if (text.length > 75) {
+    return text.slice(0, 75).concat('...')
   }
   return text
 }
@@ -74,8 +74,6 @@ const Listing = ({ articles }) => {
           <div
             sx={{
               px: 3,
-              py: 2,
-
               '@media (max-width: 30rem)': {
                 px: 3
               }
@@ -84,11 +82,10 @@ const Listing = ({ articles }) => {
             <h2
               sx={{
                 m: 0,
-                pt: 2,
-                height: '6rem',
+                minHeight: '4rem',
+                height: 'auto',
                 fontSize: [2, 3],
                 '@media (max-width: 30rem)': {
-                  pt: 0,
                   height: 'auto'
                 }
               }}
@@ -117,7 +114,7 @@ const Listing = ({ articles }) => {
             <p
               sx={{
                 fontSize: [1, 2],
-                height: '8rem',
+                height: '6rem',
                 '@media screen and (max-width: 30rem)': {
                   height: 'auto'
                 }
@@ -172,8 +169,7 @@ const Listing = ({ articles }) => {
             <p
               sx={{
                 fontSize: 0,
-                mb: 1,
-                py: 1
+                pb: 1
               }}
             >
               <em

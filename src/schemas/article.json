@@ -200,14 +200,14 @@
           "content": {
             "type": "Slice",
             "fieldset": "Content",
-            "description": "Content can be Rich Text or Raw Text or a Quote",
+            "description": "Content can be Rich Text or a Quote",
             "icon": "border_color",
             "display": "list",
             "non-repeat": {
               "type": {
                 "type": "Select",
                 "config": {
-                  "options": ["Rich Text", "Raw Text", "Quote"],
+                  "options": ["Rich Text", "Quote"],
                   "default_value": "Rich Text",
                   "label": "type",
                   "placeholder": "Type of the content"
@@ -218,7 +218,8 @@
                 "config": {
                   "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
                   "label": "content",
-                  "placeholder": "Type the content..."
+                  "placeholder": "Type the content...",
+                  "labels": ["right-align", "center-align", "codespan"]
                 }
               }
             },

@@ -29,7 +29,11 @@ const Header = () => {
         <div className="header-content">
           <div>
             <Styled.h1 style={{ margin: '0' }}>
-              <Styled.a as={Link} to="/" style={{ textDecoration: 'none' }}>
+              <Styled.a
+                as={Link}
+                to="/"
+                style={{ fontFamily: 'Damion', textDecoration: 'none' }}
+              >
                 {data.site.siteMetadata.title}
               </Styled.a>
             </Styled.h1>
