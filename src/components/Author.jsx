@@ -5,6 +5,8 @@ import { jsx, Styled } from 'theme-ui'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 import Icon from './Icon'
+import { RichText } from 'prismic-reactjs'
+import htmlSerializer from './../utils/htmlSerializer'
 
 const flexbox = {
   display: 'flex',
@@ -48,7 +50,7 @@ const Author = ({ author }) => {
         >
           {author.name}
         </h3>
-        <p dangerouslySetInnerHTML={{ __html: author.bio.html }}></p>
+        <RichText render={author.bio.raw} htmlSerializer={htmlSerializer} />
         <div sx={{ ...flexbox, mt: -1 }}>
           {author.social_links.map((platform, index) => {
             return (

@@ -82,12 +82,10 @@ const Listing = ({ articles }) => {
             <h2
               sx={{
                 m: 0,
+                pt: 2,
                 minHeight: '4rem',
                 height: 'auto',
-                fontSize: [2, 3],
-                '@media (max-width: 30rem)': {
-                  height: 'auto'
-                }
+                fontSize: [2, 3]
               }}
             >
               <Link

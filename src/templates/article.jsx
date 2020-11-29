@@ -278,7 +278,7 @@ export const articleQuery = graphql`
                   platform_url
                 }
                 bio {
-                  html
+                  raw
                 }
                 avatar {
                   alt
