@@ -235,7 +235,15 @@ export const articleQuery = graphql`
             primary {
               type
               content {
-                html
+                raw
+              }
+            }
+          }
+          ... on PrismicArticleBodyAlert {
+            slice_type
+            primary {
+              type
+              content {
                 raw
               }
             }

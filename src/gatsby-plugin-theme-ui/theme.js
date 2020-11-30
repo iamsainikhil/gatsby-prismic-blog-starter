@@ -9,41 +9,58 @@ export default {
   borders: [0],
   colors: {
     text: '#000',
-    background: '#ffff',
+    background: '#fff',
     primary: '#333',
     secondary: '#5b5b5b',
     muted: '#f6f6f6',
     highlight: '#9f9f9f',
     gray: '#6c6c6c',
     accent: '#3f3f3f',
-    gatsby: '#352065',
+    nextjs: '#352065',
     code: '#fdf6e3',
     shade1: '#d2d2d2',
     shade2: '#e0e0e0',
+    /* alert colors */
+    info: '#BFDBFE',
+    success: '#A7F3D0',
+    warning: '#FDE68A',
+    danger: '#FECACA',
+    infoBorder: '#60A5FA',
+    successBorder: '#34D399',
+    warningBorder: '#FBBF24',
+    dangerBorder: '#F87171',
     modes: {
       dark: {
         text: '#fff',
-        background: '#181818',
+        background: '#131313',
         primary: '#d2d2d2',
         secondary: '#b2b2b2',
         muted: '#202020',
         highlight: '#3c3c3c',
         gray: '#999',
         accent: '#e0e0e0',
-        gatsby: '#b2b2b2',
+        nextjs: '#b2b2b2',
         code: '#1b1b1b',
         shade1: '#0a0a0a',
-        shade2: '#262626'
+        shade2: '#101010',
+        info: '#93C5FD',
+        success: '#A7F3D0',
+        warning: '#FDE68A',
+        danger: '#FECACA',
+        infoBorder: '#60A5FA',
+        successBorder: '#059669',
+        warningBorder: '#D97706',
+        dangerBorder: '#DC2626'
       }
     }
   },
   fonts: {
-    light: "'CeraRoundPro-Light', 'Inter', 'Lato', sans-serif",
-    body: "'CeraRoundPro', 'Inter', 'Lato', sans-serif",
-    medium: "'CeraRoundPro-Medium', 'Inter', 'Lato', sans-serif",
-    heading: "'CeraRoundPro-Bold', 'Inter', 'Lato', sans-serif",
+    body: "'CeraRoundPro', 'Lato', 'Inter', sans-serif",
+    light: "'CeraRoundPro-Light', 'Lato', 'Inter', sans-serif",
+    medium: "'CeraRoundPro-Medium', 'Lato', 'Inter', sans-serif",
+    heading: "'CeraRoundPro-Bold', 'Lato', 'Inter', sans-serif",
     code: "'Fira Code', monospace",
-    title: "'Inter', 'Lato', sans-serif"
+    title: "'Lato', 'Inter', sans-serif"
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
   fontWeights: {
@@ -78,7 +95,8 @@ export default {
     },
     light: {
       fontFamily: 'light',
-      fontWeight: 'light'
+      fontWeight: 'light',
+      lineHeight: 'light'
     }
   },
   styles: {
@@ -123,11 +141,12 @@ export default {
       fontSize: [1, 2, 3]
     },
     a: {
-      color: 'gatsby',
+      color: 'nextjs',
       textDecoration: 'underline',
       '&:hover': {
         color: 'secondary',
-        textDecoration: 'none'
+        textDecoration: 'none',
+        cursor: 'pointer'
       }
     },
     blockquote: {
@@ -135,7 +154,7 @@ export default {
       variant: 'textStyles.body',
       margin: '1.45rem',
       padding: '0 0 0 1rem',
-      borderColor: 'gatsby',
+      borderColor: 'nextjs',
       borderStyle: 'solid',
       borderTopWidth: 0,
       borderLeftWidth: 2,
@@ -156,7 +175,7 @@ export default {
       fontFamily: 'code',
       fontSize: 1,
       color: 'muted',
-      bg: 'gatsby',
+      bg: 'nextjs',
       px: 1
     },
     inlineCode: {

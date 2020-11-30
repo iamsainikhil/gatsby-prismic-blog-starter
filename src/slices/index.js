@@ -5,5 +5,6 @@ import Embed from './Embed'
 import Gallery from './Gallery'
 import Quote from './Quote'
 import MetaInfo from './MetaInfo'
+import Alert from './Alert'
 
-export { Banner, Content, Quote, Code, Gallery, Embed, MetaInfo }
+export { Banner, Content, Quote, Alert, Code, Gallery, Embed, MetaInfo }

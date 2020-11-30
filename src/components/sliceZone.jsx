@@ -7,7 +7,8 @@ import {
   Embed,
   Gallery,
   Banner,
-  MetaInfo
+  MetaInfo,
+  Alert
 } from '../slices'
 
 const SliceZone = ({ slices }) => {
@@ -32,6 +33,8 @@ const SliceZone = ({ slices }) => {
         }
       case 'meta_information':
         return <MetaInfo key={index} meta={slice.primary} />
+      case 'alert':
+        return <Alert key={index} data={slice} />
       default:
         return null
     }

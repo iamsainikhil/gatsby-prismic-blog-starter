@@ -97,17 +97,17 @@ Therefore the starter has following features:
 
 - **`Slices`**(Optional):
 
-  - **Content**: This slice has 3 types (Rich Text, Raw Text, and Quote) based on which the `content` is rendered in the UI.
+  - **Content**: This slice has 2 types (Rich Text and Quote) based on which the `content` is rendered in the UI.
 
-    - **Text** (Rich Text Section) **→** Rich WYSIWYG editor content which is consumed in the UI as the HTML
-
-    - **Raw Text** (Raw Text Section) → WYSIWYG editor content which is consumed in the UI as the raw content i.e unescaped HTML content. Use case of this type is to mark any inline code content.
-
-    > Note: enclose any content inside `code` tag like `<code>inline code content</code>` to apply styling of inline code.
+    - **Text** (Rich Text Section) **→** Rich WYSIWYG editor content which is consumed in the UI as the HTML. Support for `inline code` which appear in the HTML with a class `codespan`.
 
     - **Quote** (Blockquote Section) → Select this type to have any blockquote content in the article
 
   ![Content Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/prismic_article_data_fields_slice_content.png)
+
+  - **Alert**: This slice has 4 types (Info, Success, Warning, and Danger) based on which the `alert` UI will have different background color as well as border color.
+
+  ![Alert Slice](https://github.com/iamsainikhil/gatsby-prismic-blog-starter/raw/master/README_images/alert_slice_config.png)
 
   - **Image** (banner or gallery) → Use this slice to show a `banner` (single image with caption) or a `gallery` (group of images)
 
