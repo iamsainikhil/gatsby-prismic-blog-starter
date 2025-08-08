@@ -35,7 +35,7 @@ _Have another more specific idea? You may want to check out the vibrant collecti
 
 Multiple features of Prismic are used in this starter:
 
-- **Slices**: Enrich your blogposts with custom quotes, images or codeblocks. You can order them how you like. When you used the *Image-Slice* the image will get inserted and optimized by **gatsby-image**
+- **Slices**: Enrich your blogposts with custom quotes, images or codeblocks. You can order them how you like. When you used the *Image-Slice* the image will get inserted and optimized by **gatsby-plugin-image**
 - **Relationship fields**: Categorize your blog articles in Categories via a relationship field. You can change categories on the fly
 - **Both custom types (Single / Repeatable)**: Articles, Tags, Categories, Author sections of the website are managed with Prismic. The social media links or the header & footer sections are hardcoded content which can be customized easily!
 
@@ -44,10 +44,10 @@ Therefore the starter has following features:
 - Prismic as Headless CMS
 - [Theme UI](https://theme-ui.com/home) for styling
 - Prism React Renderer plugin using PrismJS highlighting
-- Responsive images (gatsby-image)
+- Responsive images (gatsby-plugin-image)
   - The right image size for every screen size
   - Traced SVG Loading (Lazy-Loading)
-  - WebP Support
+  - WebP & AVIF Support
   - Prismic Imgix transformations
 - SEO
   - Sitemap
@@ -347,7 +347,8 @@ A list of plugins used in this starter project.
 8. **`gatsby-plugin-manifest`:** Plugin provides generation of web app manifest for PWA. For more info, check [here](https://www.gatsbyjs.org/packages/gatsby-plugin-manifest/).
 9. **`gatsby-plugin-disqus`:** A plugin that simplifies adding DISQUS comments to your Gatsby website. For more info, check [here](https://www.gatsbyjs.org/packages/gatsby-plugin-disqus/).
 10. **`gatsby-plugin-offline`:** Adds drop-in support for making a Gatsby site work offline and more resistant to bad network connections. For more info, check [here](https://www.gatsbyjs.org/packages/gatsby-plugin-offline/).
-11. `**gatsby-plugin-google-analytics`:\*\* Easily add Google Analytics tracking to your Gatsby site. For more info, check [here](https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/).
+11. `**gatsby-plugin-google-gtag`:\*\* Easily add Google Analytics/GA4 tracking to your Gatsby site. For more info, check [here](https://www.gatsbyjs.com/plugins/gatsby-plugin-google-gtag/).
+
 
 # 🧰 3rd Party Packages
 
@@ -358,13 +359,13 @@ A list of packages used in this starter project.
 3. **`theme-ui`:** Build consistent, themeable React apps based on constraint-based design principles. For more info, check [here](https://github.com/system-ui/theme-ui).
 4. **`prism-react-renderer`:** Renders highlighted Prism output to React (+ theming & vendored Prism). This package is used to syntax highlight the code blocks in article. For more info, check [here](https://github.com/FormidableLabs/prism-react-renderer).
 5. **`react-copy-to-clipboard`:** Copy-to-clipboard React component used in Code slice `src/slices/Code.jsx`. For more info, check [here](https://github.com/nkbt/react-copy-to-clipboard).
-6. **`react-gist`:** Github Gist React component used in Embed slice `src/slices/Embed.jsx`. For more info, check [here](https://github.com/tleunen/react-gist).
 7. **`react-headroom`:** A handy react component to hide the site header until you need it. For more info, check [here](https://github.com/KyleAMathews/react-headroom).
 8. **`react-icons`:** Absolutely useful package to get svg react icons of popular icon packs. For more info, check [here](https://github.com/react-icons/react-icons).
-9. **`react-images`:** A mobile-friendly, highly customizable, carousel component for displaying media in ReactJS. For more info, check [here](https://github.com/jossmac/react-images).
-10. **`react-snakke`:** Reading position indicator for React used to display the progress of the article as you scroll down the page. For more info, check [here](https://github.com/diogomoretti/react-snakke). This is one of the package which can be completely avoidable if you don't want it 😄.
+9. **`yet-another-react-lightbox`:** Modern, customizable lightbox for React, used for image galleries. For more info, check [here](https://github.com/igordanchenko/yet-another-react-lightbox).
 11. **`react-toastify`:** React notification made easy. This is used to notify users of which code block they copied to clipboard used in Code slice `src/slices/Code.jsx`. For more info, check [here](https://github.com/fkhadra/react-toastify).
-12. **`typeface-rubik`, `typeface-fira-code` & `typeface-inter`:** Typeface is a beautiful package which allows installation of fonts through npm. Rubik is used for the site, Damion is used for titles, Fira Code is used for code blocks where it supports font ligatures, and Inter for body. For more info, check [here](https://github.com/KyleAMathews/typefaces/tree/master/README_images/packages). If you don't want these fonts or use typeface based fonts, uninstall these packages as well as remove loading these fonts in `gatsby-browser.js`.
+12. **`typeface-rubik`, `typeface-fira-code` & `typeface-inter`:** Typeface is a beautiful package which allows installation of fonts through npm. Rubik is used for the entire site content and titles, Fira Code is used for code blocks where it supports font ligatures, and Inter for body. For more info, check [here](https://github.com/KyleAMathews/typefaces/tree/master/README_images/packages). If you don't want these fonts or use typeface based fonts, uninstall these packages as well as remove loading these fonts in `gatsby-browser.js`.
+
+> Removed: `gatsby-image`, `gatsby-plugin-google-analytics`, `react-gist`, `react-images`, `react-snakke`, `node-sass` as part of the Gatsby 5+ and ecosystem migration. See latest release notes in the repo for details.
 
 # ⛏️ Customization
 
