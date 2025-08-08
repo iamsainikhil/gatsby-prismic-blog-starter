@@ -1,9 +1,9 @@
 /** @jsx jsx */
 
 import React from 'react'
-import { jsx, Styled } from 'theme-ui'
+import { jsx } from 'theme-ui'
 import PropTypes from 'prop-types'
-import Img from 'gatsby-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Icon from './Icon'
 import { RichText } from 'prismic-reactjs'
 import htmlSerializer from './../utils/htmlSerializer'
@@ -35,11 +35,11 @@ const Author = ({ author }) => {
         borderRadius: '1rem'
       }}
     >
-      <Img
-        fluid={author.avatar.fluid}
+      <GatsbyImage
+        image={getImage(author.avatar.gatsbyImageData)}
         alt={author.avatar.alt}
         title={author.avatar.alt}
-        sx={{ height: '100px', borderRadius: '50%' }}
+        style={{ height: '100px', borderRadius: '50%' }}
       />
       <div>
         <h3

@@ -14,9 +14,7 @@ export const ArticleFragment = graphql`
       created
       article_image {
         alt
-        fluid(maxWidth: 300) {
-          ...GatsbyPrismicImageFluid
-        }
+        gatsbyImageData(width: 300, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
         url
       }
       categories {

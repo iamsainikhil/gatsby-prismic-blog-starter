@@ -24,9 +24,7 @@ function SEO({ description, lang, meta, title, image }) {
         }
         file(relativePath: { eq: "site_image.png" }) {
           childImageSharp {
-            fixed {
-              src
-            }
+            gatsbyImageData(width: 1200, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
           }
         }
       }
@@ -34,7 +32,7 @@ function SEO({ description, lang, meta, title, image }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const metaImage = image || file.childImageSharp.fixed.src
+  const metaImage = image || file.childImageSharp.gatsbyImageData.images.fallback.src
 
   return (
     <Helmet

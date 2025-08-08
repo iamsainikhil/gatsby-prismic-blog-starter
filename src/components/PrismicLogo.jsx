@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Img from 'gatsby-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { StaticQuery, graphql } from 'gatsby'
 
 const PrismicLogo = ({ style, title }) => (
@@ -9,18 +9,16 @@ const PrismicLogo = ({ style, title }) => (
       query {
         file(relativePath: { eq: "prismic-icon.png" }) {
           childImageSharp {
-            fixed(width: 18, height: 18) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 18, height: 18, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
           }
         }
       }
     `}
     render={(data) => (
-      <Img
-        fixed={data.file.childImageSharp.fixed}
+      <GatsbyImage
+        image={getImage(data.file.childImageSharp)}
         style={style}
-        aria-label={title}
+        alt={title}
         title={title}
       />
     )}

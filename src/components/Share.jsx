@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import React from 'react'
-import { jsx, Styled } from 'theme-ui'
+import { jsx } from 'theme-ui'
 import PropTypes from 'prop-types'
 import Icon from './Icon'
 import { FiShare2 } from 'react-icons/fi'
@@ -37,13 +37,13 @@ const Share = ({ articleURL, articleName }) => {
 
   return (
     <div sx={{ mt: 4 }}>
-      <Styled.h3 sx={{ textAlign: 'center' }}>
+      <h3 sx={{ textAlign: 'center' }}>
         Share
         <FiShare2
           sx={{ mx: 2, mb: -1 }}
           title="Share this article on different platforms."
         />
-      </Styled.h3>
+      </h3>
       <div sx={flexbox}>
         {sharePlatforms.map((platform, index) => {
           return (

@@ -1,12 +1,13 @@
-import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
+
 
 const trackGAEvent = (category, action, label, value = 0) => {
-  trackCustomEvent({
-    category,
-    action,
-    label,
-    value
-  })
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', action, {
+      event_category: category,
+      event_label: label,
+      value: value
+    });
+  }
 }
 
 export default trackGAEvent

@@ -2,24 +2,21 @@
 
 import React, { useState } from 'react'
 import { jsx, useThemeUI } from 'theme-ui'
-import Img from 'gatsby-image'
-import Carousel, { Modal, ModalGateway } from 'react-images'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import Lightbox from 'yet-another-react-lightbox'
+import 'yet-another-react-lightbox/styles.css'
 import PropTypes from 'prop-types'
 
 const Gallery = ({ data: { items } }) => {
-  const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [open, setOpen] = useState(false)
   const { theme } = useThemeUI()
-  const toggleModal = () => {
-    setModalIsOpen(!modalIsOpen)
-  }
+  const toggleModal = () => setOpen((v) => !v)
 
-  const images = items.map(({ image }) => {
-    return {
-      caption: image.alt,
-      alt: image.alt,
-      source: image.url
-    }
-  })
+  const slides = items.map(({ image }) => ({
+    src: image.url,
+    alt: image.alt,
+    description: image.alt
+  }))
 
   const navigationStyle = {
     backgroundColor: theme.colors.highlight,
@@ -63,28 +60,24 @@ const Gallery = ({ data: { items } }) => {
 
   return (
     <>
-      <ModalGateway>
-        {modalIsOpen ? (
-          <Modal onClose={toggleModal}>
-            <Carousel views={images} styles={galleryStyles} />
-          </Modal>
-        ) : null}
-      </ModalGateway>
-
+      <Lightbox
+        open={open}
+        close={() => setOpen(false)}
+        slides={slides}
+      />
       <div
         style={{
           position: 'relative',
           margin: '0 auto 2rem auto',
           cursor: 'pointer',
           borderRadius: '25px',
-          boxShadow: `inset -5px -5px 12px ${theme.colors.shade1},
-      inset 5px 5px 12px ${theme.colors.shade2}`,
+          boxShadow: `inset -5px -5px 12px ${theme.colors.shade1},      inset 5px 5px 12px ${theme.colors.shade2}`,
           overflow: 'hidden'
         }}
         onClick={toggleModal}
       >
-        <Img
-          fluid={items[0].image.fluid}
+        <GatsbyImage
+          image={getImage(items[0].image.gatsbyImageData)}
           alt={items[0].image.alt}
           title={items[0].image.alt}
         />
@@ -122,7 +115,6 @@ Gallery.defaultProps = {
   data: {
     items: {
       alt: '',
-      fluid: null,
       url: ''
     }
   }

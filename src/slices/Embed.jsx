@@ -2,8 +2,8 @@
 
 import React from 'react'
 import { jsx } from 'theme-ui'
-import Gist from 'react-gist'
 import PropTypes from 'prop-types'
+import GistEmbed from '../components/GistEmbed'
 
 const iframeStyle = {
   minWidth: '200px',
@@ -28,7 +28,7 @@ const Embed = ({ data: { primary } }) => {
   {
     if (primary.type === 'GitHub Gist') {
       return (
-        <Gist id={getGistId(primary.embed_url)} title={primary.embed_title} />
+        <GistEmbed gist={getGistId(primary.embed_url)} />
       )
     }
     return (

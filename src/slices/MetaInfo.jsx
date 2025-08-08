@@ -3,6 +3,7 @@
 import React from 'react'
 import { jsx } from 'theme-ui'
 import PropTypes from 'prop-types'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const MetaInfo = ({ meta }) => {
   return (
@@ -37,15 +38,11 @@ const MetaInfo = ({ meta }) => {
         </a>
       </div>
       <div>
-        <img
-          srcSet={meta.website_image.fluid.srcSet}
+        <GatsbyImage
+          image={getImage(meta.website_image.gatsbyImageData)}
           alt={meta.website_title.alt}
           title={meta.website_title.alt}
-          sx={{
-            width: '200px',
-            maxHeight: '125px',
-            background: 'gray'
-          }}
+          style={{ width: '200px', maxHeight: '125px', background: 'gray' }}
         />
       </div>
     </div>
@@ -57,7 +54,7 @@ MetaInfo.defaultProps = {
     website_title: '',
     website_image: {
       alt: '',
-      fluid: null,
+      gatsbyImageData: null,
       url: ''
     },
     website_description: '',

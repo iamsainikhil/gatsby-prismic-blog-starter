@@ -3,7 +3,7 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import { Layout, SEO, Listing } from '../components'
-import { jsx, Styled } from 'theme-ui'
+import { jsx } from 'theme-ui'
 
 const Tag = ({ data: { articles }, pageContext }) => {
   return (
@@ -13,7 +13,7 @@ const Tag = ({ data: { articles }, pageContext }) => {
         description={`Articles related to ${pageContext.slug} tag.`}
       />
       <div style={{ textAlign: 'center' }}>
-        <Styled.p
+        <p
           sx={{
             fontFamily: 'light',
             fontSize: [2, 3, 4],
@@ -21,7 +21,7 @@ const Tag = ({ data: { articles }, pageContext }) => {
           }}
         >
           The articles related to <strong>{pageContext.slug}</strong> tag.
-        </Styled.p>
+        </p>
       </div>
       <Listing articles={articles} />
     </Layout>

@@ -12,12 +12,22 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        // add your own GA_ID in the env file
-        trackingId: `${process.env.GA_ID}`
+        trackingIds: [
+          `${process.env.GA_ID}` // Google Analytics / GA4 Measurement ID
+        ],
+        gtagConfig: {
+          anonymize_ip: true,
+          cookie_expires: 0
+        },
+        pluginConfig: {
+          head: true,
+          respectDNT: true
+        }
       }
     },
+    `gatsby-plugin-image`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-theme-ui`,
     `gatsby-plugin-sass`,
@@ -41,7 +51,7 @@ module.exports = {
         background_color: `#f7f8f9`,
         theme_color: `#181818`,
         display: `standalone`,
-        orientation: `potrait`,
+  orientation: `portrait`,
         icon: `src/images/logo.svg` // The images inside src will be optimized and be available in public/static after build
       }
     },
@@ -66,7 +76,7 @@ module.exports = {
         // provided to the function, as seen below. This allows you to use
         // different link resolver logic for each field if necessary.
         // See: https://prismic.io/docs/javascript/query-the-api/link-resolving
-        linkResolver: () => (doc) => {
+        linkResolver: doc => {
           // Route for blog articles
           if (doc.type === 'article') {
             return '/article/' + doc.uid
@@ -119,10 +129,6 @@ module.exports = {
         // provided to the function, as seen below. This allows you to use
         // different logic for each field if necessary.
         // This defaults to always return false.
-        shouldDownloadImage: ({ node, key, value }) => {
-          // Return true to download the image or false to skip.
-          return false
-        }
 
         // Set the prefix for the filename where type paths for your schemas are
         // stored. The filename will include the MD5 hash of your schemas after

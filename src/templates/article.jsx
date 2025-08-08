@@ -1,6 +1,7 @@
 /** @jsx jsx */
 
 import React, { useState } from 'react'
+import ProgressBar from 'react-scroll-progress-bar'
 import { graphql } from 'gatsby'
 import {
   Layout,
@@ -12,11 +13,9 @@ import {
   DisqusComments,
   RelatedArticles
 } from '../components'
-import { jsx, Styled } from 'theme-ui'
+import { jsx } from 'theme-ui'
 import { FiClock } from 'react-icons/fi'
 import formatDate from '../utils/formatDate'
-import Img from 'gatsby-image'
-import Snakke from 'react-snakke'
 import { Banner } from '../slices'
 
 const Article = ({
@@ -30,38 +29,31 @@ const Article = ({
   }
   return (
     <>
-      <Snakke
-        color="#484848"
-        top="0px"
-        height="5px"
-        opacity="1"
-        zIndex="10"
-        shadow={false}
-      />
-      <Layout>
+  <ProgressBar height="5" bgcolor="#484848" duration="0.2" />
+  <Layout>
         <SEO
           title={`${article.data.title.text} | Article | Blog`}
           description={article.data.excerpt.text}
           image={article.data.article_image.url}
         />
-        <Styled.h1 sx={{ textAlign: 'center', mb: 3 }}>
+        <h1 sx={{ textAlign: 'center', mb: 3 }}>
           {article.data.title.text}
-        </Styled.h1>
+        </h1>
         <p sx={{ fontWeight: 'bold', my: 0, pt: 0, textAlign: 'center' }}>
-          <Styled.em
+          <em
             title={formatDate(article.data.created)}
             aria-label={formatDate(article.data.created)}
           >
             {formatDate(article.data.created)}
-          </Styled.em>
-          <Styled.em
+          </em>
+          <em
             sx={{ mx: 4 }}
             title="Time to read the article"
             aria-label="Time to read the article"
           >
             <FiClock style={{ marginBottom: '-0.15rem' }} />
             &nbsp;{article.data.read_time}&nbsp;min read
-          </Styled.em>
+          </em>
         </p>
 
         {/* categories */}
@@ -87,16 +79,16 @@ const Article = ({
             )
           })}
         </div>
-        <Styled.p sx={{ my: 4 }}>{article.data.excerpt.text}</Styled.p>
+  <p sx={{ my: 4 }}>{article.data.excerpt.text}</p>
 
         <Banner image={article.data.article_image} />
 
         {/* slices */}
         <SliceZone slices={article.data.body} />
 
-        <Styled.em sx={{ color: 'gray' }}>
+        <em sx={{ color: 'gray' }}>
           This article was last updated on {formatDate(article.data.modified)}
-        </Styled.em>
+        </em>
 
         {/* tags */}
         <div
@@ -188,13 +180,11 @@ export const articleQuery = graphql`
         read_time
         article_image {
           alt
-          fluid(maxWidth: 1280) {
-            ...GatsbyPrismicImageFluid
-          }
+          gatsbyImageData(width: 1280, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
           url
         }
         body {
-          ... on PrismicArticleBodyCode {
+          ... on PrismicArticleDataBodyCode {
             slice_type
             primary {
               lang
@@ -204,7 +194,7 @@ export const articleQuery = graphql`
               }
             }
           }
-          ... on PrismicArticleBodyEmbed {
+          ... on PrismicArticleDataBodyEmbed {
             slice_type
             primary {
               type
@@ -212,7 +202,7 @@ export const articleQuery = graphql`
               embed_url
             }
           }
-          ... on PrismicArticleBodyMetaInformation {
+          ... on PrismicArticleDataBodyMetaInformation {
             slice_type
             primary {
               website_url
@@ -221,16 +211,14 @@ export const articleQuery = graphql`
               }
               website_image {
                 alt
-                fluid(maxWidth: 200, maxHeight: 100) {
-                  ...GatsbyPrismicImageFluid
-                }
+                gatsbyImageData(width: 200, height: 100, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
               }
               website_description {
                 text
               }
             }
           }
-          ... on PrismicArticleBodyContent {
+          ... on PrismicArticleDataBodyContent {
             slice_type
             primary {
               type
@@ -239,7 +227,7 @@ export const articleQuery = graphql`
               }
             }
           }
-          ... on PrismicArticleBodyAlert {
+          ... on PrismicArticleDataBodyAlert {
             slice_type
             primary {
               type
@@ -248,7 +236,7 @@ export const articleQuery = graphql`
               }
             }
           }
-          ... on PrismicArticleBodyImage {
+          ... on PrismicArticleDataBodyImage {
             slice_type
             primary {
               type
@@ -256,9 +244,7 @@ export const articleQuery = graphql`
             items {
               image {
                 alt
-                fluid(maxWidth: 1280) {
-                  ...GatsbyPrismicImageFluid
-                }
+                gatsbyImageData(width: 1280, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
                 url
               }
             }
@@ -290,9 +276,7 @@ export const articleQuery = graphql`
                 }
                 avatar {
                   alt
-                  fluid(maxWidth: 100, maxHeight: 75) {
-                    ...GatsbyPrismicImageFluid
-                  }
+                  gatsbyImageData(width: 100, height: 75, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
                 }
               }
             }

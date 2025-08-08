@@ -1,11 +1,12 @@
 /** @jsx jsx */
 
 import React from 'react'
-import Img from 'gatsby-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { jsx } from 'theme-ui'
 import PropTypes from 'prop-types'
 
-const Banner = ({ image: { alt, fluid } }) => {
+const Banner = ({ image }) => {
+  const { alt, gatsbyImageData } = image
   return (
     <div
       sx={{
@@ -19,7 +20,7 @@ const Banner = ({ image: { alt, fluid } }) => {
         overflow: 'hidden'
       }}
     >
-      <Img fluid={fluid} alt={alt} title={alt} />
+      <GatsbyImage image={getImage(gatsbyImageData)} alt={alt} title={alt} />
 
       <p
         sx={{
@@ -39,7 +40,7 @@ const Banner = ({ image: { alt, fluid } }) => {
 Banner.defaultProps = {
   image: {
     alt: '',
-    fluid: null
+    gatsbyImageData: null
   }
 }
 

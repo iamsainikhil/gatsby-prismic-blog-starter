@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import Headroom from 'react-headroom'
-import { Styled, useThemeUI } from 'theme-ui'
+import { useThemeUI } from 'theme-ui'
 import { FiSun, FiMoon } from 'react-icons/fi'
 import trackGAEvent from '../utils/trackGAEvent'
 import '../styles/header.scss'
@@ -28,52 +28,49 @@ const Header = () => {
       >
         <div className="header-content">
           <div>
-            <Styled.h1 style={{ margin: '0' }}>
-              <Styled.a
-                as={Link}
+            <h1 style={{ margin: '0' }}>
+              <Link
                 to="/"
-                style={{ fontFamily: 'Damion', textDecoration: 'none' }}
+                style={{ fontFamily: `'Damion', 'Rubik', sans-serif`, textDecoration: 'none', color: `${theme.colors.text} !important` }}
               >
                 {data.site.siteMetadata.title}
-              </Styled.a>
-            </Styled.h1>
+              </Link>
+            </h1>
           </div>
           <div className="header-links">
             <p>
               {colorMode === 'light' ? (
-                <Styled.a
+                <a
                   title="Switch to Dark Mode"
                   aria-label="Switch to Dark Mode"
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => {
+                    setColorMode('dark')
+                    trackGAEvent(
+                      'toggle theme',
+                      `enabled dark theme`,
+                      'icon click'
+                    )
+                  }}
                 >
-                  <FiSun
-                    className="theme-icon"
-                    onClick={() => {
-                      setColorMode('dark')
-                      trackGAEvent(
-                        'toggle theme',
-                        `enabled dark theme`,
-                        'icon click'
-                      )
-                    }}
-                  />
-                </Styled.a>
+                  <FiSun className="theme-icon" />
+                </a>
               ) : (
-                <Styled.a
+                <a
                   title="Switch to Light Mode"
                   aria-label="Switch to Light Mode"
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => {
+                    setColorMode('light')
+                    trackGAEvent(
+                      'toggle theme',
+                      `enabled light theme`,
+                      'icon click'
+                    )
+                  }}
                 >
-                  <FiMoon
-                    className="theme-icon"
-                    onClick={() => {
-                      setColorMode('light')
-                      trackGAEvent(
-                        'toggle theme',
-                        `enabled light theme`,
-                        'icon click'
-                      )
-                    }}
-                  />
-                </Styled.a>
+                  <FiMoon className="theme-icon" />
+                </a>
               )}
             </p>
           </div>

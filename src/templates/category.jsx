@@ -3,7 +3,7 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import { Layout, SEO, Listing } from '../components'
-import { jsx, Styled } from 'theme-ui'
+import { jsx } from 'theme-ui'
 
 const Category = ({ data: { articles }, pageContext: { slug, name } }) => {
   return (
@@ -13,7 +13,7 @@ const Category = ({ data: { articles }, pageContext: { slug, name } }) => {
         description={`Articles related to ${name || slug} category.`}
       />
       <div style={{ textAlign: 'center' }}>
-        <Styled.p
+        <p
           sx={{
             fontFamily: 'light',
             fontSize: [2, 3, 4],
@@ -21,7 +21,7 @@ const Category = ({ data: { articles }, pageContext: { slug, name } }) => {
           }}
         >
           The articles related to <strong>{name || slug}</strong> category.
-        </Styled.p>
+        </p>
       </div>
       <Listing articles={articles} />
     </Layout>

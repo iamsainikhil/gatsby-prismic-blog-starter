@@ -3,7 +3,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { jsx, useThemeUI } from 'theme-ui'
 import styled from '@emotion/styled'
 import { FiClock } from 'react-icons/fi'
@@ -59,11 +59,11 @@ const Listing = ({ articles }) => {
         >
           <div>
             <Link to={`article/${article.node.uid}`}>
-              <Img
-                fluid={article.node.data.article_image.fluid}
+              <GatsbyImage
+                image={getImage(article.node.data.article_image.gatsbyImageData)}
                 alt={article.node.data.article_image.alt}
                 title={article.node.data.article_image.alt}
-                sx={{
+                style={{
                   height: '100%',
                   borderTopLeftRadius: '25px',
                   borderTopRightRadius: '25px'
