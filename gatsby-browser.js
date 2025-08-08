@@ -1,4 +1,5 @@
 // custom typefaces
+require('typeface-rubik')
 require('typeface-inter')
 require('typeface-fira-code')
 
