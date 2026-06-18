@@ -5,7 +5,7 @@
   "author": "Sai Nikhil <contact@iamsainikhil.com>",
   "dependencies": {
     "@emotion/styled": "^11.14.1",
-    "dayjs": "^1.8.28",
+    "dayjs": "^1.11.21",
     "gatsby": "^5.14.0",
     "gatsby-plugin-disqus": "^1.2.0",
     "gatsby-plugin-google-gtag": "^5.14.0",
@@ -24,18 +24,18 @@
     "prismic-reactjs": "^1.3.3",
     "prop-types": "^15.7.2",
     "react": "^18.2.0",
-    "react-copy-to-clipboard": "^5.0.2",
+    "react-copy-to-clipboard": "^5.1.1",
     "react-dom": "^18.2.0",
     "react-headroom": "^3.0.0",
     "react-helmet": "^6.0.0",
     "react-icons": "^3.10.0",
     "react-scroll-progress-bar": "^2.0.3",
     "react-toastify": "^6.0.5",
-    "sass": "^1.69.7",
+    "sass": "^1.101.0",
     "typeface-fira-code": "^1.1.4",
     "typeface-inter": "^3.12.0",
     "typeface-rubik": "^1.1.4",
-    "yet-another-react-lightbox": "^3.25.0"
+    "yet-another-react-lightbox": "^3.32.0"
   },
   "devDependencies": {
     "eslint-plugin-react": "^7.20.0",
